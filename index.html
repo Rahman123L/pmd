@@ -132,7 +132,7 @@
                             <path d="M13.5 15.5C13.5 14.5572 13.5 14.0858 13.7929 13.7929C14.0858 13.5 14.5572 13.5 15.5 13.5H16.5C17.4428 13.5 17.9142 13.5 18.2071 13.7929C18.5 14.0858 18.5 14.5572 18.5 15.5C18.5 16.9142 18.5 17.6213 18.0607 18.0607C17.6213 18.5 16.9142 18.5 15.5 18.5C14.5572 18.5 14.0858 18.5 13.7929 18.2071C13.5 17.9142 13.5 17.4428 13.5 16.5V15.5Z"/>
                             <path d="M13.5 7.5C13.5 6.55719 13.5 6.08579 13.7929 5.79289C14.0858 5.5 14.5572 5.5 15.5 5.5C16.9142 5.5 17.6213 5.5 18.0607 5.93934C18.5 6.37868 18.5 7.08579 18.5 8.5C18.5 9.44281 18.5 9.91421 18.2071 10.2071C17.9142 10.5 17.4428 10.5 16.5 10.5H15.5C14.5572 10.5 14.0858 10.5 13.7929 10.2071C13.5 9.91421 13.5 9.44281 13.5 8.5V7.5Z"/>
                         </svg>
-                        <h1 class="text-xs md:text-sm text-gray-500 font-medium">Dashboard</h1>
+                        <h1 class="text-xs md:text-sm text-gray-500 font-medium">Lorem, ipsum.</h1>
                     </a>
                 </div>
             </button>
@@ -143,7 +143,7 @@
                     <path d="M13.5 15.5C13.5 14.5572 13.5 14.0858 13.7929 13.7929C14.0858 13.5 14.5572 13.5 15.5 13.5H16.5C17.4428 13.5 17.9142 13.5 18.2071 13.7929C18.5 14.0858 18.5 14.5572 18.5 15.5C18.5 16.9142 18.5 17.6213 18.0607 18.0607C17.6213 18.5 16.9142 18.5 15.5 18.5C14.5572 18.5 14.0858 18.5 13.7929 18.2071C13.5 17.9142 13.5 17.4428 13.5 16.5V15.5Z"/>
                     <path d="M13.5 7.5C13.5 6.55719 13.5 6.08579 13.7929 5.79289C14.0858 5.5 14.5572 5.5 15.5 5.5C16.9142 5.5 17.6213 5.5 18.0607 5.93934C18.5 6.37868 18.5 7.08579 18.5 8.5C18.5 9.44281 18.5 9.91421 18.2071 10.2071C17.9142 10.5 17.4428 10.5 16.5 10.5H15.5C14.5572 10.5 14.0858 10.5 13.7929 10.2071C13.5 9.91421 13.5 9.44281 13.5 8.5V7.5Z"/>
                 </svg>
-                <h1 class="text-xs md:text-sm text-gray-500 font-medium">Dashboard</h1>
+                <h1 class="text-xs md:text-sm text-gray-500 font-medium">Lorem, ipsum.</h1>
             </a>
         </div>
     </aside>
@@ -160,24 +160,97 @@
                     </svg>
                 </button>
             </div>
-            <div x-show="isOpen" class="bg-white py-3 md:px-3 rounded md:rounded-md shadow-md shadow-black/5">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                        <h1 class="text-[10px] md:text-xs text-black font-normal uppercase">Desa Sibargot</h1>
-                    </div>
-                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                        <h1 class="text-[10px] md:text-xs text-black font-normal uppercase">Desa Bandar Kumbul</h1>
-                    </div>
-                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                        <h1 class="text-[10px] md:text-xs text-black font-normal uppercase">Desa Tanjung Medan</h1>
-                    </div>
-                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                        <h1 class="text-[10px] md:text-xs text-black font-normal uppercase">Desa Tanjung Medan</h1>
-                    </div>
+            <div x-data="dataDesa" x-show="isOpen" class="bg-white py-3 md:px-3 rounded md:rounded-md shadow-md shadow-black/5">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-3">
+                    <template x-for="(data, index) in bilahBarat" :key="index">
+                        <div class="col-span-1">
+                            <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
+                            <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <template x-for="(desa, i) in data.desa" :key="i">
+                                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
+                                        <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-for="(data, index) in bilahHulu" :key="index">
+                        <div class="col-span-1">
+                            <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
+                            <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <template x-for="(desa, i) in data.desa" :key="i">
+                                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
+                                        <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-for="(data, index) in pangkatan" :key="index">
+                        <div class="col-span-1">
+                            <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
+                            <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <template x-for="(desa, i) in data.desa" :key="i">
+                                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
+                                        <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-for="(data, index) in panaiHilir" :key="index">
+                        <div class="col-span-1">
+                            <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
+                            <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <template x-for="(desa, i) in data.desa" :key="i">
+                                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
+                                        <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-for="(data, index) in bilahHilir" :key="index">
+                        <div class="col-span-1">
+                            <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
+                            <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <template x-for="(desa, i) in data.desa" :key="i">
+                                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
+                                        <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-for="(data, index) in panaiTengah" :key="index">
+                        <div class="col-span-1">
+                            <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
+                            <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <template x-for="(desa, i) in data.desa" :key="i">
+                                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
+                                        <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-for="(data, index) in panaiHulu" :key="index">
+                        <div class="col-span-1">
+                            <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
+                            <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <template x-for="(desa, i) in data.desa" :key="i">
+                                    <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
+                                        <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
                 </div>
-            </div>
+            </div>                
         </div>
     </main>
  
+    <script src="js/desa.js"></script>
 </body>
 </html>
