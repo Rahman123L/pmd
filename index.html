@@ -38,8 +38,7 @@
     <nav class="fixed top-0 z-40 w-full bg-[#6777EF] py-4 px-5 md:px-8">
         <div class="flex justify-between items-center">
             <button 
-                @click="if (window.innerWidth < 786) isOpen = !isOpen" 
-                @click.outside="if (window.innerWidth < 786) isOpen = false">
+                @click="if (window.innerWidth < 786) isOpen = !isOpen">
                 <svg class="w-[22px] md:w-6 fill-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 7C20.75 7.41421 20.4142 7.75 20 7.75L4 7.75C3.58579 7.75 3.25 7.41421 3.25 7C3.25 6.58579 3.58579 6.25 4 6.25L20 6.25C20.4142 6.25 20.75 6.58579 20.75 7Z"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 12C20.75 12.4142 20.4142 12.75 20 12.75L4 12.75C3.58579 12.75 3.25 12.4142 3.25 12C3.25 11.5858 3.58579 11.25 4 11.25L20 11.25C20.4142 11.25 20.75 11.5858 20.75 12Z"/>
@@ -83,6 +82,7 @@
 
     <div x-show="window.innerWidth < 640 && isOpen" x-transition.opacity class="fixed inset-0 bg-zinc-800 bg-opacity-80 z-40"></div>
     <aside x-show="isOpen" 
+        @click.outside="if (window.innerWidth < 786) isOpen = false"
         x-transition:enter="transform transition-transform duration-300"
         x-transition:enter-start="-translate-x-full" 
         x-transition:enter-end="translate-x-0"
@@ -109,7 +109,7 @@
             </a>
             <hr class="h-px bg-slate-100">
             <h1 class="text-[10px] md:text-xs text-gray-400 font-normal uppercase px-4 py-2">Menu</h1>
-            <button x-data="{ isOpen : true }" class="bg-white hover:bg-gray-100 focus:bg-gray-100">
+            <button x-data="{ isOpen : false }" class="bg-white hover:bg-gray-100 focus:bg-gray-100">
                 <div @click="isOpen = !isOpen"
                     @click.outside="isOpen = false"
                     class="flex justify-between items-center py-2 px-3">
