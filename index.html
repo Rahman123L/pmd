@@ -6,7 +6,7 @@
     <title>Dashboard</title>
 
     <link href="style.css" rel="stylesheet">
-    <link href="images/logo.svg" rel="shortcut icon" type="image/x-icon">
+    <link href="svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
 
@@ -38,8 +38,7 @@
     
     <nav class="fixed top-0 z-40 w-full bg-[#6777EF] py-4 px-5 md:px-8">
         <div class="flex justify-between items-center">
-            <button 
-                @click="if (window.innerWidth < 786) isOpen = !isOpen">
+            <button @click="if (window.innerWidth < 786) isOpen = !isOpen">
                 <svg class="w-[22px] md:w-6 fill-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 7C20.75 7.41421 20.4142 7.75 20 7.75L4 7.75C3.58579 7.75 3.25 7.41421 3.25 7C3.25 6.58579 3.58579 6.25 4 6.25L20 6.25C20.4142 6.25 20.75 6.58579 20.75 7Z"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 12C20.75 12.4142 20.4142 12.75 20 12.75L4 12.75C3.58579 12.75 3.25 12.4142 3.25 12C3.25 11.5858 3.58579 11.25 4 11.25L20 11.25C20.4142 11.25 20.75 11.5858 20.75 12Z"/>
@@ -88,7 +87,7 @@
     >
         <div class="flex items-center gap-2 md:gap-3 px-6 py-2.5 lg:py-3 bg-[#5869EA]">
             <div class="w-10 h-10">
-                <img class="w-full h-full object-contain" src="images/logo.svg">
+                <img class="w-full h-full object-contain" src="svgs/logo.svg">
             </div>
             <h1 class="text-sm md:text-sm text-white font-semibold uppercase">Smart Desa PMD</h1>
         </div>
@@ -144,7 +143,7 @@
     </aside>
 
     <main class="relative md:ml-60 pt-16">
-        <section x-data="{ isOpen : true }" class="space-y-3 p-5 pb-20">
+        <section x-data="{ isOpen : false }" class="space-y-3 p-5 pb-20">
             <h1 class="text-base md:text-lg text-black font-normal">RPJMdes</h1>
             <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-5 md:py-6 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
                 <h1 class="text-xs md:text-sm text-black font-normal">Silahkan Pilih <span class="text-[#EA5858] font-medium">Desa</span></h1>
@@ -401,7 +400,7 @@
             </section>
         </section>
 
-        <section class="w-full fixed bottom-0 bg-white p-3 text-center shadow-md shadow-black/5">
+        <section class="w-full absolute bottom-0 bg-white p-3 text-center shadow-md shadow-black/5">
             <h1 class="text-xs md:text-sm text-black font-normal">Hak Cipta © 2024 - Dinas Pemberdayaan Masyarakat Desa <span class="font-semibold">Kabupaten Labuhanbatu</span></h1>
         </section>
     </main>
