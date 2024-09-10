@@ -305,263 +305,66 @@
             </div>
         </aside>
 
-        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-4">
-            <div x-data="{ isOpen : false }" class="space-y-5">
-                <div class="flex justify-between items-center">
-                    <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Laporan APEDES</h1>
-                    <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Laporan APEDES</h1>
-                </div>
-                <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-5 md:py-6 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
-                    <h1 class="text-xs md:text-sm text-black font-normal">Silahkan Pilih <span class="text-[#EA5858] font-medium">Desa</span></h1>
-                    <button @click="isOpen = !isOpen" class="flex items-center gap-1 md:gap-2 bg-[#6777EF] py-1.5 px-4 rounded">
-                        <h1 class="text-xs md:text-sm text-white font-medium">Pilih Desa</h1>
-                        <svg :class="{ 'rotate-90 ' : isOpen }"  class="w-4 stroke-white stroke-[2]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 5L15 12L9 19" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-    
-                <section x-data="dataDesa" x-show="isOpen" x-transition.duration.300ms.opacity.50 class="space-y-3">    
-                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-3 bg-white py-3 md:px-3 rounded md:rounded-md shadow-md shadow-black/5">
-                        <template x-for="(data, index) in bilahBarat" :key="index">
-                            <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-for="(data, index) in bilahHulu" :key="index">
-                            <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-for="(data, index) in pangkatan" :key="index">
-                            <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-for="(data, index) in panaiHilir" :key="index">
-                            <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-for="(data, index) in bilahHilir" :key="index">
-                            <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-for="(data, index) in panaiTengah" :key="index">
-                            <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-for="(data, index) in panaiHulu" :key="index">
-                            <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                </section>
-
-                <div :class="isOpen ? 'hidden' : 'block'" class="flex justify-center items-center pt-10">
-                    <div class="space-y-2">
-                        <img class="w-28 md:w-32 h-28 md:h-32 mx-auto" src="svgs/search.svg">
-                        <div class="text-center">
-                            <h1 class="text-lg md:text-xl text-black font-medium">Desa Tidak Ditemukan</h1>
-                            <h1 class="text-[10px] md:text-xs text-[#7A7A7A] font-normal">Pilih Desa untuk memunculkan data</h1>
-                        </div>
-                    </div>
-                </div>
+        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-5">
+            <div class="flex justify-between items-center">
+                <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Edit Profile</h1>
+                <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Edit Profile</h1>
             </div>
 
-            <section class="space-y-3"></section>
-                <section class="w-full lg:flex justify-between items-center gap-3 space-y-3 lg:space-y-0">
-                    <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-3 md:py-4 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
-                        <h1 class="text-xs md:text-sm text-[#5869EA] font-semibold">Laporan RPJMdes Desa Janji</h1>
-                    </div>
-                    <div class="md:flex items-center gap-3 space-y-3 md:space-y-0">
-                        <div x-data="{ selected : null, isOpen : false }" class="flex items-center gap-2 md:gap-3">
-                            <h1 class="text-xs md:text-sm text-[#778294] font-medium capitalize">Filter</h1>
-                            <div class="w-full md:w-40 relative space-y-2">
-                                <button @click="isOpen = !isOpen" class="w-full flex justify-between items-center gap-2 bg-white py-1.5 px-4 rounded md:rounded-md shadow-md shadow-black/5 focus:outline-none focus:ring-0">
-                                    <h1 x-text="selected ? selected : 'Pilih Filter'" class="text-xs md:text-sm text-[#313131] font-normal"></h1>
-                                    <svg class="w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <div x-show="isOpen" x-transition.duration.300ms.opacity.50 class="absolute z-10 w-full bg-white rounded md:rounded-md shadow-md shadow-black/5">
-                                    <template x-for="(option, index) in ['Terbaru', 'Terlama']" :key="index">
-                                        <div @click="selected = option; isOpen = false" class="flex justify-between items-center gap-2 py-1.5 px-4 cursor-pointer rounded md:rounded-md">
-                                            <h1 x-text="option" class="text-xs md:text-sm text-[#313131] font-normal"></h1>
-                                            <svg x-show="selected === option" class="w-5 stroke-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
+            <div class="space-y-1">
+                <div class="relative w-24 md:w-28 h-24 md:h-28">
+                    <div class="absolute inset-0 bg-[#0000004A] rounded-lg"></div>
+                    <label for="images" class="w-full inset-0 absolute flex justify-center items-center">
+                        <div class="space-y-0.5 cursor-pointer">
+                            <svg class="w-4 md:w-5 fill-white mx-auto" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 4.25C7.48122 4.25 6.25 5.48122 6.25 7C6.25 8.51878 7.48122 9.75 9 9.75C10.5188 9.75 11.75 8.51878 11.75 7C11.75 5.48122 10.5188 4.25 9 4.25ZM7.75 7C7.75 6.30964 8.30964 5.75 9 5.75C9.69036 5.75 10.25 6.30964 10.25 7C10.25 7.69036 9.69036 8.25 9 8.25C8.30964 8.25 7.75 7.69036 7.75 7Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4635 0.373728C13.3214 0.249985 11.8818 0.249992 10.0452 0.25H9.95475C8.11821 0.249992 6.67861 0.249985 5.53648 0.373728C4.37094 0.500006 3.42656 0.762324 2.62024 1.34815C2.13209 1.70281 1.70281 2.13209 1.34815 2.62024C0.762324 3.42656 0.500006 4.37094 0.373728 5.53648C0.249985 6.67861 0.249992 8.11821 0.25 9.95475V10.0452C0.249992 11.8818 0.249985 13.3214 0.373728 14.4635C0.500006 15.6291 0.762324 16.5734 1.34815 17.3798C1.36102 17.3975 1.37399 17.4151 1.38706 17.4327C1.73405 17.899 2.14981 18.3101 2.62024 18.6518C3.42656 19.2377 4.37094 19.5 5.53648 19.6263C6.67859 19.75 8.11817 19.75 9.95465 19.75H10.0453C11.8818 19.75 13.3214 19.75 14.4635 19.6263C15.6291 19.5 16.5734 19.2377 17.3798 18.6518C17.8679 18.2972 18.2972 17.8679 18.6518 17.3798C19.5217 16.1825 19.6903 14.6546 19.7348 12.5005C19.75 11.7682 19.75 10.9403 19.75 10.006V9.95473C19.75 8.11824 19.75 6.67859 19.6263 5.53648C19.5 4.37094 19.2377 3.42656 18.6518 2.62024C18.2972 2.13209 17.8679 1.70281 17.3798 1.34815C16.5734 0.762324 15.6291 0.500006 14.4635 0.373728ZM3.50191 2.56168C4.00992 2.19259 4.66013 1.97745 5.69804 1.865C6.74999 1.75103 8.10843 1.75 10 1.75C11.8916 1.75 13.25 1.75103 14.302 1.865C15.3399 1.97745 15.9901 2.19259 16.4981 2.56168C16.8589 2.82382 17.1762 3.14111 17.4383 3.50191C17.8074 4.00992 18.0225 4.66013 18.135 5.69804C18.249 6.74999 18.25 8.10843 18.25 10C18.25 10.255 18.25 10.5006 18.2497 10.7373C18.1438 10.6476 18.0435 10.5687 17.9448 10.4986C15.4737 8.7441 12.0651 9.20873 10.1537 11.5606C9.99513 11.7558 9.8432 11.9843 9.67111 12.2694L9.54618 12.2444C8.44707 12.0244 7.77404 11.8897 7.14216 11.9032C5.45369 11.939 3.86636 12.7154 2.80143 14.0261C2.53101 14.359 2.30278 14.7487 2.02741 15.2781C1.95858 14.9948 1.90522 14.6732 1.865 14.302C1.75103 13.25 1.75 11.8916 1.75 10C1.75 8.10843 1.75103 6.74999 1.865 5.69804C1.97745 4.66013 2.19259 4.00992 2.56168 3.50191C2.82382 3.14111 3.14111 2.82382 3.50191 2.56168ZM17.0764 11.7217C17.3239 11.8974 17.6104 12.1728 18.2273 12.7882C18.1701 14.7589 17.972 15.7636 17.4383 16.4981C17.1762 16.8589 16.8589 17.1762 16.4981 17.4383C15.9901 17.8074 15.3399 18.0225 14.302 18.135C13.25 18.249 11.8916 18.25 10 18.25C9.2582 18.25 8.59839 18.2498 8.0069 18.2428L10.3256 14.1404C10.4556 13.9105 10.5685 13.7108 10.6693 13.5345C10.9887 12.9758 11.1615 12.699 11.3178 12.5066C12.7305 10.7683 15.25 10.4249 17.0764 11.7217ZM6.34708 18.131C6.33655 18.1496 6.3269 18.1685 6.31812 18.1876C6.09986 18.1735 5.89365 18.1562 5.69804 18.135C4.66013 18.0225 4.00992 17.8074 3.50191 17.4383C3.28075 17.2776 3.07593 17.0962 2.89014 16.8968C3.45192 15.7732 3.68417 15.3184 3.96564 14.972C4.75276 14.0031 5.92601 13.4293 7.17401 13.4028C7.55888 13.3947 7.98434 13.4647 8.88421 13.6422L6.34708 18.131Z"/>
+                            </svg>
+                            <h1 class="text-[10px] md:text-xs text-white font-normal">Ganti Foto</h1>
+                            <input id="images" type="file" class="hidden" onchange="previewImage(event, 'image-preview1')"/>
                         </div>
-                        <div class="flex items-center bg-white rounded md:rounded-md shadow-md shadow-black/5">
-                            <label for="search" class="flex items-center ml-5 cursor-pointer">
-                                <svg class="w-[18px] md:w-5 stroke-[1.5] stroke-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke-linecap="round"/>
-                                </svg>
-                            </label>
-                            <input type="search" id="search" placeholder="Searching" autocomplete="off" class="w-full bg-transparent border-none text-xs md:text-sm text-gray-500 font-normal focus:outline-none focus:ring-0 placeholder:text-xs md:placeholder:text-sm placeholder:text-gray-500 placeholder:font-medium">
-                        </div>
-                    </div>
-                </section>
+                    </label>
+                    <img id="image-preview1" class="w-24 md:w-28 h-24 md:h-28 object-cover rounded-lg" src="images/avatar.jpg">
+                </div>
+                <h1 class="text-[10px] md:text-xs text-black font-normal">Upload Foto maksimal <span class="text-[#FF4E4E] font-normal">25mb.</span></h1>
+            </div>
 
-                <section class="scrollbar-x bg-transparent rounded md:rounded-md shadow-md shadow-black/5">
-                    <table class="w-max lg:w-full mx-auto bg-white text-center table-auto">
-                        <tr class="text-[10px] md:text-xs text-black capitalize">
-                            <th class="w-[5%] bg-[#E0E4FF] font-normal py-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">No</th>
-                            <th class="w-[30%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Nama</th>
-                            <th class="w-[15%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Status</th>
-                            <th class="w-[20%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Tanggal dikirim</th>
-                            <th class="w-[20%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Tanggal direvisi</th>
-                            <th class="w-[15%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Aksi</th>
-                        </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">1</td>
-                            <td class="line-clamp-1 bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#CEFFE8] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.0501 11.45L12.3376 6.1625L11.2876 5.1125L7.0501 9.35L4.9126 7.2125L3.8626 8.2625L7.0501 11.45ZM8.1001 15.5C7.0626 15.5 6.0876 15.3031 5.1751 14.9094C4.2626 14.5156 3.46885 13.9813 2.79385 13.3063C2.11885 12.6313 1.58447 11.8375 1.19072 10.925C0.796973 10.0125 0.600098 9.0375 0.600098 8C0.600098 6.9625 0.796973 5.9875 1.19072 5.075C1.58447 4.1625 2.11885 3.36875 2.79385 2.69375C3.46885 2.01875 4.2626 1.48438 5.1751 1.09063C6.0876 0.696875 7.0626 0.5 8.1001 0.5C9.1376 0.5 10.1126 0.696875 11.0251 1.09063C11.9376 1.48438 12.7313 2.01875 13.4063 2.69375C14.0813 3.36875 14.6157 4.1625 15.0095 5.075C15.4032 5.9875 15.6001 6.9625 15.6001 8C15.6001 9.0375 15.4032 10.0125 15.0095 10.925C14.6157 11.8375 14.0813 12.6313 13.4063 13.3063C12.7313 13.9813 11.9376 14.5156 11.0251 14.9094C10.1126 15.3031 9.1376 15.5 8.1001 15.5Z" fill="#059669"/>
-                                    </svg>
-                                    <h1 class="text-[#059669] font-normal">Sukses</h1>
-                                </div>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">2</td>
-                            <td class="line-clamp-1 bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#FFEEA9] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.6001 10.75C7.8126 10.75 7.99072 10.6781 8.13447 10.5344C8.27822 10.3906 8.3501 10.2125 8.3501 10C8.3501 9.7875 8.27822 9.60938 8.13447 9.46563C7.99072 9.32188 7.8126 9.25 7.6001 9.25C7.3876 9.25 7.20947 9.32188 7.06572 9.46563C6.92197 9.60938 6.8501 9.7875 6.8501 10C6.8501 10.2125 6.92197 10.3906 7.06572 10.5344C7.20947 10.6781 7.3876 10.75 7.6001 10.75ZM6.8501 7.75H8.3501V3.25H6.8501V7.75ZM4.7876 13.75L0.850098 9.8125V4.1875L4.7876 0.25H10.4126L14.3501 4.1875V9.8125L10.4126 13.75H4.7876Z" fill="#D97706"/>
-                                    </svg>
-                                    <h1 class="text-[#D97706] font-normal">Proses</h1>
-                                </div>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">3</td>
-                            <td class="line-clamp-1 bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#FFCCCC] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.4001 11.75L8.1001 9.05L10.8001 11.75L11.8501 10.7L9.1501 8L11.8501 5.3L10.8001 4.25L8.1001 6.95L5.4001 4.25L4.3501 5.3L7.0501 8L4.3501 10.7L5.4001 11.75ZM8.1001 15.5C7.0626 15.5 6.0876 15.3031 5.1751 14.9094C4.2626 14.5156 3.46885 13.9813 2.79385 13.3063C2.11885 12.6313 1.58447 11.8375 1.19072 10.925C0.796973 10.0125 0.600098 9.0375 0.600098 8C0.600098 6.9625 0.796973 5.9875 1.19072 5.075C1.58447 4.1625 2.11885 3.36875 2.79385 2.69375C3.46885 2.01875 4.2626 1.48438 5.1751 1.09063C6.0876 0.696875 7.0626 0.5 8.1001 0.5C9.1376 0.5 10.1126 0.696875 11.0251 1.09063C11.9376 1.48438 12.7313 2.01875 13.4063 2.69375C14.0813 3.36875 14.6157 4.1625 15.0095 5.075C15.4032 5.9875 15.6001 6.9625 15.6001 8C15.6001 9.0375 15.4032 10.0125 15.0095 10.925C14.6157 11.8375 14.0813 12.6313 13.4063 13.3063C12.7313 13.9813 11.9376 14.5156 11.0251 14.9094C10.1126 15.3031 9.1376 15.5 8.1001 15.5Z" fill="#DC2626"/>
-                                    </svg>
-                                    <h1 class="text-[#DC2626] font-normal">Revisi</h1>
-                                </div>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-
-                <section class="flex justify-center items-center gap-3">
-                    <button class="bg-[#5869EA] py-1.5 px-4 rounded-md md:rounded-lg">
-                        <h1 class="text-[10px] md:text-sm text-white font-semibold">Sebelumnya</h1>
+            <form x-data="{ username: '', firstName: '', lastName: '', phone: '', position: '' }" class="w-full sm:w-[50%] lg:w-[40%] bg-transparent space-y-5 md:space-y-6 rounded md:rounded-md">
+                <div class="grid gap-y-2">
+                    <label class="grid gap-1">
+                        <input x-model="username" type="text" placeholder="Username maksimal 10 karakter" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">Username <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                    </label>
+                    <label class="grid gap-1">
+                        <input x-model="firstName" type="text" placeholder="Masukkan nama depan" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">Nama depan <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                    </label>
+                    <label class="grid gap-1">
+                        <input x-model="lastName" type="text" placeholder="Masukkan nama belakang" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">Nama belakang <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                    </label>
+                    <label class="grid gap-1">
+                        <input x-model="phone" type="text" placeholder="Masukkan no. hp" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">No. Hp <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                    </label>
+                    <label class="grid gap-1">
+                        <input x-model="position" type="text" placeholder="Masukkan jabatan" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">Jabatan <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                    </label>
+                </div>
+            
+                <div class="flex items-center gap-2 md:gap-3">
+                    <button class="bg-[#FF4E4E] py-1.5 md:py-2 px-6 md:px-8 rounded shadow-md shadow-[#0000004D]">
+                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
                     </button>
-                    <button class="hidden sm:block group transition-all py-1 px-3.5 focus:px-6 md:focus:px-8 focus:border-b focus:border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#9B9B9B] transition-colors group-focus:text-[#615EFC] font-semibold">1</h1>
+                    <button :class="{ 'bg-[#615EFC] text-white' : username && firstName && lastName && phone && position, 'bg-[#979696] text-[#6A6A6A]' : !(username && firstName && lastName && phone && position) }" class="py-1.5 md:py-2 px-6 md:px-8 rounded shadow-md shadow-[#0000004D]">
+                        <h1 class="text-[10px] md:text-xs font-medium uppercase">Simpan</h1>
                     </button>
-                    <button class="py-1 px-6 md:px-8 border-b border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#615EFC] font-semibold">2</h1>
-                    </button>
-                    <button class="hidden sm:block group transition-all py-1 px-3.5 focus:px-6 md:focus:px-8 focus:border-b focus:border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#9B9B9B] transition-colors group-focus:text-[#615EFC] font-semibold">3</h1>
-                    </button>
-                    <button class="bg-[#5869EA] py-1.5 px-4 rounded-md md:rounded-lg">
-                        <h1 class="text-[10px] md:text-sm text-white font-semibold">Selanjutnya</h1>
-                    </button>
-                </section>
-            </section>
+                </div>
+            </form>            
         </main>
     </div>
 
-    <script src="js/desa.js"></script>
+    <script src="js/images.js"></script>
 </body>
 </html>
