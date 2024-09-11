@@ -333,8 +333,8 @@
 
             <form x-data="{ username: '', firstName: '', lastName: '', phone: '', position: '' }" class="w-full sm:w-[50%] lg:w-[40%] bg-transparent space-y-5 md:space-y-6 rounded md:rounded-md">
                 <div class="grid gap-y-2">
-                    <label x-data="{ chars : 10 }" class="grid gap-1">
-                        <input x-model="username" @keyup="chars = 10 - $refs.username.value.length" x-ref="username" maxlength="10" type="text" placeholder="Username maksimal 10 karakter" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                    <label x-data="{ chars : 0 }" class="grid gap-1">
+                        <input x-model="username" @keyup="chars = 0 + $refs.username.value.length" x-ref="username" maxlength="10" type="text" placeholder="Username maksimal 10 karakter" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
                         <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">Username <span class="text-[#FF4E4E] font-medium">*</span></h1>
                         <h1 x-text="chars + ' Karakter'" class="order-3 mx-1 text-[10px] md:text-xs text-gray-500 font-medium capitalize"></h1>
                     </label>
