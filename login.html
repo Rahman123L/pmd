@@ -34,7 +34,7 @@
     </script>
 </head>
 
-<body class="bg-[#FFFFFF]">
+<body class="bg-[#FFFFFF] h-screen">
     
     <main class="flex justify-center items-center h-[90%] md:h-screen">
         <section class="absolute flex justify-center items-center gap-3">
@@ -42,7 +42,7 @@
             <div class="bg-white bg-opacity-40 backdrop-blur-sm p-8 rounded-2xl space-y-8">
                 <div class="space-y-4">
                     <img class="w-11 h-11 mx-auto" src="svgs/logo.svg">
-                    <h1 class="mx-4 text-center text-lg md:text-xl text-white font-semibold">PMD LABUHANBATU</h1>
+                    <h1 class="mx-4 text-center text-lg md:text-xl text-white font-semibold">PMDu LABUHANBATU</h1>
                 </div>
                 <div class="space-y-6">
                     <label class="w-full flex items-center border border-[#ABABAB] py-1 px-3 rounded">
@@ -76,7 +76,7 @@
             </div>
             <img class="w-[10%] md:w-[20%] h-[10%] md:h-[20%]" src="svgs/loginRight.svg">
         </section>
-        <img class="w-full h-fit object-fill md:object-cover" src="images/backgroundLogin.png">
+        <img class="w-full h-full object-fill md:object-cover" src="images/backgroundLogin.png">
 
         <section x-data="{ isOpen : false }">
             <form action="" method="" x-show="isOpen" x-transition.duration.300ms.opacity.50 @click.outside="isOpen = false" class="absolute bottom-16 right-4 flex flex-col justify-between items-center w-72 h-80 bg-[#E9E9FF] rounded-xl shadow-lg shadow-black/20">
