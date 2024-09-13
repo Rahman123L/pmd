@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-    <link href="style.css" rel="stylesheet">
-    <link href="svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
+    <link href="/style.css" rel="stylesheet">
+    <link href="/svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
 
@@ -69,7 +69,7 @@
                 </div>
                 <div x-data="{ isOpen : false }" class="relative space-y-3">
                     <button @click="isOpen = !isOpen" class="flex items-center gap-2 md:gap-3 md:border-l md:border-gray-300 md:pl-5">
-                        <img class="w-7 lg:w-8 h-7 lg:h-8 bg-transparent object-cover rounded-full" src="images/avatar.jpg">
+                        <img class="w-7 lg:w-8 h-7 lg:h-8 bg-transparent object-cover rounded-full" src="/images/avatar.jpg">
                         <div class="hidden md:block text-xs md:text-sm text-black font-semibold capitalize">Admin PMD</div>
                         <svg class="hidden md:block w-2 fill-black" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.246 7.08721C3.20733 7.04954 3.042 6.90731 2.906 6.77482C2.05067 5.99807 0.650667 3.97177 0.223333 2.91121C0.154667 2.75014 0.00933333 2.34293 0 2.12537C0 1.91689 0.048 1.71816 0.145333 1.52852C0.281333 1.29211 0.495333 1.10247 0.748 0.998559C0.923333 0.931665 1.448 0.827752 1.45733 0.827752C2.03133 0.723839 2.964 0.666687 3.99467 0.666687C4.97667 0.666687 5.87133 0.723839 6.454 0.808918C6.46333 0.81866 7.11533 0.922573 7.33867 1.03623C7.74667 1.2447 8 1.65191 8 2.0877V2.12537C7.99 2.40918 7.73667 3.00603 7.72733 3.00603C7.29933 4.00944 5.968 5.98898 5.08333 6.78456C5.08333 6.78456 4.856 7.00863 4.714 7.10604C4.51 7.25802 4.25733 7.33335 4.00467 7.33335C3.72267 7.33335 3.46 7.24827 3.246 7.08721Z"/>
@@ -125,7 +125,7 @@
         >
             <div :class="isOpenn ? 'justify-between' : 'justify-evenly my-2'" class="flex justify-between items-center px-4 py-3 md:py-2.5 lg:py-3">
                 <div :class="isOpenn ? 'block' : 'hidden'" class="flex items-center gap-2 md:gap-3">
-                    <img class="w-9 md:w-10 h-9 md:h-10" src="svgs/logo.svg">
+                    <img class="w-9 md:w-10 h-9 md:h-10" src="/svgs/logo.svg">
                     <div class="flex md:grid items-center gap-1 md:gap-0">
                         <h1 class="text-xs md:text-sm text-white font-semibold uppercase">Smart Desa</h1>
                         <h1 class="text-xs md:text-sm text-white font-semibold uppercase">PMD</h1>
@@ -140,7 +140,7 @@
                 </button>
             </div>
             <div class="grid gap-3 mt-5">
-                <a href="index.html">
+                <a href="dashboard.html">
                     <button class="w-full relative group flex items-center gap-2 md:gap-3 pr-5">
                         <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
                         <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
@@ -219,10 +219,33 @@
                             </svg>
                         </div>
                     </button>
-                    <div x-show="isOpen" x-transition.duration.300ms.opacity.50 class="grid gap-3"></div>
+                    <div x-show="isOpen" x-transition.duration.300ms.opacity.50 class="grid gap-3">
+                        <a href="akhirTahunAnggaran.html">
+                            <button class="w-full group gap-2 md:gap-3 px-4 md:px-5">
+                                <div class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent">
+                                    <svg class="w-[14px] fill-white" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
+                                    </svg>
+                                    <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Akhir Tahun Anggaran</h1>
+                                </div>
+                                <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
+                            </button>
+                        </a>
+                        <a href="akhirMasaJabatan.html">
+                            <button class="w-full group gap-2 md:gap-3 px-4 md:px-5">
+                                <div class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent">
+                                    <svg class="w-[14px] fill-white" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
+                                    </svg>
+                                    <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Akhir Masa Jabatan</h1>
+                                </div>
+                                <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
+                            </button>
+                        </a>
+                    </div>
                 </div>
-                <div x-data="{ isOpen : false }" @click.outside="isOpen = false" class="grid gap-3">
-                    <button @click="isOpen = !isOpen" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                <a href="lkppd.html" class="grid gap-3">
+                    <button class="w-full group flex items-center gap-2 md:gap-3 pr-5">
                         <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
                         <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
                             <div class="flex items-center gap-2 md:gap-3">
@@ -231,15 +254,14 @@
                                 </svg>
                                 <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-[#615EFC] group-focus:text-[#615EFC]">LKPPD</h1>
                             </div>
-                            <svg :class="{ 'block' : isOpenn, 'hidden' : !isOpenn, 'rotate-90' : isOpen }" class="w-[5px] fill-white transition-colors duration-300 group-hover:fill-[#615EFC] group-focus:fill-[#615EFC]" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg :class="{ 'block' : isOpenn, 'hidden' : !isOpenn }" class="w-[5px] fill-white transition-colors duration-300 group-hover:fill-[#615EFC] group-focus:fill-[#615EFC]" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.14131 0.772516C0.969697 0.602425 0.69269 0.603661 0.5226 0.775276C0.352509 0.946891 0.353745 1.2239 0.52536 1.39399L1.55376 2.41325C1.97113 2.82691 2.25743 3.11161 2.45116 3.35283C2.63934 3.58715 2.7039 3.73766 2.72108 3.87246C2.73187 3.9571 2.73187 4.04274 2.72108 4.12738C2.7039 4.26218 2.63934 4.41269 2.45116 4.64701C2.25743 4.88823 1.97113 5.17292 1.55376 5.58659L0.52536 6.60585C0.353745 6.77594 0.352509 7.05295 0.5226 7.22456C0.69269 7.39618 0.969697 7.39741 1.14131 7.22732L2.18824 6.1897C2.58255 5.7989 2.90483 5.47949 3.13339 5.1949C3.37105 4.89896 3.5431 4.59858 3.58906 4.23801C3.60921 4.07991 3.60921 3.91992 3.58906 3.76182C3.5431 3.40126 3.37105 3.10088 3.13339 2.80494C2.90483 2.52034 2.58256 2.20094 2.18824 1.81014L1.14131 0.772516Z"/>
                             </svg>
                         </div>
                     </button>
-                    <div x-show="isOpen" x-transition.duration.300ms.opacity.50 class="grid gap-3"></div>
-                </div>
-                <div x-data="{ isOpen : false }" @click.outside="isOpen = false" class="grid gap-3">
-                    <button @click="isOpen = !isOpen" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                </a>
+                <a href="bpd.html" class="grid gap-3">
+                    <button class="w-full group flex items-center gap-2 md:gap-3 pr-5">
                         <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
                         <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
                             <div class="flex items-center gap-2 md:gap-3">
@@ -253,13 +275,12 @@
                                 </svg>
                                 <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-[#615EFC] group-focus:text-[#615EFC]">BPD</h1>
                             </div>
-                            <svg :class="{ 'block' : isOpenn, 'hidden' : !isOpenn, 'rotate-90' : isOpen }" class="w-[5px] fill-white transition-colors duration-300 group-hover:fill-[#615EFC] group-focus:fill-[#615EFC]" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg :class="{ 'block' : isOpenn, 'hidden' : !isOpenn }" class="w-[5px] fill-white transition-colors duration-300 group-hover:fill-[#615EFC] group-focus:fill-[#615EFC]" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.14131 0.772516C0.969697 0.602425 0.69269 0.603661 0.5226 0.775276C0.352509 0.946891 0.353745 1.2239 0.52536 1.39399L1.55376 2.41325C1.97113 2.82691 2.25743 3.11161 2.45116 3.35283C2.63934 3.58715 2.7039 3.73766 2.72108 3.87246C2.73187 3.9571 2.73187 4.04274 2.72108 4.12738C2.7039 4.26218 2.63934 4.41269 2.45116 4.64701C2.25743 4.88823 1.97113 5.17292 1.55376 5.58659L0.52536 6.60585C0.353745 6.77594 0.352509 7.05295 0.5226 7.22456C0.69269 7.39618 0.969697 7.39741 1.14131 7.22732L2.18824 6.1897C2.58255 5.7989 2.90483 5.47949 3.13339 5.1949C3.37105 4.89896 3.5431 4.59858 3.58906 4.23801C3.60921 4.07991 3.60921 3.91992 3.58906 3.76182C3.5431 3.40126 3.37105 3.10088 3.13339 2.80494C2.90483 2.52034 2.58256 2.20094 2.18824 1.81014L1.14131 0.772516Z"/>
                             </svg>
                         </div>
                     </button>
-                    <div x-show="isOpen" x-transition.duration.300ms.opacity.50 class="grid gap-3"></div>
-                </div>
+                </a>
                 <div x-data="{ isOpen : false }" @click.outside="isOpen = false" class="grid gap-3">
                     <button @click="isOpen = !isOpen" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
                         <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
@@ -277,10 +298,33 @@
                             </svg>
                         </div>
                     </button>
-                    <div x-show="isOpen" x-transition.duration.300ms.opacity.50 class="grid gap-3"></div>
+                    <div x-show="isOpen" x-transition.duration.300ms.opacity.50 class="grid gap-3">
+                        <a href="semesterPertama.html">
+                            <button class="w-full group gap-2 md:gap-3 px-4 md:px-5">
+                                <div class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent">
+                                    <svg class="w-[14px] fill-white" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
+                                    </svg>
+                                    <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Semester Pertama</h1>
+                                </div>
+                                <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
+                            </button>
+                        </a>
+                        <a href="akhirTahun.html">
+                            <button class="w-full group gap-2 md:gap-3 px-4 md:px-5">
+                                <div class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent">
+                                    <svg class="w-[14px] fill-white" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
+                                    </svg>
+                                    <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Akhir Tahun</h1>
+                                </div>
+                                <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
+                            </button>
+                        </a>
+                    </div>
                 </div>
-                <div x-data="{ isOpen : false }" @click.outside="isOpen = false" class="grid gap-3">
-                    <button @click="isOpen = !isOpen" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                <a href="kependudukan.html" class="grid gap-3">
+                    <button class="w-full group flex items-center gap-2 md:gap-3 pr-5">
                         <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
                         <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
                             <div class="flex items-center gap-2 md:gap-3">
@@ -289,13 +333,12 @@
                                 </svg>
                                 <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-[#615EFC] group-focus:text-[#615EFC]">Kependudukan</h1>
                             </div>
-                            <svg :class="{ 'block' : isOpenn, 'hidden' : !isOpenn, 'rotate-90' : isOpen }" class="w-[5px] fill-white transition-colors duration-300 group-hover:fill-[#615EFC] group-focus:fill-[#615EFC]" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg :class="{ 'block' : isOpenn, 'hidden' : !isOpenn }" class="w-[5px] fill-white transition-colors duration-300 group-hover:fill-[#615EFC] group-focus:fill-[#615EFC]" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.14131 0.772516C0.969697 0.602425 0.69269 0.603661 0.5226 0.775276C0.352509 0.946891 0.353745 1.2239 0.52536 1.39399L1.55376 2.41325C1.97113 2.82691 2.25743 3.11161 2.45116 3.35283C2.63934 3.58715 2.7039 3.73766 2.72108 3.87246C2.73187 3.9571 2.73187 4.04274 2.72108 4.12738C2.7039 4.26218 2.63934 4.41269 2.45116 4.64701C2.25743 4.88823 1.97113 5.17292 1.55376 5.58659L0.52536 6.60585C0.353745 6.77594 0.352509 7.05295 0.5226 7.22456C0.69269 7.39618 0.969697 7.39741 1.14131 7.22732L2.18824 6.1897C2.58255 5.7989 2.90483 5.47949 3.13339 5.1949C3.37105 4.89896 3.5431 4.59858 3.58906 4.23801C3.60921 4.07991 3.60921 3.91992 3.58906 3.76182C3.5431 3.40126 3.37105 3.10088 3.13339 2.80494C2.90483 2.52034 2.58256 2.20094 2.18824 1.81014L1.14131 0.772516Z"/>
                             </svg>
                         </div>
                     </button>
-                    <div x-show="isOpen" x-transition.duration.300ms.opacity.50 class="grid gap-3"></div>
-                </div>
+                </a>
                 <a href="" class="md:absolute md:bottom-4 w-full">
                     <div :class="isOpenn ? 'bg-white py-2 px-6 rounded md:rounded-md shadow-lg shadow-black/20' : 'bg-transparent py-2 px-3 hover:bg-white rounded md:rounded-md hover:shadow-lg hover:shadow-black/20'" class="flex justify-center items-center gap-2 md:gap-3 ml-4 mr-5 md:mx-5">
                         <svg class="w-[14px]" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -310,8 +353,8 @@
         <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-4">
             <div x-data="{ isOpen : false }" class="space-y-5">
                 <div class="flex justify-between items-center">
-                    <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Laporan RKPDES</h1>
-                    <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Laporan RKPDES</h1>
+                    <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Akhir Masa Jabatan</h1>
+                    <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Detail Akhir Masa Jabatan</h1>
                 </div>
                 <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-5 md:py-6 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
                     <h1 class="text-xs md:text-sm text-black font-normal">Silahkan Pilih <span class="text-[#EA5858] font-medium">Desa</span></h1>
@@ -414,7 +457,7 @@
 
                 <div :class="isOpen ? 'hidden' : 'block'" class="flex justify-center items-center pt-10">
                     <div class="space-y-2">
-                        <img class="w-28 md:w-32 h-28 md:h-32 mx-auto" src="svgs/search.svg">
+                        <img class="w-28 md:w-32 h-28 md:h-32 mx-auto" src="/svgs/search.svg">
                         <div class="text-center">
                             <h1 class="text-lg md:text-xl text-black font-medium">Desa Tidak Ditemukan</h1>
                             <h1 class="text-[10px] md:text-xs text-[#7A7A7A] font-normal">Pilih Desa untuk memunculkan data</h1>
@@ -426,7 +469,7 @@
             <section class="space-y-3">
                 <section class="w-full lg:flex justify-between items-center gap-3 space-y-3 lg:space-y-0">
                     <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-3 md:py-4 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
-                        <h1 class="text-xs md:text-sm text-[#5869EA] font-semibold">Laporan RPJMdes Desa Janji</h1>
+                        <h1 class="text-xs md:text-sm text-[#5869EA] font-semibold">Laporan Akhir Masa Jabatan Desa Janji</h1>
                     </div>
                     <div class="md:flex items-center gap-3 space-y-3 md:space-y-0">
                         <div x-data="{ selected : null, isOpen : false }" class="flex items-center gap-2 md:gap-3">
@@ -464,17 +507,19 @@
                 <section class="scrollbar-x bg-transparent rounded md:rounded-md shadow-md shadow-black/5">
                     <table class="w-max lg:w-full mx-auto bg-white text-center table-auto">
                         <tr class="text-[10px] md:text-xs text-black capitalize">
-                            <th class="w-[5%] bg-[#E0E4FF] font-normal py-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">No</th>
-                            <th class="w-[30%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Nama</th>
-                            <th class="w-[15%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Status</th>
-                            <th class="w-[20%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Tanggal dikirim</th>
-                            <th class="w-[20%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Tanggal direvisi</th>
-                            <th class="w-[15%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Aksi</th>
+                            <th class="w-[5%] bg-white font-normal py-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">No</th>
+                            <th class="w-[30%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">Judul Surat</th>
+                            <th class="w-[15%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">Status</th>
+                            <th class="w-[20%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">Tanggal dikirim</th>
+                            <th class="w-[20%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">Tanggal direvisi</th>
+                            <th class="w-[15%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">Tindakan</th>
                         </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">1</td>
-                            <td class="line-clamp-1 bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
+                        <tr class="odd:bg-white even:bg-[#E8EDF2] text-xs text-black/70 capitalize overflow-visible">
+                            <td class="font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">1</td>
+                            <td class="py-3.5 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
+                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
+                            </td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
                                 <div class="select-none flex items-center gap-2 w-fit bg-[#CEFFE8] py-1.5 px-2 rounded-xl mx-auto">
                                     <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.0501 11.45L12.3376 6.1625L11.2876 5.1125L7.0501 9.35L4.9126 7.2125L3.8626 8.2625L7.0501 11.45ZM8.1001 15.5C7.0626 15.5 6.0876 15.3031 5.1751 14.9094C4.2626 14.5156 3.46885 13.9813 2.79385 13.3063C2.11885 12.6313 1.58447 11.8375 1.19072 10.925C0.796973 10.0125 0.600098 9.0375 0.600098 8C0.600098 6.9625 0.796973 5.9875 1.19072 5.075C1.58447 4.1625 2.11885 3.36875 2.79385 2.69375C3.46885 2.01875 4.2626 1.48438 5.1751 1.09063C6.0876 0.696875 7.0626 0.5 8.1001 0.5C9.1376 0.5 10.1126 0.696875 11.0251 1.09063C11.9376 1.48438 12.7313 2.01875 13.4063 2.69375C14.0813 3.36875 14.6157 4.1625 15.0095 5.075C15.4032 5.9875 15.6001 6.9625 15.6001 8C15.6001 9.0375 15.4032 10.0125 15.0095 10.925C14.6157 11.8375 14.0813 12.6313 13.4063 13.3063C12.7313 13.9813 11.9376 14.5156 11.0251 14.9094C10.1126 15.3031 9.1376 15.5 8.1001 15.5Z" fill="#059669"/>
@@ -482,45 +527,121 @@
                                     <h1 class="text-[#059669] font-normal">Sukses</h1>
                                 </div>
                             </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </button>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">04-09-2024</td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">07-09-2024</td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
+                                <div class="flex items-center gap-1.5 md:gap-2">
+                                    <div x-data="{ modal: false }">
+                                        <button type="button" @click="modal = !modal" class="flex items-center gap-2 w-fit bg-[#FA6D09] py-1.5 px-2 rounded-md mx-auto">
+                                            <h1 class="text-[#E8EDF2] font-normal">Revisi</h1>
+                                            <svg class="w-2.5 fill-white" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.825 12.0375C0.55 11.5625 0.34375 11.075 0.20625 10.575C0.06875 10.075 0 9.5625 0 9.0375C0 7.3625 0.58125 5.9375 1.74375 4.7625C2.90625 3.5875 4.325 3 6 3H6.13125L4.93125 1.8L5.98125 0.75L8.98125 3.75L5.98125 6.75L4.93125 5.7L6.13125 4.5H6C4.75 4.5 3.6875 4.94063 2.8125 5.82188C1.9375 6.70313 1.5 7.775 1.5 9.0375C1.5 9.3625 1.5375 9.68125 1.6125 9.99375C1.6875 10.3062 1.8 10.6125 1.95 10.9125L0.825 12.0375ZM6.01875 17.25L3.01875 14.25L6.01875 11.25L7.06875 12.3L5.86875 13.5H6C7.25 13.5 8.3125 13.0594 9.1875 12.1781C10.0625 11.2969 10.5 10.225 10.5 8.9625C10.5 8.6375 10.4625 8.31875 10.3875 8.00625C10.3125 7.69375 10.2 7.3875 10.05 7.0875L11.175 5.9625C11.45 6.4375 11.6562 6.925 11.7938 7.425C11.9313 7.925 12 8.4375 12 8.9625C12 10.6375 11.4187 12.0625 10.2563 13.2375C9.09375 14.4125 7.675 15 6 15H5.86875L7.06875 16.2L6.01875 17.25Z"/>
+                                            </svg>
+                                        </button>
+                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 class="fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                                            <div class="w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
+                                                <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
+                                                    <div class=""></div>
+                                                    <h1 class="text-sm md:text-base text-black font-semibold">Revisi Laporan</h1>
+                                                    <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
+                                                        <svg class="w-3 fill-[#8B8B8B]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.0204 1.68705C11.2157 1.49179 11.2157 1.1752 11.0204 0.979943C10.8251 0.784681 10.5086 0.784681 10.3133 0.979943L6.00017 5.29307L1.68705 0.979945C1.49179 0.784683 1.1752 0.784683 0.979943 0.979945C0.784681 1.17521 0.784681 1.49179 0.979943 1.68705L5.29306 6.00017L0.979961 10.3133C0.784699 10.5085 0.784699 10.8251 0.979961 11.0204C1.17522 11.2156 1.49181 11.2156 1.68707 11.0204L6.00017 6.70728L10.3133 11.0204C10.5085 11.2156 10.8251 11.2156 11.0204 11.0204C11.2156 10.8251 11.2156 10.5085 11.0204 10.3133L6.70728 6.00017L11.0204 1.68705Z"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                                    <div class="space-y-3">
+                                                        <h1 class="text-start text-xs md:text-sm text-black font-normal">Tambahkan Catatan</h1>
+                                                        <textarea rows="3" class="inputText w-full resize-none bg-white px-3.5 py-2.5 md:px-4 md:py-3 border-[0.5px] border-[#D6D6D6] focus:border-[#D6D6D6] rounded-lg overflow-hidden focus:outline-none focus:ring-0 text-[#8B8B8B] text-[10px] md:text-xs font-normal"></textarea>
+                                                    </div>
+                                                    <div class="flex justify-center items-center gap-2 md:gap-3">
+                                                        <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
+                                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
+                                                        </button>
+                                                        <button class="bg-[#615EFC] py-1.5 px-4 md:px-5 rounded">
+                                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
+                                        <svg class="w-3.5 stroke-white" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.60005 15.2007H3.10004C2.10593 15.2007 1.30004 14.3948 1.30005 13.4007L1.30012 2.60077C1.30012 1.60666 2.10601 0.800781 3.10012 0.800781H11.2003C12.1944 0.800781 13.0003 1.60667 13.0003 2.60078V6.20078M12.55 12.0125V11.9651M4.45033 4.40078H9.85033M4.45033 7.10078H9.85033M4.45033 9.80078H7.15033M15.7 12.0508C15.7 12.0508 14.9529 14.2555 12.55 14.217C10.1472 14.1785 9.40005 12.0508 9.40005 12.0508C9.40005 12.0508 10.1169 9.80752 12.55 9.80752C14.9832 9.80752 15.7 12.0508 15.7 12.0508Z" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h1 class="text-[#E8EDF2] font-normal">LihatPDF</h1>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">2</td>
-                            <td class="line-clamp-1 bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
+                        <tr class="odd:bg-white even:bg-[#E8EDF2] text-xs text-black/70 capitalize overflow-visible">
+                            <td class="font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">2</td>
+                            <td class="py-3.5 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
+                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
+                            </td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
                                 <div class="select-none flex items-center gap-2 w-fit bg-[#FFEEA9] py-1.5 px-2 rounded-xl mx-auto">
                                     <svg class="w-4" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.6001 10.75C7.8126 10.75 7.99072 10.6781 8.13447 10.5344C8.27822 10.3906 8.3501 10.2125 8.3501 10C8.3501 9.7875 8.27822 9.60938 8.13447 9.46563C7.99072 9.32188 7.8126 9.25 7.6001 9.25C7.3876 9.25 7.20947 9.32188 7.06572 9.46563C6.92197 9.60938 6.8501 9.7875 6.8501 10C6.8501 10.2125 6.92197 10.3906 7.06572 10.5344C7.20947 10.6781 7.3876 10.75 7.6001 10.75ZM6.8501 7.75H8.3501V3.25H6.8501V7.75ZM4.7876 13.75L0.850098 9.8125V4.1875L4.7876 0.25H10.4126L14.3501 4.1875V9.8125L10.4126 13.75H4.7876Z" fill="#D97706"/>
                                     </svg>
-                                    <h1 class="text-[#D97706] font-normal">Proses</h1>
+                                    <h1 class="text-[#D97706] font-normal">BelumDilihat</h1>
                                 </div>
                             </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </button>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">04-09-2024</td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">07-09-2024</td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
+                                <div class="flex items-center gap-1.5 md:gap-2">
+                                    <div x-data="{ modal: false }">
+                                        <button type="button" @click="modal = !modal" class="flex items-center gap-2 w-fit bg-[#FA6D09] py-1.5 px-2 rounded-md mx-auto">
+                                            <h1 class="text-[#E8EDF2] font-normal">Revisi</h1>
+                                            <svg class="w-2.5 fill-white" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.825 12.0375C0.55 11.5625 0.34375 11.075 0.20625 10.575C0.06875 10.075 0 9.5625 0 9.0375C0 7.3625 0.58125 5.9375 1.74375 4.7625C2.90625 3.5875 4.325 3 6 3H6.13125L4.93125 1.8L5.98125 0.75L8.98125 3.75L5.98125 6.75L4.93125 5.7L6.13125 4.5H6C4.75 4.5 3.6875 4.94063 2.8125 5.82188C1.9375 6.70313 1.5 7.775 1.5 9.0375C1.5 9.3625 1.5375 9.68125 1.6125 9.99375C1.6875 10.3062 1.8 10.6125 1.95 10.9125L0.825 12.0375ZM6.01875 17.25L3.01875 14.25L6.01875 11.25L7.06875 12.3L5.86875 13.5H6C7.25 13.5 8.3125 13.0594 9.1875 12.1781C10.0625 11.2969 10.5 10.225 10.5 8.9625C10.5 8.6375 10.4625 8.31875 10.3875 8.00625C10.3125 7.69375 10.2 7.3875 10.05 7.0875L11.175 5.9625C11.45 6.4375 11.6562 6.925 11.7938 7.425C11.9313 7.925 12 8.4375 12 8.9625C12 10.6375 11.4187 12.0625 10.2563 13.2375C9.09375 14.4125 7.675 15 6 15H5.86875L7.06875 16.2L6.01875 17.25Z"/>
+                                            </svg>
+                                        </button>
+                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 class="fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                                            <div class="w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
+                                                <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
+                                                    <div class=""></div>
+                                                    <h1 class="text-sm md:text-base text-black font-semibold">Revisi Laporan</h1>
+                                                    <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
+                                                        <svg class="w-3 fill-[#8B8B8B]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.0204 1.68705C11.2157 1.49179 11.2157 1.1752 11.0204 0.979943C10.8251 0.784681 10.5086 0.784681 10.3133 0.979943L6.00017 5.29307L1.68705 0.979945C1.49179 0.784683 1.1752 0.784683 0.979943 0.979945C0.784681 1.17521 0.784681 1.49179 0.979943 1.68705L5.29306 6.00017L0.979961 10.3133C0.784699 10.5085 0.784699 10.8251 0.979961 11.0204C1.17522 11.2156 1.49181 11.2156 1.68707 11.0204L6.00017 6.70728L10.3133 11.0204C10.5085 11.2156 10.8251 11.2156 11.0204 11.0204C11.2156 10.8251 11.2156 10.5085 11.0204 10.3133L6.70728 6.00017L11.0204 1.68705Z"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                                    <div class="space-y-3">
+                                                        <h1 class="text-start text-xs md:text-sm text-black font-normal">Tambahkan Catatan</h1>
+                                                        <textarea rows="3" class="inputText w-full resize-none bg-white px-3.5 py-2.5 md:px-4 md:py-3 border-[0.5px] border-[#D6D6D6] focus:border-[#D6D6D6] rounded-lg overflow-hidden focus:outline-none focus:ring-0 text-[#8B8B8B] text-[10px] md:text-xs font-normal"></textarea>
+                                                    </div>
+                                                    <div class="flex justify-center items-center gap-2 md:gap-3">
+                                                        <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
+                                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
+                                                        </button>
+                                                        <button class="bg-[#615EFC] py-1.5 px-4 md:px-5 rounded">
+                                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
+                                        <svg class="w-3.5 stroke-white" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.60005 15.2007H3.10004C2.10593 15.2007 1.30004 14.3948 1.30005 13.4007L1.30012 2.60077C1.30012 1.60666 2.10601 0.800781 3.10012 0.800781H11.2003C12.1944 0.800781 13.0003 1.60667 13.0003 2.60078V6.20078M12.55 12.0125V11.9651M4.45033 4.40078H9.85033M4.45033 7.10078H9.85033M4.45033 9.80078H7.15033M15.7 12.0508C15.7 12.0508 14.9529 14.2555 12.55 14.217C10.1472 14.1785 9.40005 12.0508 9.40005 12.0508C9.40005 12.0508 10.1169 9.80752 12.55 9.80752C14.9832 9.80752 15.7 12.0508 15.7 12.0508Z" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h1 class="text-[#E8EDF2] font-normal">LihatPDF</h1>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">3</td>
-                            <td class="line-clamp-1 bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
+                        <tr class="odd:bg-white even:bg-[#E8EDF2] text-xs text-black/70 capitalize overflow-visible">
+                            <td class="font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">3</td>
+                            <td class="py-3.5 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
+                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
+                            </td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
                                 <div class="select-none flex items-center gap-2 w-fit bg-[#FFCCCC] py-1.5 px-2 rounded-xl mx-auto">
                                     <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5.4001 11.75L8.1001 9.05L10.8001 11.75L11.8501 10.7L9.1501 8L11.8501 5.3L10.8001 4.25L8.1001 6.95L5.4001 4.25L4.3501 5.3L7.0501 8L4.3501 10.7L5.4001 11.75ZM8.1001 15.5C7.0626 15.5 6.0876 15.3031 5.1751 14.9094C4.2626 14.5156 3.46885 13.9813 2.79385 13.3063C2.11885 12.6313 1.58447 11.8375 1.19072 10.925C0.796973 10.0125 0.600098 9.0375 0.600098 8C0.600098 6.9625 0.796973 5.9875 1.19072 5.075C1.58447 4.1625 2.11885 3.36875 2.79385 2.69375C3.46885 2.01875 4.2626 1.48438 5.1751 1.09063C6.0876 0.696875 7.0626 0.5 8.1001 0.5C9.1376 0.5 10.1126 0.696875 11.0251 1.09063C11.9376 1.48438 12.7313 2.01875 13.4063 2.69375C14.0813 3.36875 14.6157 4.1625 15.0095 5.075C15.4032 5.9875 15.6001 6.9625 15.6001 8C15.6001 9.0375 15.4032 10.0125 15.0095 10.925C14.6157 11.8375 14.0813 12.6313 13.4063 13.3063C12.7313 13.9813 11.9376 14.5156 11.0251 14.9094C10.1126 15.3031 9.1376 15.5 8.1001 15.5Z" fill="#DC2626"/>
@@ -528,16 +649,52 @@
                                     <h1 class="text-[#DC2626] font-normal">Revisi</h1>
                                 </div>
                             </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </button>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">04-09-2024</td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">07-09-2024</td>
+                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:relative last:right-0">
+                                <div class="flex items-center gap-1.5 md:gap-2">
+                                    <div x-data="{ modal: false }">
+                                        <button type="button" @click="modal = !modal" class="flex items-center gap-2 w-fit bg-[#FA6D09] py-1.5 px-2 rounded-md mx-auto">
+                                            <h1 class="text-[#E8EDF2] font-normal">Revisi</h1>
+                                            <svg class="w-2.5 fill-white" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.825 12.0375C0.55 11.5625 0.34375 11.075 0.20625 10.575C0.06875 10.075 0 9.5625 0 9.0375C0 7.3625 0.58125 5.9375 1.74375 4.7625C2.90625 3.5875 4.325 3 6 3H6.13125L4.93125 1.8L5.98125 0.75L8.98125 3.75L5.98125 6.75L4.93125 5.7L6.13125 4.5H6C4.75 4.5 3.6875 4.94063 2.8125 5.82188C1.9375 6.70313 1.5 7.775 1.5 9.0375C1.5 9.3625 1.5375 9.68125 1.6125 9.99375C1.6875 10.3062 1.8 10.6125 1.95 10.9125L0.825 12.0375ZM6.01875 17.25L3.01875 14.25L6.01875 11.25L7.06875 12.3L5.86875 13.5H6C7.25 13.5 8.3125 13.0594 9.1875 12.1781C10.0625 11.2969 10.5 10.225 10.5 8.9625C10.5 8.6375 10.4625 8.31875 10.3875 8.00625C10.3125 7.69375 10.2 7.3875 10.05 7.0875L11.175 5.9625C11.45 6.4375 11.6562 6.925 11.7938 7.425C11.9313 7.925 12 8.4375 12 8.9625C12 10.6375 11.4187 12.0625 10.2563 13.2375C9.09375 14.4125 7.675 15 6 15H5.86875L7.06875 16.2L6.01875 17.25Z"/>
+                                            </svg>
+                                        </button>
+                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 class="fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                                            <div class="w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
+                                                <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
+                                                    <div class=""></div>
+                                                    <h1 class="text-sm md:text-base text-black font-semibold">Revisi Laporan</h1>
+                                                    <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
+                                                        <svg class="w-3 fill-[#8B8B8B]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.0204 1.68705C11.2157 1.49179 11.2157 1.1752 11.0204 0.979943C10.8251 0.784681 10.5086 0.784681 10.3133 0.979943L6.00017 5.29307L1.68705 0.979945C1.49179 0.784683 1.1752 0.784683 0.979943 0.979945C0.784681 1.17521 0.784681 1.49179 0.979943 1.68705L5.29306 6.00017L0.979961 10.3133C0.784699 10.5085 0.784699 10.8251 0.979961 11.0204C1.17522 11.2156 1.49181 11.2156 1.68707 11.0204L6.00017 6.70728L10.3133 11.0204C10.5085 11.2156 10.8251 11.2156 11.0204 11.0204C11.2156 10.8251 11.2156 10.5085 11.0204 10.3133L6.70728 6.00017L11.0204 1.68705Z"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                                    <div class="space-y-3">
+                                                        <h1 class="text-start text-xs md:text-sm text-black font-normal">Tambahkan Catatan</h1>
+                                                        <textarea rows="3" class="inputText w-full resize-none bg-white px-3.5 py-2.5 md:px-4 md:py-3 border-[0.5px] border-[#D6D6D6] focus:border-[#D6D6D6] rounded-lg overflow-hidden focus:outline-none focus:ring-0 text-[#8B8B8B] text-[10px] md:text-xs font-normal"></textarea>
+                                                    </div>
+                                                    <div class="flex justify-center items-center gap-2 md:gap-3">
+                                                        <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
+                                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
+                                                        </button>
+                                                        <button class="bg-[#615EFC] py-1.5 px-4 md:px-5 rounded">
+                                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
+                                        <svg class="w-3.5 stroke-white" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.60005 15.2007H3.10004C2.10593 15.2007 1.30004 14.3948 1.30005 13.4007L1.30012 2.60077C1.30012 1.60666 2.10601 0.800781 3.10012 0.800781H11.2003C12.1944 0.800781 13.0003 1.60667 13.0003 2.60078V6.20078M12.55 12.0125V11.9651M4.45033 4.40078H9.85033M4.45033 7.10078H9.85033M4.45033 9.80078H7.15033M15.7 12.0508C15.7 12.0508 14.9529 14.2555 12.55 14.217C10.1472 14.1785 9.40005 12.0508 9.40005 12.0508C9.40005 12.0508 10.1169 9.80752 12.55 9.80752C14.9832 9.80752 15.7 12.0508 15.7 12.0508Z" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h1 class="text-[#E8EDF2] font-normal">LihatPDF</h1>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     </table>
@@ -564,6 +721,6 @@
         </main>
     </div>
 
-    <script src="js/desa.js"></script>
+    <script src="/js/desa.js"></script>
 </body>
 </html>
