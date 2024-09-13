@@ -36,7 +36,7 @@
 
 <body class="bg-[#FFFFFF]">
     
-    <main class="flex justify-center items-center h-full md:h-screen">
+    <main class="flex justify-center items-center h-[90%] md:h-screen">
         <section class="absolute flex justify-center items-center gap-3">
             <img class="w-[10%] md:w-[20%] h-[10%] md:h-[20%]" src="svgs/loginLeft.svg">
             <div class="bg-white bg-opacity-40 backdrop-blur-sm p-8 rounded-2xl space-y-8">
@@ -76,7 +76,7 @@
             </div>
             <img class="w-[10%] md:w-[20%] h-[10%] md:h-[20%]" src="svgs/loginRight.svg">
         </section>
-        <img class="w-full h-full top-0 object-fill md:object-cover" src="images/backgroundLogin.png">
+        <img class="w-full h-full object-fill md:object-cover" src="images/backgroundLogin.png">
 
         <section x-data="{ isOpen : false }">
             <form action="" method="" x-show="isOpen" x-transition.duration.300ms.opacity.50 @click.outside="isOpen = false" class="absolute bottom-16 right-4 flex flex-col justify-between items-center w-72 h-80 bg-[#E9E9FF] rounded-xl shadow-lg shadow-black/20">
