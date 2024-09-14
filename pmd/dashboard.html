@@ -58,7 +58,7 @@
                                 <h1 class="text-[8px] md:text-[9px] text-white font-medium">2</h1>
                             </div>
                         </div>
-                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 class="w-max absolute right-0">
+                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
                             <div class="grid w-60 sm:w-72 md:w-80 lg:w-96 bg-white rounded md:rounded-md shadow-lg shadow-black/20">
                                 <div class="p-4 border-b border-[#eaeaea]">
                                     <h1 class="text-start text-xs md:text-sm text-black font-normal">Notifikasi</h1>
@@ -189,7 +189,7 @@
                                 <h1 class="text-[8px] md:text-[9px] text-white font-medium">3</h1>
                             </div>
                         </div>
-                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 class="w-max absolute right-0">
+                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
                             <div class="grid w-60 sm:w-72 md:w-80 lg:w-96 bg-white rounded md:rounded-md shadow-lg shadow-black/20">
                                 <div class="p-4 border-b border-[#eaeaea]">
                                     <h1 class="text-start text-xs md:text-sm text-black font-normal">Inbox</h1>
@@ -295,7 +295,7 @@
                             <path d="M3.246 7.08721C3.20733 7.04954 3.042 6.90731 2.906 6.77482C2.05067 5.99807 0.650667 3.97177 0.223333 2.91121C0.154667 2.75014 0.00933333 2.34293 0 2.12537C0 1.91689 0.048 1.71816 0.145333 1.52852C0.281333 1.29211 0.495333 1.10247 0.748 0.998559C0.923333 0.931665 1.448 0.827752 1.45733 0.827752C2.03133 0.723839 2.964 0.666687 3.99467 0.666687C4.97667 0.666687 5.87133 0.723839 6.454 0.808918C6.46333 0.81866 7.11533 0.922573 7.33867 1.03623C7.74667 1.2447 8 1.65191 8 2.0877V2.12537C7.99 2.40918 7.73667 3.00603 7.72733 3.00603C7.29933 4.00944 5.968 5.98898 5.08333 6.78456C5.08333 6.78456 4.856 7.00863 4.714 7.10604C4.51 7.25802 4.25733 7.33335 4.00467 7.33335C3.72267 7.33335 3.46 7.24827 3.246 7.08721Z"/>
                         </svg>
                     </button>
-                    <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 class="w-max absolute right-0">
+                    <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
                         <div class="grid gap-0.5 bg-white p-4 space-y-2 rounded md:rounded-md shadow-lg shadow-black/20">
                             <a href="editProfile.html">
                                 <button class="flex items-center gap-2 md:gap-3">
@@ -325,7 +325,7 @@
                             </button>
                         </div>
                     </div>
-                    <div x-data="{ notif : false }" x-show="notif" class="w-max absolute right-0">
+                    <div x-data="{ notif : false }" x-show="notif" :class="{ 'block': notif, 'hidden': !notif }" class="hidden w-max absolute right-0">
                         <div class="w-56 md:w-72 flex justify-between items-center bg-[#CEFFE8] py-2 md:py-2.5 px-3 md:px-4 rounded md:rounded-md shadow-md shadow-black/20">
                             <div class="flex items-center gap-2 md:gap-3">
                                 <svg class="w-4 md:w-5 fill-[#059669]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -346,7 +346,7 @@
         </div>
     </nav>
 
-    <div x-show="window.innerWidth < 640 && isOpen" x-transition.opacity class="fixed inset-0 bg-zinc-800 bg-opacity-80 z-40"></div>
+    <div x-show="window.innerWidth < 640 && isOpen" x-transition.opacity :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden fixed inset-0 bg-zinc-800 bg-opacity-80 z-40"></div>
     <div x-data="{ isOpenn : true }">
         <aside x-show="isOpen" 
         @click.outside="if (window.innerWidth < 786) isOpen = false"
@@ -356,8 +356,8 @@
         x-transition:leave="transform transition-transform duration-300"
         x-transition:leave-start="translate-x-0" 
         x-transition:leave-end="-translate-x-full"
-        class="fixed top-0 left-0 z-50 w-60 bg-gradient-to-b from-[#615EFC] to-[#4C3896] to-[100%] shadow-xl h-screen scrollbar-y"
-        :class="isOpenn ? 'w-60' : 'w-20 ' + 'transition-all duration-500'"
+        class="hidden fixed top-0 left-0 z-50 w-60 bg-gradient-to-b from-[#615EFC] to-[#4C3896] to-[100%] shadow-xl h-screen scrollbar-y"
+        :class="{ 'block': isOpen, 'hidden': !isOpen, 'w-60': isOpenn, 'w-20 transition-all duration-500': !isOpenn,}"
         >
             <div :class="isOpenn ? 'justify-between' : 'justify-evenly my-2'" class="flex justify-between items-center px-4 py-3 md:py-2.5 lg:py-3">
                 <div :class="isOpenn ? 'block' : 'hidden'" class="flex items-center gap-2 md:gap-3">
