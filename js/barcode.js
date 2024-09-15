@@ -1,6 +1,6 @@
-function imageUploadHandler(existingImageUrl = '') {
+function imageUploadHandler() {
     return {
-        imageUrl: existingImageUrl,
+        imageUrl: null,
         previewImage(event) {
             const file = event.target.files[0];
             if (file) {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPJMDES</title>
+    <title>Laporan RPJMDES</title>
 
     <link href="/style.css" rel="stylesheet">
     <link href="/svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
@@ -603,8 +603,8 @@
             </div>
         </aside>
 
-        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-6">
-            <div class="flex justify-between items-center">
+        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-4 md:space-y-5">
+            <div class="md:flex md:justify-between items-center">
                 <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Laporan RPJMDES</h1>
                 <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Laporan RPJMDES / Detail Laporan</h1>
             </div>
@@ -653,7 +653,7 @@
                         <h1 class="text-xs md:text-sm text-black font-semibold">A. RANCANGAN PERATURAN DESA</h1>
                     </div>
 
-                    <div x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="space-y-3">
+                    <div x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden space-y-3">
                         <div class="border border-[#E9E9E9] p-3 rounded-md md:rounded-lg space-y-3">
                             <div class="flex items-start gap-2 md:gap-3">
                                 <span class="text-[10px] md:text-xs text-black font-medium">1.</span>
@@ -686,7 +686,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="ml-5 space-y-3">
+                                    <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden ml-5 space-y-3">
                                         <label class="flex justify-normal items-center gap-2">
                                             <input type="checkbox" :checked="selected === 1" @click="selected = selected === 1 ? null : 1" class="peer/checkbox appearance-none checked:bg-[#615EFC] rounded-md bg-transparent border-gray-500 checked:border-[#615EFC] ring-[#615EFC] checked:ring-[#615EFC]">
                                             <h1 class="text-[10px] md:text-xs text-gray-500 peer-checked/checkbox:text-[#615EFC] font-medium">Dilaksanakan (ada dokumen)</h1>
@@ -712,7 +712,7 @@
                                                         <h1 class="text-[10px] md:text-xs text-black font-medium">Biaya Bantuan Operasional Pemdes ( 3% )</h1>
                                                     </div>
                                                 </div>
-                                                <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="ml-5 space-y-3">
+                                                <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden ml-5 space-y-3">
                                                     <label class="flex justify-normal items-center gap-2">
                                                         <input type="checkbox" :checked="selected === 1" @click="selected = selected === 1 ? null : 1" class="peer/checkbox appearance-none checked:bg-[#615EFC] rounded-md bg-transparent border-gray-500 checked:border-[#615EFC] ring-[#615EFC] checked:ring-[#615EFC]">
                                                         <h1 class="text-[10px] md:text-xs text-gray-500 peer-checked/checkbox:text-[#615EFC] font-medium">Dilaksanakan (ada dokumen)</h1>
@@ -740,7 +740,7 @@
                                                         <h1 class="text-[10px] md:text-xs text-black font-medium">BLT Miskin Ekstreme ( s/d 25% )</h1>
                                                     </div>
                                                 </div>
-                                                <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="ml-5 space-y-3">
+                                                <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden ml-5 space-y-3">
                                                     <label class="flex justify-normal items-center gap-2">
                                                         <input type="checkbox" :checked="selected === 1" @click="selected = selected === 1 ? null : 1" class="peer/checkbox appearance-none checked:bg-[#615EFC] rounded-md bg-transparent border-gray-500 checked:border-[#615EFC] ring-[#615EFC] checked:ring-[#615EFC]">
                                                         <h1 class="text-[10px] md:text-xs text-gray-500 peer-checked/checkbox:text-[#615EFC] font-medium">Dilaksanakan (ada dokumen)</h1>
@@ -792,7 +792,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="ml-5 space-y-3">
+                                    <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden ml-5 space-y-3">
                                         <label class="flex justify-normal items-center gap-2">
                                             <input type="checkbox" :checked="selected === 1" @click="selected = selected === 1 ? null : 1" class="peer/checkbox appearance-none checked:bg-[#615EFC] rounded-md bg-transparent border-gray-500 checked:border-[#615EFC] ring-[#615EFC] checked:ring-[#615EFC]">
                                             <h1 class="text-[10px] md:text-xs text-gray-500 peer-checked/checkbox:text-[#615EFC] font-medium">Dilaksanakan (ada dokumen)</h1>
@@ -818,7 +818,7 @@
                                                         <h1 class="text-[10px] md:text-xs text-black font-medium">Biaya Bantuan Operasional Pemdes ( 3% )</h1>
                                                     </div>
                                                 </div>
-                                                <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="ml-5 space-y-3">
+                                                <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden ml-5 space-y-3">
                                                     <label class="flex justify-normal items-center gap-2">
                                                         <input type="checkbox" :checked="selected === 1" @click="selected = selected === 1 ? null : 1" class="peer/checkbox appearance-none checked:bg-[#615EFC] rounded-md bg-transparent border-gray-500 checked:border-[#615EFC] ring-[#615EFC] checked:ring-[#615EFC]">
                                                         <h1 class="text-[10px] md:text-xs text-gray-500 peer-checked/checkbox:text-[#615EFC] font-medium">Dilaksanakan (ada dokumen)</h1>
@@ -846,7 +846,7 @@
                                                         <h1 class="text-[10px] md:text-xs text-black font-medium">BLT Miskin Ekstreme ( s/d 25% )</h1>
                                                     </div>
                                                 </div>
-                                                <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="ml-5 space-y-3">
+                                                <div x-data="{ selected: null }" x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden ml-5 space-y-3">
                                                     <label class="flex justify-normal items-center gap-2">
                                                         <input type="checkbox" :checked="selected === 1" @click="selected = selected === 1 ? null : 1" class="peer/checkbox appearance-none checked:bg-[#615EFC] rounded-md bg-transparent border-gray-500 checked:border-[#615EFC] ring-[#615EFC] checked:ring-[#615EFC]">
                                                         <h1 class="text-[10px] md:text-xs text-gray-500 peer-checked/checkbox:text-[#615EFC] font-medium">Dilaksanakan (ada dokumen)</h1>
@@ -877,6 +877,10 @@
                 </div>
             </div>
 
+            <div class="flex justify-end">
+                <h1 class="text-xs md:text-sm text-black font-normal">Tanggal : 04-September-2024</h1>
+            </div>
+
             <div class="w-full bg-white p-3 md:p-4 rounded-md md:rounded-lg">
                 <div x-data="{ accordion : false }" class="space-y-3">
                     <div @click="accordion = !accordion" class="flex items-center gap-2 md:gap-3 cursor-pointer">
@@ -886,7 +890,7 @@
                         <h1 class="text-xs md:text-sm text-black font-semibold">Desa Janji</h1>
                     </div>
 
-                    <div x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="space-y-3">
+                    <div x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden space-y-3">
                         <hr class="border-[0.5px] border-[#f1f1f1]">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                             <div class="border border-[#E9E9E9] p-3 rounded-md md:rounded-lg space-y-3">
@@ -913,7 +917,7 @@
             </div>
 
             <div class="w-full bg-white p-3 md:p-4 rounded-md md:rounded-lg">
-                <div x-data="{ accordion : true }" class="space-y-3">
+                <div x-data="{ accordion : false }" class="space-y-3">
                     <div @click="accordion = !accordion" class="flex items-center gap-2 md:gap-3 cursor-pointer">
                         <svg class="w-3 md:w-4 fill-[#2D264B]" viewBox="0 0 13 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.0327 1.59046C12.3243 1.29626 12.3222 0.821393 12.028 0.529809C11.7338 0.238226 11.2589 0.240344 10.9673 0.534541L9.22 2.29751C8.51086 3.013 8.02282 3.50381 7.6093 3.83591C7.2076 4.1585 6.94958 4.26918 6.7185 4.29863C6.57341 4.31712 6.42659 4.31712 6.2815 4.29863C6.05042 4.26918 5.7924 4.15851 5.39071 3.83591C4.97718 3.50381 4.48914 3.01301 3.78 2.29751L2.03269 0.534542C1.74111 0.240345 1.26624 0.238226 0.972041 0.52981C0.677844 0.821394 0.675726 1.29626 0.967309 1.59046L2.74609 3.38519C3.41604 4.06116 3.96359 4.61364 4.45146 5.00544C4.95879 5.41287 5.47373 5.70781 6.09184 5.78659C6.36287 5.82114 6.63714 5.82114 6.90816 5.78659C7.52628 5.70781 8.04122 5.41287 8.54854 5.00544C9.03641 4.61364 9.58396 4.06117 10.2539 3.38519L12.0327 1.59046Z"/>
@@ -921,7 +925,7 @@
                         <h1 class="text-xs md:text-sm text-black font-semibold">Tim Evaluasi</h1>
                     </div>
 
-                    <div x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 class="space-y-3">
+                    <div x-show="accordion" @click.outside="accordion = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': accordion, 'hidden': !accordion }" class="hidden space-y-3">
                         <hr class="border-[0.5px] border-[#f1f1f1]">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                             <div class="border border-[#E9E9E9] p-3 rounded-md md:rounded-lg space-y-3">
@@ -965,7 +969,7 @@
                                                                 </label>
                                                                 <div x-data="imageUploadHandler()">
                                                                     <label for="image" class="grid gap-1">
-                                                                        <h1 class="mx-1 text-xs md:text-sm text-black font-medium capitalize">Tanda tangan tim evaluasi</h1>
+                                                                        <h1 class="mx-1 text-xs md:text-sm text-black font-medium capitalize">Tanda tangan supervisor</h1>
                                                                         <div class="flex justify-center items-center gap-2 md:gap-3 border-[1px] border-[#C4C4C5] p-3 rounded-md cursor-pointer">
                                                                             <template x-if="imageUrl">
                                                                                 <img :src="imageUrl" class="w-14 h-14 object-cover"/>
@@ -1036,8 +1040,82 @@
                                 </div>
                             </div>
                         </div>
+                        <hr class="border-[0.5px] border-[#f1f1f1]">
+                        <div x-data="{ modal : false }" class="flex items-center gap-2 md:gap-3">
+                            <button @click="modal = !modal" class="bg-[#F4F4F4] p-2 rounded md:rounded-md">
+                                <svg class="w-4 md:w-5" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="0.562988" width="25" height="25" rx="12.5" stroke="#A0A0A0"/>
+                                    <path d="M13.9377 8.39648C13.9377 8.15486 13.7418 7.95898 13.5002 7.95898C13.2585 7.95898 13.0627 8.15486 13.0627 8.39648L13.0627 12.6257H8.8335C8.59187 12.6257 8.396 12.8215 8.396 13.0632C8.396 13.3048 8.59187 13.5007 8.8335 13.5007H13.0627V17.7298C13.0627 17.9714 13.2585 18.1673 13.5002 18.1673C13.7418 18.1673 13.9377 17.9714 13.9377 17.7298V13.5007H18.1668C18.4085 13.5007 18.6043 13.3048 18.6043 13.0632C18.6043 12.8215 18.4085 12.6257 18.1668 12.6257H13.9377L13.9377 8.39648Z" fill="#A0A0A0"/>
+                                </svg>
+                            </button>
+                            <h1 class="text-[10px] md:text-xs text-black font-normal">Tambah tim evaluasi</h1>
+                            <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                                <div class="w-[80%] sm:w-[50%] md:w-[35%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
+                                    <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
+                                        <div class=""></div>
+                                        <h1 class="text-sm md:text-base text-black font-semibold">Tambah Tim Evaluasi</h1>
+                                        <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
+                                            <svg class="w-3 fill-[#8B8B8B]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.0204 1.68705C11.2157 1.49179 11.2157 1.1752 11.0204 0.979943C10.8251 0.784681 10.5086 0.784681 10.3133 0.979943L6.00017 5.29307L1.68705 0.979945C1.49179 0.784683 1.1752 0.784683 0.979943 0.979945C0.784681 1.17521 0.784681 1.49179 0.979943 1.68705L5.29306 6.00017L0.979961 10.3133C0.784699 10.5085 0.784699 10.8251 0.979961 11.0204C1.17522 11.2156 1.49181 11.2156 1.68707 11.0204L6.00017 6.70728L10.3133 11.0204C10.5085 11.2156 10.8251 11.2156 11.0204 11.0204C11.2156 10.8251 11.2156 10.5085 11.0204 10.3133L6.70728 6.00017L11.0204 1.68705Z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                        <form class="w-full bg-transparent space-y-5 md:space-y-6 rounded md:rounded-md">
+                                            <div class="grid gap-y-3 text-start">
+                                                <label class="grid gap-1">
+                                                    <h1 class="mx-1 text-xs md:text-sm text-black font-medium capitalize">Nama</h1>
+                                                    <input placeholder="Masukan nama tim evaluasi" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#C4C4C5] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#C4C4C5] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                                                </label>
+                                                <div x-data="imageUploadHandler()">
+                                                    <label for="image" class="grid gap-1">
+                                                        <h1 class="mx-1 text-xs md:text-sm text-black font-medium capitalize">Tanda tangan supervisor</h1>
+                                                        <div class="flex justify-center items-center gap-2 md:gap-3 border-[1px] border-[#C4C4C5] p-3 rounded-md cursor-pointer">
+                                                            <template x-if="imageUrl">
+                                                                <img :src="imageUrl" class="w-14 h-14 object-cover"/>
+                                                            </template>
+                                                            <div x-show="!imageUrl" class="flex items-center gap-2 md:gap-3">
+                                                                <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">Upload File</h1>
+                                                                <svg class="w-3" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M5.30368 0.575012C5.57309 0.304564 5.87211 0.0803688 6.25422 0.0194877C6.33563 0.00651769 6.41775 0 6.50001 0C6.58226 0 6.66438 0.00651749 6.74579 0.0194876C7.1279 0.0803688 7.42692 0.304564 7.69633 0.575013C7.95886 0.838559 8.25217 1.2085 8.60763 1.65682L9.55846 2.85602C9.73003 3.0724 9.6937 3.38689 9.47732 3.55846C9.26094 3.73002 8.94645 3.69369 8.77488 3.47731L7.84299 2.302C7.47084 1.83265 7.21511 1.51131 7.00001 1.29301V9.83333C7.00001 10.1095 6.77615 10.3333 6.50001 10.3333C6.22387 10.3333 6.00001 10.1095 6.00001 9.83333V1.29301C5.7849 1.51131 5.52917 1.83265 5.15703 2.302L4.22513 3.47731C4.05356 3.69369 3.73907 3.73002 3.52269 3.55846C3.30631 3.38689 3.26999 3.0724 3.44155 2.85602L4.39238 1.65683C4.74783 1.20852 5.04116 0.838554 5.30368 0.575012Z" fill="#8B8B8B"/>
+                                                                    <path d="M12.2334 5.53304C12.0675 5.31225 11.7541 5.2677 11.5333 5.43355C11.3125 5.59939 11.268 5.91283 11.4338 6.13362C11.7895 6.60711 12 7.19491 12 7.83333V8.5C12 9.13844 11.9985 9.39945 11.9651 9.6099C11.7731 10.8223 10.8223 11.7731 9.6099 11.9651C9.39946 11.9984 9.13845 12 8.50001 12H4.50001C3.86156 12 3.60055 11.9984 3.39011 11.9651C2.17775 11.7731 1.22691 10.8223 1.03489 9.6099C1.00156 9.39945 1.00001 9.13844 1.00001 8.5V7.83333C1.00001 7.19491 1.21056 6.60711 1.56621 6.13362C1.73206 5.91283 1.68751 5.59939 1.46672 5.43355C1.24592 5.2677 0.93249 5.31225 0.766645 5.53304C0.285381 6.17376 5.55369e-06 6.97094 5.55369e-06 7.83333L2.7324e-06 8.55388C-4.23287e-05 9.12189 -6.97474e-05 9.46788 0.0472003 9.76633C0.306991 11.4066 1.59342 12.693 3.23367 12.9528C3.53213 13.0001 3.87812 13 4.44614 13H8.55387C9.12189 13 9.46789 13.0001 9.76634 12.9528C11.4066 12.693 12.693 11.4066 12.9528 9.76633C13.0001 9.46788 13.0001 9.12189 13 8.55387L13 7.83333C13 6.97094 12.7146 6.17376 12.2334 5.53304Z" fill="#8B8B8B"/>                                                                                    
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <input id="image" type="file" class="hidden" @change="previewImage">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-center items-center gap-2 md:gap-3">
+                                                <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-2 px-4 md:px-5 rounded">
+                                                    <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
+                                                </button>
+                                                <button class="bg-[#615EFC] py-2 px-4 md:px-5 rounded">
+                                                    <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="w-full flex justify-end items-center gap-2 md:gap-3">
+                <button class="flex items-center gap-2 bg-[#FA6D09] py-1.5 px-4 rounded-md">
+                    <h1 class="text-[10px] md:text-xs text-[#E8EDF2] font-normal">Revisi</h1>
+                    <svg class="w-2.5 fill-white" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.825 12.0375C0.55 11.5625 0.34375 11.075 0.20625 10.575C0.06875 10.075 0 9.5625 0 9.0375C0 7.3625 0.58125 5.9375 1.74375 4.7625C2.90625 3.5875 4.325 3 6 3H6.13125L4.93125 1.8L5.98125 0.75L8.98125 3.75L5.98125 6.75L4.93125 5.7L6.13125 4.5H6C4.75 4.5 3.6875 4.94063 2.8125 5.82188C1.9375 6.70313 1.5 7.775 1.5 9.0375C1.5 9.3625 1.5375 9.68125 1.6125 9.99375C1.6875 10.3062 1.8 10.6125 1.95 10.9125L0.825 12.0375ZM6.01875 17.25L3.01875 14.25L6.01875 11.25L7.06875 12.3L5.86875 13.5H6C7.25 13.5 8.3125 13.0594 9.1875 12.1781C10.0625 11.2969 10.5 10.225 10.5 8.9625C10.5 8.6375 10.4625 8.31875 10.3875 8.00625C10.3125 7.69375 10.2 7.3875 10.05 7.0875L11.175 5.9625C11.45 6.4375 11.6562 6.925 11.7938 7.425C11.9313 7.925 12 8.4375 12 8.9625C12 10.6375 11.4187 12.0625 10.2563 13.2375C9.09375 14.4125 7.675 15 6 15H5.86875L7.06875 16.2L6.01875 17.25Z"/>
+                    </svg>
+                </button>
+                <button class="flex items-center gap-2 bg-[#615EFC] py-1.5 px-4 rounded-md">
+                    <h1 class="text-[10px] md:text-xs text-[#E8EDF2] font-normal">Konfirmasi</h1>
+                    <svg class="w-4" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.45 11.0125L11.7375 5.725L10.6875 4.675L6.45 8.9125L4.3125 6.775L3.2625 7.825L6.45 11.0125ZM7.5 15.0625C6.4625 15.0625 5.4875 14.8656 4.575 14.4719C3.6625 14.0781 2.86875 13.5438 2.19375 12.8688C1.51875 12.1938 0.984375 11.4 0.590625 10.4875C0.196875 9.575 0 8.6 0 7.5625C0 6.525 0.196875 5.55 0.590625 4.6375C0.984375 3.725 1.51875 2.93125 2.19375 2.25625C2.86875 1.58125 3.6625 1.04688 4.575 0.653125C5.4875 0.259375 6.4625 0.0625 7.5 0.0625C8.5375 0.0625 9.5125 0.259375 10.425 0.653125C11.3375 1.04688 12.1313 1.58125 12.8063 2.25625C13.4813 2.93125 14.0156 3.725 14.4094 4.6375C14.8031 5.55 15 6.525 15 7.5625C15 8.6 14.8031 9.575 14.4094 10.4875C14.0156 11.4 13.4813 12.1938 12.8063 12.8688C12.1313 13.5438 11.3375 14.0781 10.425 14.4719C9.5125 14.8656 8.5375 15.0625 7.5 15.0625Z" fill="white"/>
+                    </svg>                        
+                </button>
             </div>
         </main>
     </div>

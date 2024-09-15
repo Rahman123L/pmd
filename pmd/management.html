@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPJMDES</title>
+    <title>Password</title>
 
     <link href="/style.css" rel="stylesheet">
     <link href="/svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
@@ -603,269 +603,150 @@
             </div>
         </aside>
 
-        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-4">
-            <div x-data="{ isOpen : false }" class="space-y-5">
-                <div class="flex justify-between items-center">
-                    <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Laporan RPJMDES</h1>
-                    <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Laporan RPJMDES</h1>
-                </div>
-                <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-5 md:py-6 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
-                    <h1 class="text-xs md:text-sm text-black font-normal">Silahkan Pilih <span class="text-[#EA5858] font-medium">Desa</span></h1>
-                    <button @click="isOpen = !isOpen" class="flex items-center gap-1 md:gap-2 bg-[#6777EF] py-1.5 px-4 rounded">
-                        <h1 class="text-xs md:text-sm text-white font-medium">Pilih Desa</h1>
-                        <svg :class="{ 'rotate-90 ' : isOpen }"  class="w-4 stroke-white stroke-[2]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 5L15 12L9 19" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-    
-                <section x-data="dataDesa" x-show="isOpen" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden space-y-3">    
-                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-3 bg-white py-3 md:px-3 rounded md:rounded-md shadow-md shadow-black/5">
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in bilahBarat" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in bilahHulu" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in pangkatan" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in panaiHilir" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in bilahHilir" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in panaiTengah" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in panaiHulu" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                </section>
+        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-5">
+            <div class="flex justify-between items-center">
+                <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Management Evaluasi</h1>
+                <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Management Evaluasi</h1>
+            </div>
 
-                <div :class="isOpen ? 'hidden' : 'block'" class="flex justify-center items-center pt-10">
-                    <div class="space-y-2">
-                        <img class="w-28 md:w-32 h-28 md:h-32 mx-auto" src="/svgs/search.svg">
-                        <div class="text-center">
-                            <h1 class="text-lg md:text-xl text-black font-medium">Desa Tidak Ditemukan</h1>
-                            <h1 class="text-[10px] md:text-xs text-[#7A7A7A] font-normal">Pilih Desa untuk memunculkan data</h1>
-                        </div>
+            <div x-data="{ selected : null, isOpen : false }" class="space-y-1">
+                <h1 class="text-[10px] md:text-xs text-black font-normal capitalize">Pilih Evaluasi</h1>
+                <div class="w-full md:w-52 relative space-y-2">
+                    <button @click="isOpen = !isOpen" class="w-full flex justify-between items-center gap-2 bg-white py-1.5 px-4 rounded md:rounded-md shadow-md shadow-[#00000014] focus:outline-none focus:ring-0">
+                        <h1 x-text="selected ? selected : 'Evaluasi'" class="text-xs md:text-sm text-[#313131] font-normal"></h1>
+                        <svg class="w-3 fill-[#615EFC]" viewBox="0 0 12 6" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5327 1.52796C11.8243 1.23376 11.8222 0.758893 11.528 0.467309C11.2338 0.175726 10.7589 0.177844 10.4673 0.472041L8.72 2.23501C8.01086 2.9505 7.52282 3.44131 7.1093 3.77341C6.7076 4.096 6.44958 4.20668 6.2185 4.23613C6.07341 4.25462 5.92659 4.25462 5.7815 4.23613C5.55042 4.20668 5.2924 4.09601 4.89071 3.77341C4.47718 3.44131 3.98914 2.95051 3.28 2.23501L1.53269 0.472042C1.24111 0.177845 0.766238 0.175726 0.472041 0.46731C0.177844 0.758894 0.175726 1.23376 0.467309 1.52796L2.24609 3.32269C2.91604 3.99866 3.46359 4.55114 3.95146 4.94294C4.45879 5.35037 4.97373 5.64531 5.59184 5.72409C5.86287 5.75864 6.13714 5.75864 6.40816 5.72409C7.02628 5.64531 7.54122 5.35037 8.04854 4.94294C8.53641 4.55114 9.08396 3.99867 9.7539 3.32269L11.5327 1.52796Z"/>
+                        </svg>  
+                    </button>
+                    <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'visible': isOpen, 'invisible': !isOpen }" class="invisible absolute z-10 w-full bg-white rounded md:rounded-md shadow-md shadow-[#00000014]">
+                        <template x-for="(option, index) in ['Evaluasi RPJMDES', 'Evaluasi RKPDES', 'Evaluasi APEDES']" :key="index">
+                            <div @click="selected = option; isOpen = false" class="flex justify-between items-center gap-2 py-1.5 px-4 cursor-pointer rounded md:rounded-md">
+                                <h1 x-text="option" class="text-xs md:text-sm text-[#313131] font-normal"></h1>
+                                <svg x-show="selected === option" class="w-5 stroke-[#615EFC]" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
-
-            <section class="space-y-3">
-                <section class="w-full lg:flex justify-between items-center gap-3 space-y-3 lg:space-y-0">
-                    <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-3 md:py-4 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
-                        <h1 class="text-xs md:text-sm text-[#5869EA] font-semibold">Laporan RPJMdes Desa Janji</h1>
-                    </div>
-                    <div class="md:flex items-center gap-3 space-y-3 md:space-y-0">
-                        <div x-data="{ selected : null, isOpen : false }" class="flex items-center gap-2 md:gap-3">
-                            <h1 class="text-xs md:text-sm text-[#778294] font-medium capitalize">Filter</h1>
-                            <div class="w-full md:w-40 relative space-y-2">
-                                <button @click="isOpen = !isOpen" class="w-full flex justify-between items-center gap-2 bg-white py-1.5 px-4 rounded md:rounded-md shadow-md shadow-black/5 focus:outline-none focus:ring-0">
-                                    <h1 x-text="selected ? selected : 'Pilih Filter'" class="text-xs md:text-sm text-[#313131] font-normal"></h1>
-                                    <svg class="w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'visible': isOpen, 'invisible': !isOpen }" class="invisible absolute z-10 w-full bg-white rounded md:rounded-md shadow-md shadow-black/5">
-                                    <template x-for="(option, index) in ['Terbaru', 'Terlama']" :key="index">
-                                        <div @click="selected = option; isOpen = false" class="flex justify-between items-center gap-2 py-1.5 px-4 cursor-pointer rounded md:rounded-md">
-                                            <h1 x-text="option" class="text-xs md:text-sm text-[#313131] font-normal"></h1>
-                                            <svg x-show="selected === option" class="w-5 stroke-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                    </template>
+            
+            <div class="w-[90%] md:w-[40%] flex items-start gap-2 md:gap-3">
+                <div class="w-full space-y-3">
+                    <div x-data="app()" class="bg-white p-3 pb-5 space-y-3 rounded-md md:rounded-lg">
+                        <div class="flex items-start gap-2 md:gap-3">
+                            <span class="bg-[#F3F3F3] py-2 px-2.5 rounded md:rounded-md">
+                                <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">A</h1>
+                            </span>
+                            <div class="w-full space-y-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-full bg-[#F3F3F3] py-2 px-3.5 rounded md:rounded-md">
+                                        <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">Isi evaluasi</h1>
+                                    </div>
+                                    <button @click="addSubmenu()">
+                                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                                        </svg>
+                                    </button>
                                 </div>
+                
+                                <template x-for="(submenu, submenuIndex) in submenus" :key="submenuIndex">
+                                    <div class="space-y-2">
+                                        <label class="flex items-start gap-3 md:gap-4">
+                                            <span x-text="submenuIndex + 1" class="text-[10px] md:text-xs text-[#778294] font-medium py-2.5 md:py-2"></span>
+                                            <div class="w-full space-y-3">
+                                                <div class="flex items-center gap-3 md:gap-4">
+                                                    <input type="text" x-model="submenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
+                                                    <button @click="addSubmenu(submenu)">
+                                                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                                                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                
+                                                <template x-if="submenu.submenus.length">
+                                                    <template x-for="(subSubmenu, subSubmenuIndex) in submenu.submenus" :key="subSubmenuIndex">
+                                                        <div class="flex items-start gap-3 md:gap-4">
+                                                            <span x-text="subSubmenuIndex + 1" class="text-[10px] md:text-xs text-[#778294] font-medium py-2.5 md:py-2"></span>
+                                                            <div class="w-full space-y-3">
+                                                                <div class="flex items-center gap-3 md:gap-4">
+                                                                    <input type="text" x-model="subSubmenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
+                                                                    <button @click="addSubmenu(subSubmenu)">
+                                                                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                                                                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+            
+                                                                <template x-if="subSubmenu.submenus.length">
+                                                                    <template x-for="(subSubSubmenu, subSubSubmenuIndex) in subSubmenu.submenus" :key="subSubSubmenuIndex">
+                                                                        <div class="flex items-start gap-3 md:gap-4">
+                                                                            <span class="text-[10px] md:text-xs text-[#778294] font-bold py-2.5 md:py-2">-</span>
+                                                                            <div class="w-full space-y-3">
+                                                                                <div class="flex items-center gap-3 md:gap-4">
+                                                                                    <input type="text" x-model="subSubSubmenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
+                                                                                    <button class="invisible">
+                                                                                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                                                                                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                                                                                        </svg>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </template>
+                                                                </template>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                                </template>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </template>
                             </div>
                         </div>
-                        <div class="flex items-center bg-white rounded md:rounded-md shadow-md shadow-black/5">
-                            <label for="search" class="flex items-center ml-5 cursor-pointer">
-                                <svg class="w-[18px] md:w-5 stroke-[1.5] stroke-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke-linecap="round"/>
-                                </svg>
-                            </label>
-                            <input type="search" id="search" placeholder="Searching" autocomplete="off" class="w-full bg-transparent border-none text-xs md:text-sm text-gray-500 font-normal focus:outline-none focus:ring-0 placeholder:text-xs md:placeholder:text-sm placeholder:text-gray-500 placeholder:font-medium">
+                        <hr class="h-px border-b border-b-[#C0C0C0]">
+                        <div class="flex justify-end items-center mx-1.5 gap-2 md:gap-3">
+                            <svg class="w-3.5 cursor-pointer" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.1665 3.93685H5.83317C5.27317 3.93685 4.229 3.93685 4.229 2.33268C4.229 0.728516 5.27317 0.728516 5.83317 0.728516H8.1665C8.7265 0.728516 9.77067 0.728516 9.77067 2.33268C9.77067 2.89268 9.77067 3.93685 8.1665 3.93685ZM5.83317 1.60352C5.25567 1.60352 5.104 1.60352 5.104 2.33268C5.104 3.06185 5.25567 3.06185 5.83317 3.06185H8.1665C8.89567 3.06185 8.89567 2.91018 8.89567 2.33268C8.89567 1.60352 8.744 1.60352 8.1665 1.60352H5.83317Z" fill="black"/>
+                                <path d="M8.16667 13.2701H5.25C1.97167 13.2701 1.3125 11.7651 1.3125 9.33264V5.83264C1.3125 3.17264 2.275 2.03514 4.64333 1.91264C4.87667 1.90098 5.0925 2.08181 5.10417 2.32681C5.11583 2.57181 4.92917 2.77014 4.69 2.78181C3.03333 2.87514 2.1875 3.37098 2.1875 5.83264V9.33264C2.1875 11.491 2.61333 12.3951 5.25 12.3951H8.16667C8.40583 12.3951 8.60417 12.5935 8.60417 12.8326C8.60417 13.0718 8.40583 13.2701 8.16667 13.2701Z" fill="black"/>
+                                <path d="M12.2502 9.18677C12.011 9.18677 11.8127 8.98843 11.8127 8.74927V5.8326C11.8127 3.37094 10.9669 2.8751 9.31019 2.78177C9.07103 2.7701 8.88436 2.5601 8.89603 2.32094C8.90769 2.08177 9.12353 1.8951 9.35686 1.90677C11.7252 2.0351 12.6877 3.1726 12.6877 5.82677V8.74343C12.6877 8.98843 12.4894 9.18677 12.2502 9.18677Z" fill="black"/>
+                                <path d="M12.25 13.2715H10.5C10.2608 13.2715 10.0625 13.0732 10.0625 12.834C10.0625 12.5948 10.2608 12.3965 10.5 12.3965H11.8125V11.084C11.8125 10.8448 12.0108 10.6465 12.25 10.6465C12.4892 10.6465 12.6875 10.8448 12.6875 11.084V12.834C12.6875 13.0732 12.4892 13.2715 12.25 13.2715Z" fill="black"/>
+                                <path d="M12.2267 13.2467C12.1158 13.2467 12.005 13.2059 11.9175 13.1184L8.44084 9.64169C8.27167 9.47253 8.27167 9.19253 8.44084 9.02336C8.61001 8.85419 8.89001 8.85419 9.05917 9.02336L12.5358 12.5C12.705 12.6692 12.705 12.9492 12.5358 13.1184C12.4483 13.2 12.3375 13.2467 12.2267 13.2467Z" fill="black"/>
+                            </svg>
+                            <svg class="w-3.5 cursor-pointer" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.00016 0.728516C4.46987 0.728516 3.22933 1.96906 3.22933 3.49935V3.64518H1.3335C1.09187 3.64518 0.895996 3.84106 0.895996 4.08268C0.895996 4.32431 1.09187 4.52018 1.3335 4.52018H10.6668C10.9085 4.52018 11.1043 4.32431 11.1043 4.08268C11.1043 3.84106 10.9085 3.64518 10.6668 3.64518H8.771V3.49935C8.771 1.96906 7.53045 0.728516 6.00016 0.728516ZM6.00016 1.60352C7.0472 1.60352 7.896 2.45231 7.896 3.49935V3.64518H4.10433V3.49935C4.10433 2.45231 4.95312 1.60352 6.00016 1.60352Z" fill="#FF4E4E"/>
+                                <path d="M2.35237 5.20797C2.32951 4.96743 2.11599 4.79096 1.87545 4.81381C1.63491 4.83667 1.45844 5.05019 1.48129 5.29073C1.5364 5.87073 1.63585 6.58536 1.76369 7.50397L1.92793 8.6841C2.08494 9.8127 2.17399 10.4528 2.36663 10.9771C2.72516 11.9529 3.36469 12.7352 4.1872 13.0822C4.63384 13.2707 5.14472 13.2705 5.90527 13.2702H6.09505C6.85561 13.2705 7.36649 13.2707 7.81313 13.0822C8.63563 12.7352 9.27517 11.9529 9.63369 10.9771C9.82634 10.4527 9.91538 9.81269 10.0724 8.68407L10.2366 7.50398C10.3645 6.58537 10.4639 5.87073 10.519 5.29073C10.5419 5.05019 10.3654 4.83667 10.1249 4.81381C9.88434 4.79096 9.67081 4.96743 9.64796 5.20797C9.59486 5.76678 9.49811 6.4627 9.36854 7.39375L9.21551 8.49335C9.04603 9.71112 8.96842 10.2506 8.81237 10.6753C8.51144 11.4944 8.01103 12.049 7.47294 12.2761C7.21032 12.3869 6.89218 12.3952 6.00016 12.3952C5.10815 12.3952 4.79 12.3869 4.52738 12.2761C3.98929 12.049 3.48889 11.4944 3.18795 10.6753C3.0319 10.2506 2.95429 9.71112 2.78482 8.49335L2.63179 7.39375C2.50221 6.4627 2.40546 5.76678 2.35237 5.20797Z" fill="#FF4E4E"/>
+                                <path d="M5.271 5.83268C5.271 5.59106 5.07512 5.39518 4.8335 5.39518C4.59187 5.39518 4.396 5.59106 4.396 5.83268V10.4993C4.396 10.741 4.59187 10.9368 4.8335 10.9368C5.07512 10.9368 5.271 10.741 5.271 10.4993V5.83268Z" fill="#FF4E4E"/>
+                                <path d="M7.60433 5.83268C7.60433 5.59106 7.40845 5.39518 7.16683 5.39518C6.9252 5.39518 6.72933 5.59106 6.72933 5.83268V10.4993C6.72933 10.741 6.9252 10.9368 7.16683 10.9368C7.40845 10.9368 7.60433 10.741 7.60433 10.4993V5.83268Z" fill="#FF4E4E"/>
+                            </svg>
                         </div>
                     </div>
-                </section>
-
-                <section class="scrollbar-x bg-transparent rounded md:rounded-md shadow-md shadow-black/5">
-                    <table class="w-max lg:w-full mx-auto bg-white text-center table-auto">
-                        <tr class="text-[10px] md:text-xs text-black capitalize">
-                            <th class="w-[5%] bg-[#E0E4FF] font-normal py-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">No</th>
-                            <th class="w-[30%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Nama</th>
-                            <th class="w-[15%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Status</th>
-                            <th class="w-[20%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Tanggal dikirim</th>
-                            <th class="w-[20%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Tanggal direvisi</th>
-                            <th class="w-[15%] bg-[#E0E4FF] font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Aksi</th>
-                        </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">1</td>
-                            <td class="bg-white py-3.5 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#CEFFE8] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.0501 11.45L12.3376 6.1625L11.2876 5.1125L7.0501 9.35L4.9126 7.2125L3.8626 8.2625L7.0501 11.45ZM8.1001 15.5C7.0626 15.5 6.0876 15.3031 5.1751 14.9094C4.2626 14.5156 3.46885 13.9813 2.79385 13.3063C2.11885 12.6313 1.58447 11.8375 1.19072 10.925C0.796973 10.0125 0.600098 9.0375 0.600098 8C0.600098 6.9625 0.796973 5.9875 1.19072 5.075C1.58447 4.1625 2.11885 3.36875 2.79385 2.69375C3.46885 2.01875 4.2626 1.48438 5.1751 1.09063C6.0876 0.696875 7.0626 0.5 8.1001 0.5C9.1376 0.5 10.1126 0.696875 11.0251 1.09063C11.9376 1.48438 12.7313 2.01875 13.4063 2.69375C14.0813 3.36875 14.6157 4.1625 15.0095 5.075C15.4032 5.9875 15.6001 6.9625 15.6001 8C15.6001 9.0375 15.4032 10.0125 15.0095 10.925C14.6157 11.8375 14.0813 12.6313 13.4063 13.3063C12.7313 13.9813 11.9376 14.5156 11.0251 14.9094C10.1126 15.3031 9.1376 15.5 8.1001 15.5Z" fill="#059669"/>
-                                    </svg>
-                                    <h1 class="text-[#059669] font-normal">Sukses</h1>
-                                </div>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <a href="laporanRpjmdes.html" class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">2</td>
-                            <td class="bg-white py-3.5 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#FFEEA9] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.6001 10.75C7.8126 10.75 7.99072 10.6781 8.13447 10.5344C8.27822 10.3906 8.3501 10.2125 8.3501 10C8.3501 9.7875 8.27822 9.60938 8.13447 9.46563C7.99072 9.32188 7.8126 9.25 7.6001 9.25C7.3876 9.25 7.20947 9.32188 7.06572 9.46563C6.92197 9.60938 6.8501 9.7875 6.8501 10C6.8501 10.2125 6.92197 10.3906 7.06572 10.5344C7.20947 10.6781 7.3876 10.75 7.6001 10.75ZM6.8501 7.75H8.3501V3.25H6.8501V7.75ZM4.7876 13.75L0.850098 9.8125V4.1875L4.7876 0.25H10.4126L14.3501 4.1875V9.8125L10.4126 13.75H4.7876Z" fill="#D97706"/>
-                                    </svg>
-                                    <h1 class="text-[#D97706] font-normal">Proses</h1>
-                                </div>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <a href="laporanRpjmdes.html" class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="text-xs text-black/70 capitalize overflow-visible">
-                            <td class="bg-white font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">3</td>
-                            <td class="bg-white py-3.5 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#FFCCCC] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.4001 11.75L8.1001 9.05L10.8001 11.75L11.8501 10.7L9.1501 8L11.8501 5.3L10.8001 4.25L8.1001 6.95L5.4001 4.25L4.3501 5.3L7.0501 8L4.3501 10.7L5.4001 11.75ZM8.1001 15.5C7.0626 15.5 6.0876 15.3031 5.1751 14.9094C4.2626 14.5156 3.46885 13.9813 2.79385 13.3063C2.11885 12.6313 1.58447 11.8375 1.19072 10.925C0.796973 10.0125 0.600098 9.0375 0.600098 8C0.600098 6.9625 0.796973 5.9875 1.19072 5.075C1.58447 4.1625 2.11885 3.36875 2.79385 2.69375C3.46885 2.01875 4.2626 1.48438 5.1751 1.09063C6.0876 0.696875 7.0626 0.5 8.1001 0.5C9.1376 0.5 10.1126 0.696875 11.0251 1.09063C11.9376 1.48438 12.7313 2.01875 13.4063 2.69375C14.0813 3.36875 14.6157 4.1625 15.0095 5.075C15.4032 5.9875 15.6001 6.9625 15.6001 8C15.6001 9.0375 15.4032 10.0125 15.0095 10.925C14.6157 11.8375 14.0813 12.6313 13.4063 13.3063C12.7313 13.9813 11.9376 14.5156 11.0251 14.9094C10.1126 15.3031 9.1376 15.5 8.1001 15.5Z" fill="#DC2626"/>
-                                    </svg>
-                                    <h1 class="text-[#DC2626] font-normal">Revisi</h1>
-                                </div>
-                            </td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="bg-white font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <a href="laporanRpjmdes.html" class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-
-                <section class="flex justify-center items-center gap-3">
-                    <button class="bg-[#5869EA] py-1.5 px-4 rounded-md md:rounded-lg">
-                        <h1 class="text-[10px] md:text-sm text-white font-semibold">Sebelumnya</h1>
+                    <div class="flex justify-end items-center gap-2 md:gap-3">
+                        <button class="bg-[#FF4E4E] py-1.5 px-4 rounded md:rounded-md">
+                            <h1 class="text-[10px] md:text-xs text-white font-medium">Batal</h1>
+                        </button>
+                        <button class="bg-[#615EFC] py-1.5 px-4 rounded md:rounded-md">
+                            <h1 class="text-[10px] md:text-xs text-white font-medium">Simpan</h1>
+                        </button>
+                    </div>
+                </div>
+                <span class="bg-white mt-1.5 p-2 pb-0.5 space-y-3 rounded-md md:rounded-lg">
+                    <button>
+                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                        </svg>
                     </button>
-                    <button class="hidden sm:block group transition-all py-1 px-3.5 focus:px-6 md:focus:px-8 focus:border-b focus:border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#9B9B9B] transition-colors group-focus:text-[#615EFC] font-semibold">1</h1>
-                    </button>
-                    <button class="py-1 px-6 md:px-8 border-b border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#615EFC] font-semibold">2</h1>
-                    </button>
-                    <button class="hidden sm:block group transition-all py-1 px-3.5 focus:px-6 md:focus:px-8 focus:border-b focus:border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#9B9B9B] transition-colors group-focus:text-[#615EFC] font-semibold">3</h1>
-                    </button>
-                    <button class="bg-[#5869EA] py-1.5 px-4 rounded-md md:rounded-lg">
-                        <h1 class="text-[10px] md:text-sm text-white font-semibold">Selanjutnya</h1>
-                    </button>
-                </section>
-            </section>
+                </span>
+            </div>
         </main>
     </div>
 
-    <script src="/js/desa.js"></script>
+    <script src="/js/subPoint.js"></script>
 </body>
 </html>
