@@ -39,7 +39,7 @@
     
     <nav class="fixed top-0 z-40 w-full bg-[#F2F8FF] py-4 px-5 md:px-8">
         <div class="flex justify-between items-center">
-            <button @click="if (window.innerWidth < 786) isOpen = !isOpen">
+            <button @click="if (window.innerWidth < 786) isOpen = !isOpen" class="visible md:invisible">
                 <svg class="w-[22px] md:w-6 fill-black" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 7C20.75 7.41421 20.4142 7.75 20 7.75L4 7.75C3.58579 7.75 3.25 7.41421 3.25 7C3.25 6.58579 3.58579 6.25 4 6.25L20 6.25C20.4142 6.25 20.75 6.58579 20.75 7Z"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 12C20.75 12.4142 20.4142 12.75 20 12.75L4 12.75C3.58579 12.75 3.25 12.4142 3.25 12C3.25 11.5858 3.58579 11.25 4 11.25L20 11.25C20.4142 11.25 20.75 11.5858 20.75 12Z"/>
@@ -58,7 +58,7 @@
                                 <h1 class="text-[8px] md:text-[9px] text-white font-medium">2</h1>
                             </div>
                         </div>
-                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 class="w-max absolute right-0">
+                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
                             <div class="grid w-60 sm:w-72 md:w-80 lg:w-96 bg-white rounded md:rounded-md shadow-lg shadow-black/20">
                                 <div class="p-4 border-b border-[#eaeaea]">
                                     <h1 class="text-start text-xs md:text-sm text-black font-normal">Notifikasi</h1>
@@ -189,7 +189,7 @@
                                 <h1 class="text-[8px] md:text-[9px] text-white font-medium">3</h1>
                             </div>
                         </div>
-                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 class="w-max absolute right-0">
+                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
                             <div class="grid w-60 sm:w-72 md:w-80 lg:w-96 bg-white rounded md:rounded-md shadow-lg shadow-black/20">
                                 <div class="p-4 border-b border-[#eaeaea]">
                                     <h1 class="text-start text-xs md:text-sm text-black font-normal">Inbox</h1>
@@ -295,7 +295,7 @@
                             <path d="M3.246 7.08721C3.20733 7.04954 3.042 6.90731 2.906 6.77482C2.05067 5.99807 0.650667 3.97177 0.223333 2.91121C0.154667 2.75014 0.00933333 2.34293 0 2.12537C0 1.91689 0.048 1.71816 0.145333 1.52852C0.281333 1.29211 0.495333 1.10247 0.748 0.998559C0.923333 0.931665 1.448 0.827752 1.45733 0.827752C2.03133 0.723839 2.964 0.666687 3.99467 0.666687C4.97667 0.666687 5.87133 0.723839 6.454 0.808918C6.46333 0.81866 7.11533 0.922573 7.33867 1.03623C7.74667 1.2447 8 1.65191 8 2.0877V2.12537C7.99 2.40918 7.73667 3.00603 7.72733 3.00603C7.29933 4.00944 5.968 5.98898 5.08333 6.78456C5.08333 6.78456 4.856 7.00863 4.714 7.10604C4.51 7.25802 4.25733 7.33335 4.00467 7.33335C3.72267 7.33335 3.46 7.24827 3.246 7.08721Z"/>
                         </svg>
                     </button>
-                    <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 class="w-max absolute right-0">
+                    <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
                         <div class="grid gap-0.5 bg-white p-4 space-y-2 rounded md:rounded-md shadow-lg shadow-black/20">
                             <a href="editProfile.html">
                                 <button class="flex items-center gap-2 md:gap-3">
@@ -325,12 +325,28 @@
                             </button>
                         </div>
                     </div>
+                    <div x-data="{ notif : false }" x-show="notif" :class="{ 'block': notif, 'hidden': !notif }" class="hidden w-max absolute right-0">
+                        <div class="w-56 md:w-72 flex justify-between items-center bg-[#CEFFE8] py-2 md:py-2.5 px-3 md:px-4 rounded md:rounded-md shadow-md shadow-black/20">
+                            <div class="flex items-center gap-2 md:gap-3">
+                                <svg class="w-4 md:w-5 fill-[#059669]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.6 14.6L15.65 7.55L14.25 6.15L8.6 11.8L5.75 8.95L4.35 10.35L8.6 14.6ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20Z"/>
+                                </svg>
+                                <h1 class="text-[10px] md:text-xs text-[#059669] font-medium">
+                                    <!-- Berhasil mengubah profile -->
+                                    Berhasil mengubah password
+                                </h1>
+                            </div>
+                            <svg @click="notif = false" class="w-2.5 md:w-3 fill-[#8B8B8B] cursor-pointer" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.0204 1.68705C11.2157 1.49179 11.2157 1.1752 11.0204 0.979943C10.8251 0.784681 10.5086 0.784681 10.3133 0.979943L6.00017 5.29307L1.68705 0.979945C1.49179 0.784683 1.1752 0.784683 0.979943 0.979945C0.784681 1.17521 0.784681 1.49179 0.979943 1.68705L5.29306 6.00017L0.979961 10.3133C0.784699 10.5085 0.784699 10.8251 0.979961 11.0204C1.17522 11.2156 1.49181 11.2156 1.68707 11.0204L6.00017 6.70728L10.3133 11.0204C10.5085 11.2156 10.8251 11.2156 11.0204 11.0204C11.2156 10.8251 11.2156 10.5085 11.0204 10.3133L6.70728 6.00017L11.0204 1.68705Z"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div x-show="window.innerWidth < 640 && isOpen" x-transition.opacity class="fixed inset-0 bg-zinc-800 bg-opacity-80 z-40"></div>
+    <div x-show="window.innerWidth < 640 && isOpen" x-transition.opacity :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden fixed inset-0 bg-zinc-800 bg-opacity-80 z-40"></div>
     <div x-data="{ isOpenn : true }">
         <aside x-show="isOpen" 
         @click.outside="if (window.innerWidth < 786) isOpen = false"
@@ -340,8 +356,8 @@
         x-transition:leave="transform transition-transform duration-300"
         x-transition:leave-start="translate-x-0" 
         x-transition:leave-end="-translate-x-full"
-        class="fixed top-0 left-0 z-50 w-60 bg-gradient-to-b from-[#615EFC] to-[#4C3896] to-[100%] shadow-xl h-screen scrollbar-y"
-        :class="isOpenn ? 'w-60' : 'w-20 ' + 'transition-all duration-500'"
+        class="hidden fixed top-0 left-0 z-50 w-60 bg-gradient-to-b from-[#615EFC] to-[#4C3896] to-[100%] shadow-xl h-screen scrollbar-y"
+        :class="{ 'block': isOpen, 'hidden': !isOpen, 'w-60': isOpenn, 'w-20 transition-all duration-500': !isOpenn,}"
         >
             <div :class="isOpenn ? 'justify-between' : 'justify-evenly my-2'" class="flex justify-between items-center px-4 py-3 md:py-2.5 lg:py-3">
                 <div :class="isOpenn ? 'block' : 'hidden'" class="flex items-center gap-2 md:gap-3">
@@ -603,12 +619,12 @@
                     </button>
                 </div>
     
-                <section x-data="dataDesa" x-show="isOpen" x-transition.duration.300ms.opacity.50 class="space-y-3">    
+                <section x-data="dataDesa" x-show="isOpen" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden space-y-3">    
                     <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-3 bg-white py-3 md:px-3 rounded md:rounded-md shadow-md shadow-black/5">
-                        <template x-for="(data, index) in bilahBarat" :key="index">
+                        <template x-data="{ isOpen : window.innerWidth >= 786 }" x-for="(data, index) in bilahBarat" :key="index">
                             <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
+                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
                                     <template x-for="(desa, i) in data.desa" :key="i">
                                         <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
                                             <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
@@ -617,10 +633,10 @@
                                 </div>
                             </div>
                         </template>
-                        <template x-for="(data, index) in bilahHulu" :key="index">
+                        <template x-data="{ isOpen : window.innerWidth >= 786 }" x-for="(data, index) in bilahHulu" :key="index">
                             <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
+                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
                                     <template x-for="(desa, i) in data.desa" :key="i">
                                         <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
                                             <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
@@ -629,10 +645,10 @@
                                 </div>
                             </div>
                         </template>
-                        <template x-for="(data, index) in pangkatan" :key="index">
+                        <template x-data="{ isOpen : window.innerWidth >= 786 }" x-for="(data, index) in pangkatan" :key="index">
                             <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
+                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
                                     <template x-for="(desa, i) in data.desa" :key="i">
                                         <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
                                             <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
@@ -641,10 +657,10 @@
                                 </div>
                             </div>
                         </template>
-                        <template x-for="(data, index) in panaiHilir" :key="index">
+                        <template x-data="{ isOpen : window.innerWidth >= 786 }" x-for="(data, index) in panaiHilir" :key="index">
                             <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
+                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
                                     <template x-for="(desa, i) in data.desa" :key="i">
                                         <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
                                             <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
@@ -653,10 +669,10 @@
                                 </div>
                             </div>
                         </template>
-                        <template x-for="(data, index) in bilahHilir" :key="index">
+                        <template x-data="{ isOpen : window.innerWidth >= 786 }" x-for="(data, index) in bilahHilir" :key="index">
                             <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
+                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
                                     <template x-for="(desa, i) in data.desa" :key="i">
                                         <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
                                             <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
@@ -665,10 +681,10 @@
                                 </div>
                             </div>
                         </template>
-                        <template x-for="(data, index) in panaiTengah" :key="index">
+                        <template x-data="{ isOpen : window.innerWidth >= 786 }" x-for="(data, index) in panaiTengah" :key="index">
                             <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
+                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
                                     <template x-for="(desa, i) in data.desa" :key="i">
                                         <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
                                             <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
@@ -677,10 +693,10 @@
                                 </div>
                             </div>
                         </template>
-                        <template x-for="(data, index) in panaiHulu" :key="index">
+                        <template x-data="{ isOpen : window.innerWidth >= 786 }" x-for="(data, index) in panaiHulu" :key="index">
                             <div class="col-span-1">
-                                <h1 x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4"></h1>
-                                <div class="h-44 overflow-hidden overflow-y-scroll scrollbar-y">
+                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
+                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
                                     <template x-for="(desa, i) in data.desa" :key="i">
                                         <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
                                             <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
@@ -775,7 +791,7 @@
                                                 <path d="M0.825 12.0375C0.55 11.5625 0.34375 11.075 0.20625 10.575C0.06875 10.075 0 9.5625 0 9.0375C0 7.3625 0.58125 5.9375 1.74375 4.7625C2.90625 3.5875 4.325 3 6 3H6.13125L4.93125 1.8L5.98125 0.75L8.98125 3.75L5.98125 6.75L4.93125 5.7L6.13125 4.5H6C4.75 4.5 3.6875 4.94063 2.8125 5.82188C1.9375 6.70313 1.5 7.775 1.5 9.0375C1.5 9.3625 1.5375 9.68125 1.6125 9.99375C1.6875 10.3062 1.8 10.6125 1.95 10.9125L0.825 12.0375ZM6.01875 17.25L3.01875 14.25L6.01875 11.25L7.06875 12.3L5.86875 13.5H6C7.25 13.5 8.3125 13.0594 9.1875 12.1781C10.0625 11.2969 10.5 10.225 10.5 8.9625C10.5 8.6375 10.4625 8.31875 10.3875 8.00625C10.3125 7.69375 10.2 7.3875 10.05 7.0875L11.175 5.9625C11.45 6.4375 11.6562 6.925 11.7938 7.425C11.9313 7.925 12 8.4375 12 8.9625C12 10.6375 11.4187 12.0625 10.2563 13.2375C9.09375 14.4125 7.675 15 6 15H5.86875L7.06875 16.2L6.01875 17.25Z"/>
                                             </svg>
                                         </button>
-                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 class="fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
                                             <div class="w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
                                                 <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
                                                     <div class=""></div>
@@ -786,7 +802,7 @@
                                                         </svg>
                                                     </button>
                                                 </div>
-                                                <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                                <form action="" method="" class="pt-2.5 pb-3.5 px-5 space-y-8">
                                                     <div class="space-y-3">
                                                         <h1 class="text-start text-xs md:text-sm text-black font-normal">Tambahkan Catatan</h1>
                                                         <textarea rows="3" class="inputText w-full resize-none bg-white px-3.5 py-2.5 md:px-4 md:py-3 border-[0.5px] border-[#D6D6D6] focus:border-[#D6D6D6] rounded-lg overflow-hidden focus:outline-none focus:ring-0 text-[#8B8B8B] text-[10px] md:text-xs font-normal"></textarea>
@@ -799,7 +815,7 @@
                                                             <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
                                                         </button>
                                                     </div>
-                                                </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -836,7 +852,7 @@
                                                 <path d="M0.825 12.0375C0.55 11.5625 0.34375 11.075 0.20625 10.575C0.06875 10.075 0 9.5625 0 9.0375C0 7.3625 0.58125 5.9375 1.74375 4.7625C2.90625 3.5875 4.325 3 6 3H6.13125L4.93125 1.8L5.98125 0.75L8.98125 3.75L5.98125 6.75L4.93125 5.7L6.13125 4.5H6C4.75 4.5 3.6875 4.94063 2.8125 5.82188C1.9375 6.70313 1.5 7.775 1.5 9.0375C1.5 9.3625 1.5375 9.68125 1.6125 9.99375C1.6875 10.3062 1.8 10.6125 1.95 10.9125L0.825 12.0375ZM6.01875 17.25L3.01875 14.25L6.01875 11.25L7.06875 12.3L5.86875 13.5H6C7.25 13.5 8.3125 13.0594 9.1875 12.1781C10.0625 11.2969 10.5 10.225 10.5 8.9625C10.5 8.6375 10.4625 8.31875 10.3875 8.00625C10.3125 7.69375 10.2 7.3875 10.05 7.0875L11.175 5.9625C11.45 6.4375 11.6562 6.925 11.7938 7.425C11.9313 7.925 12 8.4375 12 8.9625C12 10.6375 11.4187 12.0625 10.2563 13.2375C9.09375 14.4125 7.675 15 6 15H5.86875L7.06875 16.2L6.01875 17.25Z"/>
                                             </svg>
                                         </button>
-                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 class="fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
                                             <div class="w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
                                                 <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
                                                     <div class=""></div>
@@ -847,7 +863,7 @@
                                                         </svg>
                                                     </button>
                                                 </div>
-                                                <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                                <form action="" method="" class="pt-2.5 pb-3.5 px-5 space-y-8">
                                                     <div class="space-y-3">
                                                         <h1 class="text-start text-xs md:text-sm text-black font-normal">Tambahkan Catatan</h1>
                                                         <textarea rows="3" class="inputText w-full resize-none bg-white px-3.5 py-2.5 md:px-4 md:py-3 border-[0.5px] border-[#D6D6D6] focus:border-[#D6D6D6] rounded-lg overflow-hidden focus:outline-none focus:ring-0 text-[#8B8B8B] text-[10px] md:text-xs font-normal"></textarea>
@@ -860,7 +876,7 @@
                                                             <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
                                                         </button>
                                                     </div>
-                                                </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -897,7 +913,7 @@
                                                 <path d="M0.825 12.0375C0.55 11.5625 0.34375 11.075 0.20625 10.575C0.06875 10.075 0 9.5625 0 9.0375C0 7.3625 0.58125 5.9375 1.74375 4.7625C2.90625 3.5875 4.325 3 6 3H6.13125L4.93125 1.8L5.98125 0.75L8.98125 3.75L5.98125 6.75L4.93125 5.7L6.13125 4.5H6C4.75 4.5 3.6875 4.94063 2.8125 5.82188C1.9375 6.70313 1.5 7.775 1.5 9.0375C1.5 9.3625 1.5375 9.68125 1.6125 9.99375C1.6875 10.3062 1.8 10.6125 1.95 10.9125L0.825 12.0375ZM6.01875 17.25L3.01875 14.25L6.01875 11.25L7.06875 12.3L5.86875 13.5H6C7.25 13.5 8.3125 13.0594 9.1875 12.1781C10.0625 11.2969 10.5 10.225 10.5 8.9625C10.5 8.6375 10.4625 8.31875 10.3875 8.00625C10.3125 7.69375 10.2 7.3875 10.05 7.0875L11.175 5.9625C11.45 6.4375 11.6562 6.925 11.7938 7.425C11.9313 7.925 12 8.4375 12 8.9625C12 10.6375 11.4187 12.0625 10.2563 13.2375C9.09375 14.4125 7.675 15 6 15H5.86875L7.06875 16.2L6.01875 17.25Z"/>
                                             </svg>
                                         </button>
-                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 class="fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                                        <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
                                             <div class="w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
                                                 <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
                                                     <div class=""></div>
@@ -908,7 +924,7 @@
                                                         </svg>
                                                     </button>
                                                 </div>
-                                                <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                                <form action="" method="" class="pt-2.5 pb-3.5 px-5 space-y-8">
                                                     <div class="space-y-3">
                                                         <h1 class="text-start text-xs md:text-sm text-black font-normal">Tambahkan Catatan</h1>
                                                         <textarea rows="3" class="inputText w-full resize-none bg-white px-3.5 py-2.5 md:px-4 md:py-3 border-[0.5px] border-[#D6D6D6] focus:border-[#D6D6D6] rounded-lg overflow-hidden focus:outline-none focus:ring-0 text-[#8B8B8B] text-[10px] md:text-xs font-normal"></textarea>
@@ -921,7 +937,7 @@
                                                             <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
                                                         </button>
                                                     </div>
-                                                </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
