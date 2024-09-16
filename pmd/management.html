@@ -631,118 +631,198 @@
                 </div>
             </div>
             
-            <div class="w-[90%] md:w-[40%] flex items-start gap-2 md:gap-3">
-                <div class="w-full space-y-3">
-                    <div x-data="app()" class="bg-white p-3 pb-5 space-y-3 rounded-md md:rounded-lg">
-                        <div class="flex items-start gap-2 md:gap-3">
-                            <span class="bg-[#F3F3F3] py-2 px-2.5 rounded md:rounded-md">
-                                <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">A</h1>
-                            </span>
-                            <div class="w-full space-y-2">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-full bg-[#F3F3F3] py-2 px-3.5 rounded md:rounded-md">
-                                        <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">Isi evaluasi</h1>
+            <div x-data="app()" class="w-full md:w-[70%] space-y-3">
+                <button @click="addmenu()" class="flex items-center gap-2 md:gap-3 bg-white py-2 px-4 rounded md:rounded-md shadow-md shadow-[#00000014]">
+                    <svg class="w-[18px] md:w-5" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                        <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                    </svg>
+                    <h1 class="text-xs md:text-sm text-gray-500 font-normal">Tambah Evaluasi</h1>
+                </button>
+                <template x-for="(menu, menuIndex) in menus" :key="menuIndex">
+                    <div class="w-full space-y-3">
+                        <div class="bg-white p-3 pb-5 space-y-3 rounded-md md:rounded-lg">
+                            <div class="flex items-start gap-2 md:gap-3">
+                                <span class="bg-[#F3F3F3] py-2 px-2.5 rounded md:rounded-md">
+                                    <h1 x-text="menuIndex + 1" class="text-[10px] md:text-xs text-[#778294] font-normal"></h1>
+                                </span>
+                                <div class="w-full space-y-2">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-full bg-[#F3F3F3] py-2 px-3.5 rounded md:rounded-md">
+                                            <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">Isi evaluasi</h1>
+                                        </div>
+                                        <button @click="addSubmenu(menu)" class="relative group flex items-center">
+                                            <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                                                <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                                            </svg>
+                                            <div class="absolute left-14 w-max invisible md:group-hover:visible flex bg-white py-1.5 px-4 rounded md:rounded-md drop-shadow-md shadow-[#00000014]">
+                                                <h1 class="text-xs md:text-sm text-[#A0A0A0] font-normal">Tambah Point</h1>
+                                                <div class="absolute -z-10 inset-y-2.5 -left-2">
+                                                    <svg class="w-3 fill-white" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.32914 0.757568L9.32914 11.034L0.42948 5.89579L9.32914 0.757568Z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </button>
                                     </div>
-                                    <button @click="addSubmenu()">
-                                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
-                                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+            
+                                    <template x-for="(submenu, submenuIndex) in menu.submenus" :key="submenuIndex">
+                                        <div class="space-y-2">
+                                            <label class="flex items-start gap-3 md:gap-4">
+                                                <span x-text="submenuIndex + 1" class="text-[10px] md:text-xs text-[#778294] font-medium py-2.5 md:py-2"></span>
+                                                <div class="w-full space-y-3">
+                                                    <div class="flex items-center gap-3 md:gap-4">
+                                                        <input type="text" x-model="submenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
+                                                        <button @click="addSubmenu(submenu)" class="relative group flex items-center">
+                                                            <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                                                                <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                                                            </svg>
+                                                            <div class="absolute left-14 w-max invisible md:group-hover:visible flex bg-white py-1.5 px-4 rounded md:rounded-md drop-shadow-md shadow-[#00000014]">
+                                                                <h1 class="text-xs md:text-sm text-[#A0A0A0] font-normal">Tambah Point</h1>
+                                                                <div class="absolute -z-10 inset-y-2.5 -left-2">
+                                                                    <svg class="w-3 fill-white" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M9.32914 0.757568L9.32914 11.034L0.42948 5.89579L9.32914 0.757568Z"/>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+            
+                                                    <template x-if="submenu.submenus.length">
+                                                        <template x-for="(subSubmenu, subSubmenuIndex) in submenu.submenus" :key="subSubmenuIndex">
+                                                            <div class="flex items-start gap-3 md:gap-4">
+                                                                <span x-text="subSubmenuIndex + 1" class="text-[10px] md:text-xs text-[#778294] font-medium py-2.5 md:py-2"></span>
+                                                                <div class="w-full space-y-3">
+                                                                    <div class="flex items-center gap-3 md:gap-4">
+                                                                        <input type="text" x-model="subSubmenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
+                                                                        <button @click="addSubmenu(subSubmenu)" class="relative group flex items-center">
+                                                                            <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                                                                                <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                                                                            </svg>
+                                                                            <div class="absolute left-14 w-max invisible md:group-hover:visible flex bg-white py-1.5 px-4 rounded md:rounded-md drop-shadow-md shadow-[#00000014]">
+                                                                                <h1 class="text-xs md:text-sm text-[#A0A0A0] font-normal">Tambah Point</h1>
+                                                                                <div class="absolute -z-10 inset-y-2.5 -left-2">
+                                                                                    <svg class="w-3 fill-white" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M9.32914 0.757568L9.32914 11.034L0.42948 5.89579L9.32914 0.757568Z"/>
+                                                                                    </svg>
+                                                                                </div>
+                                                                            </div>
+                                                                        </button>
+                                                                    </div>
+                
+                                                                    <template x-if="subSubmenu.submenus.length">
+                                                                        <template x-for="(subSubSubmenu, subSubSubmenuIndex) in subSubmenu.submenus" :key="subSubSubmenuIndex">
+                                                                            <div class="flex items-start gap-3 md:gap-4">
+                                                                                <span class="text-[10px] md:text-xs text-[#778294] font-bold py-2.5 md:py-2">-</span>
+                                                                                <div class="w-full space-y-3">
+                                                                                    <div class="flex items-center gap-3 md:gap-4">
+                                                                                        <input type="text" x-model="subSubSubmenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
+                                                                                        <button class="invisible">
+                                                                                            <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                                <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
+                                                                                                <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
+                                                                                            </svg>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </template>
+                                                                    </template>
+                                                                </div>
+                                                            </div>
+                                                        </template>
+                                                    </template>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                            <hr class="h-px border-b border-b-[#C0C0C0]">
+                            <div class="flex justify-end items-center mx-1.5 gap-2 md:gap-3">
+                                <button @click="hapus(menuIndex)" class="relative group flex items-center">
+                                    <svg class="w-3.5 cursor-pointer" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.00016 0.728516C4.46987 0.728516 3.22933 1.96906 3.22933 3.49935V3.64518H1.3335C1.09187 3.64518 0.895996 3.84106 0.895996 4.08268C0.895996 4.32431 1.09187 4.52018 1.3335 4.52018H10.6668C10.9085 4.52018 11.1043 4.32431 11.1043 4.08268C11.1043 3.84106 10.9085 3.64518 10.6668 3.64518H8.771V3.49935C8.771 1.96906 7.53045 0.728516 6.00016 0.728516ZM6.00016 1.60352C7.0472 1.60352 7.896 2.45231 7.896 3.49935V3.64518H4.10433V3.49935C4.10433 2.45231 4.95312 1.60352 6.00016 1.60352Z" fill="#FF4E4E"/>
+                                        <path d="M2.35237 5.20797C2.32951 4.96743 2.11599 4.79096 1.87545 4.81381C1.63491 4.83667 1.45844 5.05019 1.48129 5.29073C1.5364 5.87073 1.63585 6.58536 1.76369 7.50397L1.92793 8.6841C2.08494 9.8127 2.17399 10.4528 2.36663 10.9771C2.72516 11.9529 3.36469 12.7352 4.1872 13.0822C4.63384 13.2707 5.14472 13.2705 5.90527 13.2702H6.09505C6.85561 13.2705 7.36649 13.2707 7.81313 13.0822C8.63563 12.7352 9.27517 11.9529 9.63369 10.9771C9.82634 10.4527 9.91538 9.81269 10.0724 8.68407L10.2366 7.50398C10.3645 6.58537 10.4639 5.87073 10.519 5.29073C10.5419 5.05019 10.3654 4.83667 10.1249 4.81381C9.88434 4.79096 9.67081 4.96743 9.64796 5.20797C9.59486 5.76678 9.49811 6.4627 9.36854 7.39375L9.21551 8.49335C9.04603 9.71112 8.96842 10.2506 8.81237 10.6753C8.51144 11.4944 8.01103 12.049 7.47294 12.2761C7.21032 12.3869 6.89218 12.3952 6.00016 12.3952C5.10815 12.3952 4.79 12.3869 4.52738 12.2761C3.98929 12.049 3.48889 11.4944 3.18795 10.6753C3.0319 10.2506 2.95429 9.71112 2.78482 8.49335L2.63179 7.39375C2.50221 6.4627 2.40546 5.76678 2.35237 5.20797Z" fill="#FF4E4E"/>
+                                        <path d="M5.271 5.83268C5.271 5.59106 5.07512 5.39518 4.8335 5.39518C4.59187 5.39518 4.396 5.59106 4.396 5.83268V10.4993C4.396 10.741 4.59187 10.9368 4.8335 10.9368C5.07512 10.9368 5.271 10.741 5.271 10.4993V5.83268Z" fill="#FF4E4E"/>
+                                        <path d="M7.60433 5.83268C7.60433 5.59106 7.40845 5.39518 7.16683 5.39518C6.9252 5.39518 6.72933 5.59106 6.72933 5.83268V10.4993C6.72933 10.741 6.9252 10.9368 7.16683 10.9368C7.40845 10.9368 7.60433 10.741 7.60433 10.4993V5.83268Z" fill="#FF4E4E"/>
+                                    </svg>
+                                    <div class="absolute left-14 w-max invisible md:group-hover:visible flex bg-white py-1.5 px-4 rounded md:rounded-md drop-shadow-md shadow-[#00000014]">
+                                        <h1 class="text-xs md:text-sm text-red-500 font-normal">Hapus Evaluasi</h1>
+                                        <div class="absolute -z-10 inset-y-2.5 -left-2">
+                                            <svg class="w-3 fill-white" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.32914 0.757568L9.32914 11.034L0.42948 5.89579L9.32914 0.757568Z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <div x-show="showButtons" :class="{ 'visible': showButtons, 'invisible': !showButtons }" class="invisible flex justify-end items-center gap-2 md:gap-3">
+                    <div x-data="{ modal : false }">
+                        <button @click="modal = !modal" class="bg-[#FF4E4E] py-1.5 px-4 rounded md:rounded-md">
+                            <h1 class="text-[10px] md:text-xs text-white font-medium">Batal</h1>
+                        </button>
+                        <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                            <div class="w-[80%] sm:w-[50%] md:w-[40%] lg:w-[25%] bg-white rounded-lg md:rounded-xl">
+                                <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
+                                    <div class=""></div>
+                                    <h1 class="text-sm md:text-base text-black font-semibold">Notifikasi</h1>
+                                    <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
+                                        <svg class="w-3 fill-[#8B8B8B]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0204 1.68705C11.2157 1.49179 11.2157 1.1752 11.0204 0.979943C10.8251 0.784681 10.5086 0.784681 10.3133 0.979943L6.00017 5.29307L1.68705 0.979945C1.49179 0.784683 1.1752 0.784683 0.979943 0.979945C0.784681 1.17521 0.784681 1.49179 0.979943 1.68705L5.29306 6.00017L0.979961 10.3133C0.784699 10.5085 0.784699 10.8251 0.979961 11.0204C1.17522 11.2156 1.49181 11.2156 1.68707 11.0204L6.00017 6.70728L10.3133 11.0204C10.5085 11.2156 10.8251 11.2156 11.0204 11.0204C11.2156 10.8251 11.2156 10.5085 11.0204 10.3133L6.70728 6.00017L11.0204 1.68705Z"/>
                                         </svg>
                                     </button>
                                 </div>
-                
-                                <template x-for="(submenu, submenuIndex) in submenus" :key="submenuIndex">
-                                    <div class="space-y-2">
-                                        <label class="flex items-start gap-3 md:gap-4">
-                                            <span x-text="submenuIndex + 1" class="text-[10px] md:text-xs text-[#778294] font-medium py-2.5 md:py-2"></span>
-                                            <div class="w-full space-y-3">
-                                                <div class="flex items-center gap-3 md:gap-4">
-                                                    <input type="text" x-model="submenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
-                                                    <button @click="addSubmenu(submenu)">
-                                                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
-                                                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                
-                                                <template x-if="submenu.submenus.length">
-                                                    <template x-for="(subSubmenu, subSubmenuIndex) in submenu.submenus" :key="subSubmenuIndex">
-                                                        <div class="flex items-start gap-3 md:gap-4">
-                                                            <span x-text="subSubmenuIndex + 1" class="text-[10px] md:text-xs text-[#778294] font-medium py-2.5 md:py-2"></span>
-                                                            <div class="w-full space-y-3">
-                                                                <div class="flex items-center gap-3 md:gap-4">
-                                                                    <input type="text" x-model="subSubmenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
-                                                                    <button @click="addSubmenu(subSubmenu)">
-                                                                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
-                                                                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
-                                                                        </svg>
-                                                                    </button>
-                                                                </div>
-            
-                                                                <template x-if="subSubmenu.submenus.length">
-                                                                    <template x-for="(subSubSubmenu, subSubSubmenuIndex) in subSubmenu.submenus" :key="subSubSubmenuIndex">
-                                                                        <div class="flex items-start gap-3 md:gap-4">
-                                                                            <span class="text-[10px] md:text-xs text-[#778294] font-bold py-2.5 md:py-2">-</span>
-                                                                            <div class="w-full space-y-3">
-                                                                                <div class="flex items-center gap-3 md:gap-4">
-                                                                                    <input type="text" x-model="subSubSubmenu.title" placeholder="Tambahkan subpoint" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-transparent py-1.5 md:py-2 border-t-0 border-x-0 border-b border-b-black focus:border-black focus:outline-none focus:ring-0" />
-                                                                                    <button class="invisible">
-                                                                                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
-                                                                                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
-                                                                                        </svg>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </template>
-                                                                </template>
-                                                            </div>
-                                                        </div>
-                                                    </template>
-                                                </template>
-                                            </div>
-                                        </label>
+                                <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                    <h1 class="text-center text-sm md:text-base text-black font-normal">Anda belum menyimpan Form Evaluasi. Yakin ingin membatalkan ?</h1>
+                                    <div class="flex justify-center items-center gap-2 md:gap-3">
+                                        <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
+                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
+                                        </button>
+                                        <button @click="() => { hapusAll(); modal = false; }" @click="modal = false" class="bg-[#615EFC] py-1.5 px-4 md:px-5 rounded">
+                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Yakin</h1>
+                                        </button>
                                     </div>
-                                </template>
+                                </div>
                             </div>
                         </div>
-                        <hr class="h-px border-b border-b-[#C0C0C0]">
-                        <div class="flex justify-end items-center mx-1.5 gap-2 md:gap-3">
-                            <svg class="w-3.5 cursor-pointer" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.1665 3.93685H5.83317C5.27317 3.93685 4.229 3.93685 4.229 2.33268C4.229 0.728516 5.27317 0.728516 5.83317 0.728516H8.1665C8.7265 0.728516 9.77067 0.728516 9.77067 2.33268C9.77067 2.89268 9.77067 3.93685 8.1665 3.93685ZM5.83317 1.60352C5.25567 1.60352 5.104 1.60352 5.104 2.33268C5.104 3.06185 5.25567 3.06185 5.83317 3.06185H8.1665C8.89567 3.06185 8.89567 2.91018 8.89567 2.33268C8.89567 1.60352 8.744 1.60352 8.1665 1.60352H5.83317Z" fill="black"/>
-                                <path d="M8.16667 13.2701H5.25C1.97167 13.2701 1.3125 11.7651 1.3125 9.33264V5.83264C1.3125 3.17264 2.275 2.03514 4.64333 1.91264C4.87667 1.90098 5.0925 2.08181 5.10417 2.32681C5.11583 2.57181 4.92917 2.77014 4.69 2.78181C3.03333 2.87514 2.1875 3.37098 2.1875 5.83264V9.33264C2.1875 11.491 2.61333 12.3951 5.25 12.3951H8.16667C8.40583 12.3951 8.60417 12.5935 8.60417 12.8326C8.60417 13.0718 8.40583 13.2701 8.16667 13.2701Z" fill="black"/>
-                                <path d="M12.2502 9.18677C12.011 9.18677 11.8127 8.98843 11.8127 8.74927V5.8326C11.8127 3.37094 10.9669 2.8751 9.31019 2.78177C9.07103 2.7701 8.88436 2.5601 8.89603 2.32094C8.90769 2.08177 9.12353 1.8951 9.35686 1.90677C11.7252 2.0351 12.6877 3.1726 12.6877 5.82677V8.74343C12.6877 8.98843 12.4894 9.18677 12.2502 9.18677Z" fill="black"/>
-                                <path d="M12.25 13.2715H10.5C10.2608 13.2715 10.0625 13.0732 10.0625 12.834C10.0625 12.5948 10.2608 12.3965 10.5 12.3965H11.8125V11.084C11.8125 10.8448 12.0108 10.6465 12.25 10.6465C12.4892 10.6465 12.6875 10.8448 12.6875 11.084V12.834C12.6875 13.0732 12.4892 13.2715 12.25 13.2715Z" fill="black"/>
-                                <path d="M12.2267 13.2467C12.1158 13.2467 12.005 13.2059 11.9175 13.1184L8.44084 9.64169C8.27167 9.47253 8.27167 9.19253 8.44084 9.02336C8.61001 8.85419 8.89001 8.85419 9.05917 9.02336L12.5358 12.5C12.705 12.6692 12.705 12.9492 12.5358 13.1184C12.4483 13.2 12.3375 13.2467 12.2267 13.2467Z" fill="black"/>
-                            </svg>
-                            <svg class="w-3.5 cursor-pointer" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.00016 0.728516C4.46987 0.728516 3.22933 1.96906 3.22933 3.49935V3.64518H1.3335C1.09187 3.64518 0.895996 3.84106 0.895996 4.08268C0.895996 4.32431 1.09187 4.52018 1.3335 4.52018H10.6668C10.9085 4.52018 11.1043 4.32431 11.1043 4.08268C11.1043 3.84106 10.9085 3.64518 10.6668 3.64518H8.771V3.49935C8.771 1.96906 7.53045 0.728516 6.00016 0.728516ZM6.00016 1.60352C7.0472 1.60352 7.896 2.45231 7.896 3.49935V3.64518H4.10433V3.49935C4.10433 2.45231 4.95312 1.60352 6.00016 1.60352Z" fill="#FF4E4E"/>
-                                <path d="M2.35237 5.20797C2.32951 4.96743 2.11599 4.79096 1.87545 4.81381C1.63491 4.83667 1.45844 5.05019 1.48129 5.29073C1.5364 5.87073 1.63585 6.58536 1.76369 7.50397L1.92793 8.6841C2.08494 9.8127 2.17399 10.4528 2.36663 10.9771C2.72516 11.9529 3.36469 12.7352 4.1872 13.0822C4.63384 13.2707 5.14472 13.2705 5.90527 13.2702H6.09505C6.85561 13.2705 7.36649 13.2707 7.81313 13.0822C8.63563 12.7352 9.27517 11.9529 9.63369 10.9771C9.82634 10.4527 9.91538 9.81269 10.0724 8.68407L10.2366 7.50398C10.3645 6.58537 10.4639 5.87073 10.519 5.29073C10.5419 5.05019 10.3654 4.83667 10.1249 4.81381C9.88434 4.79096 9.67081 4.96743 9.64796 5.20797C9.59486 5.76678 9.49811 6.4627 9.36854 7.39375L9.21551 8.49335C9.04603 9.71112 8.96842 10.2506 8.81237 10.6753C8.51144 11.4944 8.01103 12.049 7.47294 12.2761C7.21032 12.3869 6.89218 12.3952 6.00016 12.3952C5.10815 12.3952 4.79 12.3869 4.52738 12.2761C3.98929 12.049 3.48889 11.4944 3.18795 10.6753C3.0319 10.2506 2.95429 9.71112 2.78482 8.49335L2.63179 7.39375C2.50221 6.4627 2.40546 5.76678 2.35237 5.20797Z" fill="#FF4E4E"/>
-                                <path d="M5.271 5.83268C5.271 5.59106 5.07512 5.39518 4.8335 5.39518C4.59187 5.39518 4.396 5.59106 4.396 5.83268V10.4993C4.396 10.741 4.59187 10.9368 4.8335 10.9368C5.07512 10.9368 5.271 10.741 5.271 10.4993V5.83268Z" fill="#FF4E4E"/>
-                                <path d="M7.60433 5.83268C7.60433 5.59106 7.40845 5.39518 7.16683 5.39518C6.9252 5.39518 6.72933 5.59106 6.72933 5.83268V10.4993C6.72933 10.741 6.9252 10.9368 7.16683 10.9368C7.40845 10.9368 7.60433 10.741 7.60433 10.4993V5.83268Z" fill="#FF4E4E"/>
-                            </svg>
-                        </div>
                     </div>
-                    <div class="flex justify-end items-center gap-2 md:gap-3">
-                        <button class="bg-[#FF4E4E] py-1.5 px-4 rounded md:rounded-md">
-                            <h1 class="text-[10px] md:text-xs text-white font-medium">Batal</h1>
-                        </button>
-                        <button class="bg-[#615EFC] py-1.5 px-4 rounded md:rounded-md">
+                    <div x-data="{ modal : false }">
+                        <button @click="modal = !modal" class="bg-[#615EFC] py-1.5 px-4 rounded md:rounded-md">
                             <h1 class="text-[10px] md:text-xs text-white font-medium">Simpan</h1>
                         </button>
+                        <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                            <div class="w-[80%] sm:w-[50%] md:w-[40%] lg:w-[25%] bg-white rounded-lg md:rounded-xl">
+                                <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
+                                    <div class=""></div>
+                                    <h1 class="text-sm md:text-base text-black font-semibold">Notifikasi</h1>
+                                    <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
+                                        <svg class="w-3 fill-[#8B8B8B]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0204 1.68705C11.2157 1.49179 11.2157 1.1752 11.0204 0.979943C10.8251 0.784681 10.5086 0.784681 10.3133 0.979943L6.00017 5.29307L1.68705 0.979945C1.49179 0.784683 1.1752 0.784683 0.979943 0.979945C0.784681 1.17521 0.784681 1.49179 0.979943 1.68705L5.29306 6.00017L0.979961 10.3133C0.784699 10.5085 0.784699 10.8251 0.979961 11.0204C1.17522 11.2156 1.49181 11.2156 1.68707 11.0204L6.00017 6.70728L10.3133 11.0204C10.5085 11.2156 10.8251 11.2156 11.0204 11.0204C11.2156 10.8251 11.2156 10.5085 11.0204 10.3133L6.70728 6.00017L11.0204 1.68705Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                    <h1 class="text-center text-sm md:text-base text-black font-normal">Apakah Form Evaluasi sudah benar ?</h1>
+                                    <div class="flex justify-center items-center gap-2 md:gap-3">
+                                        <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
+                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Periksa</h1>
+                                        </button>
+                                        <button @click="() => { hapusAll(); modal = false; }" @click="modal = false" class="bg-[#615EFC] py-1.5 px-4 md:px-5 rounded">
+                                            <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <span class="bg-white mt-1.5 p-2 pb-0.5 space-y-3 rounded-md md:rounded-lg">
-                    <button>
-                        <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
-                            <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
-                        </svg>
-                    </button>
-                </span>
             </div>
         </main>
     </div>
