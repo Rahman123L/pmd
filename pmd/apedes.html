@@ -438,6 +438,17 @@
                                 <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
                             </button>
                         </a>
+                        <a href="management.html">
+                            <button class="w-full group gap-2 md:gap-3 px-4 md:px-5">
+                                <div class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent">
+                                    <svg class="w-[14px] fill-white" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
+                                    </svg>
+                                    <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Management Evaluasi</h1>
+                                </div>
+                                <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <div x-data="{ isOpen : false }" @click.outside="isOpen = false" class="grid gap-3">
