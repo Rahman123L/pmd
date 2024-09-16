@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPJMDES</title>
+    <title>Dashboard</title>
 
     <link href="/style.css" rel="stylesheet">
     <link href="/svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
@@ -290,7 +290,7 @@
                 <div x-data="{ isOpen : false }" class="relative space-y-3">
                     <button @click="isOpen = !isOpen" class="flex items-center gap-2 md:gap-3 md:border-l md:border-gray-300 md:pl-5">
                         <img class="w-7 lg:w-8 h-7 lg:h-8 bg-transparent object-cover rounded-full" src="/images/avatar.jpg">
-                        <div class="hidden md:block text-xs md:text-sm text-black font-semibold capitalize">Admin PMD</div>
+                        <div class="hidden md:block text-xs md:text-sm text-black font-semibold capitalize">Admin Desa</div>
                         <svg class="hidden md:block w-2 fill-black" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.246 7.08721C3.20733 7.04954 3.042 6.90731 2.906 6.77482C2.05067 5.99807 0.650667 3.97177 0.223333 2.91121C0.154667 2.75014 0.00933333 2.34293 0 2.12537C0 1.91689 0.048 1.71816 0.145333 1.52852C0.281333 1.29211 0.495333 1.10247 0.748 0.998559C0.923333 0.931665 1.448 0.827752 1.45733 0.827752C2.03133 0.723839 2.964 0.666687 3.99467 0.666687C4.97667 0.666687 5.87133 0.723839 6.454 0.808918C6.46333 0.81866 7.11533 0.922573 7.33867 1.03623C7.74667 1.2447 8 1.65191 8 2.0877V2.12537C7.99 2.40918 7.73667 3.00603 7.72733 3.00603C7.29933 4.00944 5.968 5.98898 5.08333 6.78456C5.08333 6.78456 4.856 7.00863 4.714 7.10604C4.51 7.25802 4.25733 7.33335 4.00467 7.33335C3.72267 7.33335 3.46 7.24827 3.246 7.08721Z"/>
                         </svg>
@@ -434,17 +434,6 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
                                     </svg>
                                     <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Evaluasi APEdes</h1>
-                                </div>
-                                <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
-                            </button>
-                        </a>
-                        <a href="management.html">
-                            <button class="w-full group gap-2 md:gap-3 px-4 md:px-5">
-                                <div class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent">
-                                    <svg class="w-[14px] fill-white" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
-                                    </svg>
-                                    <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Management Evaluasi</h1>
                                 </div>
                                 <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
                             </button>
@@ -614,269 +603,126 @@
             </div>
         </aside>
 
-        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-4">
-            <div x-data="{ isOpen : false }" class="space-y-5">
-                <div class="flex justify-between items-center">
-                    <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Laporan RPJMDES</h1>
-                    <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Laporan RPJMDES</h1>
-                </div>
-                <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-5 md:py-6 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
-                    <h1 class="text-xs md:text-sm text-black font-normal">Silahkan Pilih <span class="text-[#EA5858] font-medium">Desa</span></h1>
-                    <button @click="isOpen = !isOpen" class="flex items-center gap-1 md:gap-2 bg-[#6777EF] py-1.5 px-4 rounded">
-                        <h1 class="text-xs md:text-sm text-white font-medium">Pilih Desa</h1>
-                        <svg :class="{ 'rotate-90 ' : isOpen }"  class="w-4 stroke-white stroke-[2]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 5L15 12L9 19" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-    
-                <section x-data="dataDesa" x-show="isOpen" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden space-y-3">    
-                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-3 bg-white py-3 md:px-3 rounded md:rounded-md shadow-md shadow-black/5">
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in bilahBarat" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in bilahHulu" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in pangkatan" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in panaiHilir" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in bilahHilir" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in panaiTengah" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-data="{ isOpen : false }" x-for="(data, index) in panaiHulu" :key="index">
-                            <div class="col-span-1">
-                                <h1 @click="isOpen = !isOpen" x-text="data.kecamatan" class="text-xs md:text-sm text-gray-400 font-medium uppercase py-0.5 px-4 cursor-pointer"></h1>
-                                <div x-show="isOpen" @click.outside="isOpen = false" class="h-44 overflow-hidden overflow-y-scroll">
-                                    <template x-for="(desa, i) in data.desa" :key="i">
-                                        <div class="py-1.5 px-5 hover:bg-gray-100 cursor-pointer">
-                                            <h1 x-text="desa.nama" class="text-[10px] md:text-xs text-black font-normal uppercase"></h1>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                </section>
-
-                <div :class="isOpen ? 'hidden' : 'block'" class="flex justify-center items-center pt-10">
-                    <div class="space-y-2">
-                        <img class="w-28 md:w-32 h-28 md:h-32 mx-auto" src="/svgs/search.svg">
-                        <div class="text-center">
-                            <h1 class="text-lg md:text-xl text-black font-medium">Desa Tidak Ditemukan</h1>
-                            <h1 class="text-[10px] md:text-xs text-[#7A7A7A] font-normal">Pilih Desa untuk memunculkan data</h1>
-                        </div>
-                    </div>
-                </div>
+        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-5">
+            <div class="flex justify-between items-center">
+                <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Dashboard</h1>
+                <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Dashboard</h1>
             </div>
 
-            <section class="space-y-3">
-                <section class="w-full lg:flex justify-between items-center gap-3 space-y-3 lg:space-y-0">
-                    <div class="w-full md:w-[60%] lg:w-[40%] bg-white py-3 md:py-4 px-5 space-y-2 rounded md:rounded-md shadow-md shadow-black/5">
-                        <h1 class="text-xs md:text-sm text-[#5869EA] font-semibold">Laporan RPJMdes Desa Janji</h1>
+            <section class="flex items-center gap-2 md:gap-3">
+                <button class="flex justify-center items-center gap-2 md:gap-3 bg-white py-2 px-4 rounded md:rounded-md">
+                    <h1 class="text-xs md:text-sm text-black font-normal">Pilih Tahun</h1>
+                    <svg class="w-2 md:w-3 stroke-black stroke-[1.5]" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1.53284L9.25269 3.29581C7.85925 4.70174 7.16253 5.40471 6.31333 5.51295C6.10527 5.53947 5.89473 5.53947 5.68667 5.51295C4.83748 5.40471 4.14075 4.70174 2.74731 3.29581L1 1.53284" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="flex justify-center items-center gap-2 md:gap-3 bg-white py-2 px-4 rounded md:rounded-md">
+                    <h1 class="text-xs md:text-sm text-black font-normal">Pilih Bulan</h1>
+                    <svg class="w-2 md:w-3 stroke-black stroke-[1.5]" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1.53284L9.25269 3.29581C7.85925 4.70174 7.16253 5.40471 6.31333 5.51295C6.10527 5.53947 5.89473 5.53947 5.68667 5.51295C4.83748 5.40471 4.14075 4.70174 2.74731 3.29581L1 1.53284" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </section>
+
+            <section class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+                <div class="row-span-2 col-span-1 lg:col-span-3 h-fit">
+                    <div class="h-[300px] lg:h-[400px] bg-white p-3 pb-14 md:p-4 md:pb-[70px] space-y-2 md:space-y-3 rounded md:rounded-md">
+                        <h1 class="text-xs md:text-sm text-[#8B8B8B] font-normal">Grafik Kependudukan Desa Janji Tahun 2024</h1>
+                        <canvas id="chartLine"></canvas>
+                        <div class="flex items-center gap-5 md:gap-10">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-[#5D87FF] p-2 md:p-2.5"></div>
+                                <h1 class="text-[10px] md:text-xs text-black font-normal">Laki - laki</h1>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="bg-[#FF5DDC] p-2 md:p-2.5"></div>
+                                <h1 class="text-[10px] md:text-xs text-black font-normal">Perempuan</h1>
+                            </div>
+                        </div>
                     </div>
-                    <div class="md:flex items-center gap-3 space-y-3 md:space-y-0">
-                        <div x-data="{ selected : null, isOpen : false }" class="flex items-center gap-2 md:gap-3">
-                            <h1 class="text-xs md:text-sm text-[#778294] font-medium capitalize">Filter</h1>
-                            <div class="w-full md:w-40 relative space-y-2">
-                                <button @click="isOpen = !isOpen" class="w-full flex justify-between items-center gap-2 bg-white py-1.5 px-4 rounded md:rounded-md shadow-md shadow-black/5 focus:outline-none focus:ring-0">
-                                    <h1 x-text="selected ? selected : 'Pilih Filter'" class="text-xs md:text-sm text-[#313131] font-normal"></h1>
-                                    <svg class="w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'visible': isOpen, 'invisible': !isOpen }" class="invisible absolute z-10 w-full bg-white rounded md:rounded-md shadow-md shadow-black/5">
-                                    <template x-for="(option, index) in ['Terbaru', 'Terlama']" :key="index">
-                                        <div @click="selected = option; isOpen = false" class="flex justify-between items-center gap-2 py-1.5 px-4 cursor-pointer rounded md:rounded-md">
-                                            <h1 x-text="option" class="text-xs md:text-sm text-[#313131] font-normal"></h1>
-                                            <svg x-show="selected === option" class="w-5 stroke-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                    </template>
+                </div>
+                <div class="grid row-span-1 col-span-1 lg:col-span-2 h-fit gap-4">
+                    <div class="bg-white p-3 md:p-4 space-y-5 rounded md:rounded-md">
+                        <h1 class="text-xs md:text-sm text-black font-normal">Data Kependudukan</h1>
+                        <div class="space-y-4">
+                            <div class="space-y-2">
+                                <h1 class="text-[10px] md:text-xs text-[#8B8B8B] font-normal">Usia 1-10</h1>
+                                <div class="w-full flex justify-center items-center bg-slate-100 rounded-full h-2">
+                                    <div class="w-[60%] bg-[#5D87FF] py-0.5 text-center rounded-l-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                    <div class="w-[40%] bg-[#FF5DDC] py-0.5 text-center rounded-r-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h1 class="text-[10px] md:text-xs text-[#8B8B8B] font-normal">Usia 11-20</h1>
+                                <div class="w-full flex justify-center items-center bg-slate-100 rounded-full h-2">
+                                    <div class="w-[70%] bg-[#5D87FF] py-0.5 text-center rounded-l-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                    <div class="w-[30%] bg-[#FF5DDC] py-0.5 text-center rounded-r-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h1 class="text-[10px] md:text-xs text-[#8B8B8B] font-normal">Usia 21-30</h1>
+                                <div class="w-full flex justify-center items-center bg-slate-100 rounded-full h-2">
+                                    <div class="w-[40%] bg-[#5D87FF] py-0.5 text-center rounded-l-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                    <div class="w-[60%] bg-[#FF5DDC] py-0.5 text-center rounded-r-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h1 class="text-[10px] md:text-xs text-[#8B8B8B] font-normal">Usia 30-55</h1>
+                                <div class="w-full flex justify-center items-center bg-slate-100 rounded-full h-2">
+                                    <div class="w-[50%] bg-[#5D87FF] py-0.5 text-center rounded-l-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                    <div class="w-[50%] bg-[#FF5DDC] py-0.5 text-center rounded-r-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h1 class="text-[10px] md:text-xs text-[#8B8B8B] font-normal">Lansia</h1>
+                                <div class="w-full flex justify-center items-center bg-slate-100 rounded-full h-2">
+                                    <div class="w-[50%] bg-[#5D87FF] py-0.5 text-center rounded-l-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
+                                    <div class="w-[50%] bg-[#FF5DDC] py-0.5 text-center rounded-r-full">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">1.400 jiwa</h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center bg-white rounded md:rounded-md shadow-md shadow-black/5">
-                            <label for="search" class="flex items-center ml-5 cursor-pointer">
-                                <svg class="w-[18px] md:w-5 stroke-[1.5] stroke-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke-linecap="round"/>
-                                </svg>
-                            </label>
-                            <input type="search" id="search" placeholder="Searching" autocomplete="off" class="w-full bg-transparent border-none text-xs md:text-sm text-gray-500 font-normal focus:outline-none focus:ring-0 placeholder:text-xs md:placeholder:text-sm placeholder:text-gray-500 placeholder:font-medium">
+                        <div class="flex items-center gap-5 md:gap-10 pt-2">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-[#5D87FF] p-2 md:p-2.5"></div>
+                                <h1 class="text-[10px] md:text-xs text-black font-normal">Laki - laki</h1>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="bg-[#FF5DDC] p-2 md:p-2.5"></div>
+                                <h1 class="text-[10px] md:text-xs text-black font-normal">Perempuan</h1>
+                            </div>
                         </div>
                     </div>
-                </section>
-
-                <section class="scrollbar-x bg-transparent rounded md:rounded-md shadow-md shadow-black/5">
-                    <table class="w-max lg:w-full mx-auto bg-white text-center table-auto">
-                        <tr class="text-[10px] md:text-xs text-black capitalize">
-                            <th class="w-[5%] bg-white font-normal py-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">No</th>
-                            <th class="w-[30%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Nama</th>
-                            <th class="w-[15%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Status</th>
-                            <th class="w-[20%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Tanggal dikirim</th>
-                            <th class="w-[20%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Tanggal direvisi</th>
-                            <th class="w-[15%] bg-white font-normal p-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">Aksi</th>
-                        </tr>
-                        <tr class="odd:bg-white even:bg-[#E8EDF2] text-xs text-black/70 capitalize overflow-visible">
-                            <td class="font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">1</td>
-                            <td class="py-3.5 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
-                            </td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#CEFFE8] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.0501 11.45L12.3376 6.1625L11.2876 5.1125L7.0501 9.35L4.9126 7.2125L3.8626 8.2625L7.0501 11.45ZM8.1001 15.5C7.0626 15.5 6.0876 15.3031 5.1751 14.9094C4.2626 14.5156 3.46885 13.9813 2.79385 13.3063C2.11885 12.6313 1.58447 11.8375 1.19072 10.925C0.796973 10.0125 0.600098 9.0375 0.600098 8C0.600098 6.9625 0.796973 5.9875 1.19072 5.075C1.58447 4.1625 2.11885 3.36875 2.79385 2.69375C3.46885 2.01875 4.2626 1.48438 5.1751 1.09063C6.0876 0.696875 7.0626 0.5 8.1001 0.5C9.1376 0.5 10.1126 0.696875 11.0251 1.09063C11.9376 1.48438 12.7313 2.01875 13.4063 2.69375C14.0813 3.36875 14.6157 4.1625 15.0095 5.075C15.4032 5.9875 15.6001 6.9625 15.6001 8C15.6001 9.0375 15.4032 10.0125 15.0095 10.925C14.6157 11.8375 14.0813 12.6313 13.4063 13.3063C12.7313 13.9813 11.9376 14.5156 11.0251 14.9094C10.1126 15.3031 9.1376 15.5 8.1001 15.5Z" fill="#059669"/>
-                                    </svg>
-                                    <h1 class="text-[#059669] font-normal">Sukses</h1>
-                                </div>
-                            </td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <a href="laporanRpjmdes.html" class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="odd:bg-white even:bg-[#E8EDF2] text-xs text-black/70 capitalize overflow-visible">
-                            <td class="font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">2</td>
-                            <td class="py-3.5 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
-                            </td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#FFEEA9] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.6001 10.75C7.8126 10.75 7.99072 10.6781 8.13447 10.5344C8.27822 10.3906 8.3501 10.2125 8.3501 10C8.3501 9.7875 8.27822 9.60938 8.13447 9.46563C7.99072 9.32188 7.8126 9.25 7.6001 9.25C7.3876 9.25 7.20947 9.32188 7.06572 9.46563C6.92197 9.60938 6.8501 9.7875 6.8501 10C6.8501 10.2125 6.92197 10.3906 7.06572 10.5344C7.20947 10.6781 7.3876 10.75 7.6001 10.75ZM6.8501 7.75H8.3501V3.25H6.8501V7.75ZM4.7876 13.75L0.850098 9.8125V4.1875L4.7876 0.25H10.4126L14.3501 4.1875V9.8125L10.4126 13.75H4.7876Z" fill="#D97706"/>
-                                    </svg>
-                                    <h1 class="text-[#D97706] font-normal">Proses</h1>
-                                </div>
-                            </td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <a href="laporanRpjmdes.html" class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="odd:bg-white even:bg-[#E8EDF2] text-xs text-black/70 capitalize overflow-visible">
-                            <td class="font-normal my-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">3</td>
-                            <td class="py-3.5 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <h1 class="line-clamp-1 font-normal">Undangan Sosialisasi</h1>
-                            </td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <div class="select-none flex items-center gap-2 w-fit bg-[#FFCCCC] py-1.5 px-2 rounded-xl mx-auto">
-                                    <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.4001 11.75L8.1001 9.05L10.8001 11.75L11.8501 10.7L9.1501 8L11.8501 5.3L10.8001 4.25L8.1001 6.95L5.4001 4.25L4.3501 5.3L7.0501 8L4.3501 10.7L5.4001 11.75ZM8.1001 15.5C7.0626 15.5 6.0876 15.3031 5.1751 14.9094C4.2626 14.5156 3.46885 13.9813 2.79385 13.3063C2.11885 12.6313 1.58447 11.8375 1.19072 10.925C0.796973 10.0125 0.600098 9.0375 0.600098 8C0.600098 6.9625 0.796973 5.9875 1.19072 5.075C1.58447 4.1625 2.11885 3.36875 2.79385 2.69375C3.46885 2.01875 4.2626 1.48438 5.1751 1.09063C6.0876 0.696875 7.0626 0.5 8.1001 0.5C9.1376 0.5 10.1126 0.696875 11.0251 1.09063C11.9376 1.48438 12.7313 2.01875 13.4063 2.69375C14.0813 3.36875 14.6157 4.1625 15.0095 5.075C15.4032 5.9875 15.6001 6.9625 15.6001 8C15.6001 9.0375 15.4032 10.0125 15.0095 10.925C14.6157 11.8375 14.0813 12.6313 13.4063 13.3063C12.7313 13.9813 11.9376 14.5156 11.0251 14.9094C10.1126 15.3031 9.1376 15.5 8.1001 15.5Z" fill="#DC2626"/>
-                                    </svg>
-                                    <h1 class="text-[#DC2626] font-normal">Revisi</h1>
-                                </div>
-                            </td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">04-09-2024</td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">07-09-2024</td>
-                            <td class="font-normal m-4 first:pl-4 last:pr-4 last:pl-4 last:sticky last:right-0">
-                                <a href="laporanRpjmdes.html" class="flex items-center gap-2 w-fit bg-[#5869EA] py-1.5 px-2 rounded-md mx-auto">
-                                    <svg class="w-4 fill-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z"/>
-                                    </svg>
-                                    <h1 class="text-white font-normal">Detail</h1>
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-
-                <section class="flex justify-center items-center gap-3">
-                    <button class="bg-[#5869EA] py-1.5 px-4 rounded-md md:rounded-lg">
-                        <h1 class="text-[10px] md:text-sm text-white font-semibold">Sebelumnya</h1>
-                    </button>
-                    <button class="hidden sm:block group transition-all py-1 px-3.5 focus:px-6 md:focus:px-8 focus:border-b focus:border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#9B9B9B] transition-colors group-focus:text-[#615EFC] font-semibold">1</h1>
-                    </button>
-                    <button class="py-1 px-6 md:px-8 border-b border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#615EFC] font-semibold">2</h1>
-                    </button>
-                    <button class="hidden sm:block group transition-all py-1 px-3.5 focus:px-6 md:focus:px-8 focus:border-b focus:border-[#615EFC]">
-                        <h1 class="text-[10px] md:text-sm text-[#9B9B9B] transition-colors group-focus:text-[#615EFC] font-semibold">3</h1>
-                    </button>
-                    <button class="bg-[#5869EA] py-1.5 px-4 rounded-md md:rounded-lg">
-                        <h1 class="text-[10px] md:text-sm text-white font-semibold">Selanjutnya</h1>
-                    </button>
-                </section>
+                    <div class="flex justify-center items-center gap-2 md:gap-3 bg-white py-2 md:py-2.5 rounded md:rounded-md">
+                        <h1 class="text-xs md:text-sm text-[#615EFC] font-normal">Lihat Data Lengkap</h1>
+                        <svg class="w-1 md:w-1.5 stroke-[#615EFC] stroke-[1.5]" viewBox="0 0 6 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1.5L2.76297 3.24731C4.1689 4.64075 4.87187 5.33747 4.98011 6.18667C5.00663 6.39473 5.00663 6.60527 4.98011 6.81333C4.87187 7.66252 4.1689 8.35925 2.76297 9.75269L1 11.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
 
-    <script src="/js/desa.js"></script>
+    <script src="/js/chartLine.js"></script>
 </body>
 </html>
