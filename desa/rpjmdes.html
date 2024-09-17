@@ -628,7 +628,7 @@
                         </svg>
                     </button>
                     <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
-                        <div class="w-[80%] sm:w-[50%] md:w-[40%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
+                        <div class="w-[80%] sm:w-[50%] md:w-[40%] lg:w-[50%] bg-white rounded-lg md:rounded-xl">
                             <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
                                 <h1 class="text-sm md:text-base text-black font-semibold">Upload Laporan</h1>
                                 <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
@@ -637,57 +637,111 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="pt-2.5 pb-3.5 px-5 space-y-4">
+                            <div x-data="fileUploader()" class="pt-2.5 pb-3.5 px-5 space-y-4">
                                 <div class="space-y-2">
                                     <label for="upload">
                                         <div class="border-[1.5px] border-dashed border-[#384EB74D] p-5 mx-5 space-y-2 rounded md:rounded-md cursor-pointer">
                                             <img class="w-16 md:w-20 h-16 md:h-20 mx-auto" src="/svgs/upload.svg">
                                             <div class="text-center space-y-1">
-                                                <h1 class="text-xs md:text-sm text-[#0F0F0F] font-bold">Drag & drop files or <span class="text-[#483EA8] font-bold underline">Browse</span></h1>
-                                                <p class="text-[10px] md:text-xs text-[#676767] font-normal">Format harus.pdf</p>
+                                                <h1 class="text-xs md:text-sm text-[#0F0F0F] font-bold">Drag & drop files or 
+                                                    <span class="text-[#483EA8] font-bold underline">Browse</span>
+                                                </h1>
+                                                <p class="text-[10px] md:text-xs text-[#676767] font-normal">Format harus .pdf</p>
                                             </div>
                                         </div>
-                                        <input class="hidden" type="file" name="" id="upload">
+                                        <input @change="handleFileUpload($event)" class="hidden" type="file" id="upload" multiple>
                                     </label>
-                                    <div class="space-y-2">
-                                        <h1 class="text-xs md:text-sm text-[#676767] font-semibold">Mengunggah file - 2 files</h1>
-                                        <div class="space-y-1">
-                                            <div class="flex justify-between items-center border-[0.5px] border-[#E41D1D] py-1.5 px-3 rounded">
-                                                <h1 class="text-[10px] md:text-xs text-black font-normal">your-file-here.xlsx</h1>
-                                                <div class="cursor-pointer">
-                                                    <svg class="w-4" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.5 16.1182C6.37833 16.1182 4.34331 15.2753 2.84315 13.775C1.3429 12.2746 0.5 10.2398 0.5 8.11817C0.5 5.9965 1.3429 3.96148 2.84315 2.46132C4.34353 0.961066 6.37833 0.118164 8.5 0.118164C10.6217 0.118164 12.6567 0.961066 14.1568 2.46132C15.6571 3.9617 16.5 5.9965 16.5 8.11817C16.4974 10.2391 15.6538 12.2727 14.154 13.7722C12.6543 15.272 10.6207 16.1156 8.5 16.1182ZM11.5851 6.06058V6.06046C11.7254 5.92495 11.8053 5.7388 11.8071 5.54374C11.8088 5.34869 11.7321 5.16108 11.5941 5.02313C11.4562 4.88517 11.2685 4.80848 11.0735 4.81018C10.8784 4.81188 10.6923 4.89188 10.5568 5.03214L8.5 7.08966L6.44323 5.03214C6.25853 4.85377 5.99346 4.78595 5.7457 4.85389C5.49805 4.92183 5.3046 5.11529 5.23665 5.36294C5.16871 5.61071 5.23653 5.87576 5.4149 6.06047L7.47167 8.11799L5.4149 10.1755C5.27464 10.311 5.19465 10.4972 5.19294 10.6922C5.19124 10.8873 5.26794 11.0749 5.40589 11.2128C5.54383 11.3508 5.73145 11.4275 5.9265 11.4258C6.12155 11.4241 6.3077 11.3441 6.44322 11.2038L8.49999 9.14631L10.5568 11.2038C10.6923 11.3441 10.8784 11.4241 11.0735 11.4258C11.2685 11.4275 11.4561 11.3508 11.5941 11.2128C11.7321 11.0749 11.8088 10.8873 11.807 10.6922C11.8053 10.4972 11.7253 10.311 11.5851 10.1755L9.52832 8.11799L11.5851 6.06058Z" fill="#E41D1D"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal">File tidak didukung. Tolong upload format .pdf</h1>
-                                        </div>
-                                        <h1 class="text-xs md:text-sm text-[#676767] font-semibold">Berhasil diunggah</h1>
-                                        <div class="space-y-1">
-                                            <div class="flex justify-between items-center border-[0.5px] border-[#11AF22] py-1.5 px-3 rounded">
-                                                <h1 class="text-[10px] md:text-xs text-black font-normal">your-file-here.pdf</h1>
-                                                <div class="flex items-center gap-2 md:gap-3">
-                                                    <div class="bg-[#615EFC] py-0.5 px-2 rounded cursor-pointer">
-                                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">Ganti Nama</h1>
+                            
+                                    <template x-if="files.length > 0">
+                                        <div class="space-y-2">
+                                            <h1 class="text-xs md:text-sm text-[#676767] font-semibold">Mengunggah file - <span x-text="files.length + ' files'"></span></h1>
+                            
+                                            <template x-for="(file, index) in files" :key="index">
+                                                <div x-show="!file.isValid" class="space-y-1">
+                                                    <div class="flex justify-between items-center border-[0.5px] border-[#E41D1D] py-1.5 px-3 rounded">
+                                                        <h1 class="text-[10px] md:text-xs text-black font-normal" x-text="file.name"></h1>
+                                                        <div class="cursor-pointer" @click="removeFile(index)">
+                                                            <h1>Hapus</h1>
+                                                        </div>
                                                     </div>
-                                                    <div class="cursor-pointer">
-                                                        <svg class="w-4" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M8.5 16.1182C6.37833 16.1182 4.34331 15.2753 2.84315 13.775C1.3429 12.2746 0.5 10.2398 0.5 8.11817C0.5 5.9965 1.3429 3.96148 2.84315 2.46132C4.34353 0.961066 6.37833 0.118164 8.5 0.118164C10.6217 0.118164 12.6567 0.961066 14.1568 2.46132C15.6571 3.9617 16.5 5.9965 16.5 8.11817C16.4974 10.2391 15.6538 12.2727 14.154 13.7722C12.6543 15.272 10.6207 16.1156 8.5 16.1182ZM11.5851 6.06058V6.06046C11.7254 5.92495 11.8053 5.7388 11.8071 5.54374C11.8088 5.34869 11.7321 5.16108 11.5941 5.02313C11.4562 4.88517 11.2685 4.80848 11.0735 4.81018C10.8784 4.81188 10.6923 4.89188 10.5568 5.03214L8.5 7.08966L6.44323 5.03214C6.25853 4.85377 5.99346 4.78595 5.7457 4.85389C5.49805 4.92183 5.3046 5.11529 5.23665 5.36294C5.16871 5.61071 5.23653 5.87576 5.4149 6.06047L7.47167 8.11799L5.4149 10.1755C5.27464 10.311 5.19465 10.4972 5.19294 10.6922C5.19124 10.8873 5.26794 11.0749 5.40589 11.2128C5.54383 11.3508 5.73145 11.4275 5.9265 11.4258C6.12155 11.4241 6.3077 11.3441 6.44322 11.2038L8.49999 9.14631L10.5568 11.2038C10.6923 11.3441 10.8784 11.4241 11.0735 11.4258C11.2685 11.4275 11.4561 11.3508 11.5941 11.2128C11.7321 11.0749 11.8088 10.8873 11.807 10.6922C11.8053 10.4972 11.7253 10.311 11.5851 10.1755L9.52832 8.11799L11.5851 6.06058Z" fill="#E41D1D"/>
-                                                        </svg>
-                                                    </div>
+                                                    <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal">File tidak didukung. Tolong upload format .pdf</h1>
                                                 </div>
-                                            </div>
-                                            <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal">Ganti nama file untuk melanjutkan upload file</h1>
+                                            </template>
+                            
+                                            <template x-if="files.some(file => file.isValid)">
+                                                <h1 class="text-xs md:text-sm text-[#676767] font-semibold">Berhasil diunggah</h1>
+                                            </template>
+                                            <template x-for="(file, index) in files" :key="index">
+                                                <div x-show="file.isValid" class="space-y-1">
+                                                    <div class="flex justify-between items-center border-[0.5px] border-[#11AF22] py-1.5 px-3 rounded">
+                                                        <div class="break-words w-[50%] md:w-[70%]">
+                                                            <h1 class="line-clamp-1 text-[10px] md:text-xs text-black font-normal" x-text="file.name + '.pdf'"></h1>
+                                                        </div>
+                                                        <div class="flex items-center gap-2 md:gap-3">
+                                                            <div x-data="{ modal : false }">
+                                                                <button @click="modal = !modal" class="w-max bg-[#615EFC] py-0.5 px-2 rounded cursor-pointer">
+                                                                    <h1 class="text-[8px] md:text-[10px] text-white font-normal">Ganti Nama</h1>
+                                                                </button>
+                                                                <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                                                                    <div class="w-[60%] sm:w-[50%] md:w-[40%] lg:w-[40%] bg-white rounded-lg md:rounded-xl">
+                                                                        <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
+                                                                            <h1 class="text-sm md:text-base text-black font-semibold">Ganti Nama File</h1>
+                                                                            <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
+                                                                                <svg class="w-3 fill-[#8B8B8B]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path d="M11.0204 1.68705C11.2157 1.49179 11.2157 1.1752 11.0204 0.979943C10.8251 0.784681 10.5086 0.784681 10.3133 0.979943L6.00017 5.29307L1.68705 0.979945C1.49179 0.784683 1.1752 0.784683 0.979943 0.979945C0.784681 1.17521 0.784681 1.49179 0.979943 1.68705L5.29306 6.00017L0.979961 10.3133C0.784699 10.5085 0.784699 10.8251 0.979961 11.0204C1.17522 11.2156 1.49181 11.2156 1.68707 11.0204L6.00017 6.70728L10.3133 11.0204C10.5085 11.2156 10.8251 11.2156 11.0204 11.0204C11.2156 10.8251 11.2156 10.5085 11.0204 10.3133L6.70728 6.00017L11.0204 1.68705Z"/>
+                                                                                </svg>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="pt-2.5 pb-3.5 px-5 space-y-8">
+                                                                            <label class="grid gap-1">
+                                                                                <h1 class="mx-1 text-xs md:text-sm text-black font-medium capitalize">Nama File</h1>
+                                                                                <div class="flex items-center">
+                                                                                    <input x-ref="inputField" type="text" :id="'file-' + index" :value="file.name" required autocomplete="off" class="peer transition-colors duration-500 w-full text-[10px] md:text-xs text-black focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border rounded-l-md border-[#ABABAB] focus:border-black focus:outline-none focus:ring-0"/>
+                                                                                    <div class="bg-gray-300 px-5 py-1.5 md:py-2 border border-gray-300 rounded-r-md">
+                                                                                        <h1 class="text-[8px] md:text-xs text-gray-600">.pdf</h1>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </label>
+                                                                            <div class="flex justify-center items-center gap-2 md:gap-3">
+                                                                                <button type="button" @click="modal = false; $refs.inputField.value = file.name" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
+                                                                                    <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
+                                                                                </button>
+                                                                                <button @click="() => { renameFile(index); modal = false; }"  class="bg-[#615EFC] py-1.5 px-4 md:px-5 rounded">
+                                                                                    <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cursor-pointer" @click="removeFile(index)">
+                                                                <h1>Hapus</h1>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal" x-show="file.renameRequired">Ganti nama file untuk melanjutkan upload file</h1>
+                                                </div>
+                                            </template>
                                         </div>
-                                    </div>
+                                    </template>
                                 </div>
                                 <div class="flex justify-center items-center gap-2 md:gap-3">
                                     <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
                                         <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
                                     </button>
-                                    <button class="bg-[#615EFC] py-1.5 px-4 md:px-5 rounded">
-                                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Upload</h1>
-                                    </button>
+                                    <button
+                                        x-data="{
+                                            status() {
+                                                return this.files.length === 0 ? false : this.files.every(file => file.isValid);
+                                            }
+                                        }"
+                                        x-init="$watch('files', () => { $el.disabled = !status(); })"
+                                        :disabled="!status()"
+                                        :class="{ 'bg-[#615EFC]': status(), 'bg-gray-500': !status() }"
+                                        class="py-1.5 px-4 md:px-5 rounded"
+                                >
+                                    <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Upload</h1>
+                                </button>
                                 </div>
                             </div>
                         </div>
@@ -870,5 +924,44 @@
     </div>
 
     <script src="/js/desa.js"></script>
+    <script>
+        function fileUploader() {
+            return {
+                files: [],
+                handleFileUpload(event) {
+                    Array.from(event.target.files).forEach(file => {
+                        let isValid = file.type === 'application/pdf';
+                        this.files.push({
+                            name: this.getFileNameWithoutExtension(file.name),
+                            file: file,
+                            isValid: isValid,
+                        });
+                    });
+                },
+                removeFile(index) {
+                    this.files.splice(index, 1);
+                },
+                renameFile(index) {
+                    const newFile = document.getElementById(`file-${index}`);
+                    if (newFile) {
+                        const oldFile = this.files[index];
+                        oldFile.name = this.getFileNameWithoutExtension(newFile.value);
+                        this.files[index] = {
+                            name: oldFile.name,
+                            file: newFile,
+                            isValid: true
+                        };
+                    }
+                },
+                getFileNameWithoutExtension(fileName) {
+                    const lastDotIndex = fileName.lastIndexOf('.');
+                    if (lastDotIndex !== -1) {
+                        return fileName.substring(0, lastDotIndex);
+                    }
+                    return fileName;
+                }
+            };
+        }
+    </script>
 </body>
 </html>

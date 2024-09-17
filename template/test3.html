@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+
+    <link href="/style.css" rel="stylesheet">
+    <link href="/svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                keyframes: {
+                    fadeIn: {
+                        '0%': { opacity: 0 },
+                        '100%': { opacity: 1 },
+                    },
+                },
+                animation: {
+                    fadeIn: "fadeIn 2s forwards",
+                },
+            },
+        },
+    };
+    </script>
+</head>
+
+<body class="bg-[#F2F8FF]">
+    
+    <div x-data="fileUploader()" class="pt-2.5 pb-3.5 px-5 space-y-4">
+        <div class="space-y-2">
+            <label for="upload">
+                <div class="border-[1.5px] border-dashed border-[#384EB74D] p-5 mx-5 space-y-2 rounded md:rounded-md cursor-pointer">
+                    <img class="w-16 md:w-20 h-16 md:h-20 mx-auto" src="/svgs/upload.svg">
+                    <div class="text-center space-y-1">
+                        <h1 class="text-xs md:text-sm text-[#0F0F0F] font-bold">Drag & drop files or 
+                            <span class="text-[#483EA8] font-bold underline">Browse</span>
+                        </h1>
+                        <p class="text-[10px] md:text-xs text-[#676767] font-normal">Format harus .pdf</p>
+                    </div>
+                </div>
+                <input @change="handleFileUpload($event)" class="hidden" type="file" id="upload" multiple>
+            </label>
+    
+            <template x-if="files.length > 0">
+                <div class="space-y-2">
+                    <h1 class="text-xs md:text-sm text-[#676767] font-semibold">Mengunggah file - <span x-text="files.length + ' files'"></span></h1>
+    
+                    <template x-for="(file, index) in files" :key="index">
+                        <div x-show="!file.isValid" class="space-y-1">
+                            <div class="flex justify-between items-center border-[0.5px] border-[#E41D1D] py-1.5 px-3 rounded">
+                                <h1 class="text-[10px] md:text-xs text-black font-normal" x-text="file.name"></h1>
+                                <div class="cursor-pointer" @click="removeFile(index)">
+                                    <h1>Hapus</h1>
+                                </div>
+                            </div>
+                            <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal">File tidak didukung. Tolong upload format .pdf</h1>
+                        </div>
+                    </template>
+    
+                    <template x-if="files.some(file => file.isValid)">
+                        <h1 class="text-xs md:text-sm text-[#676767] font-semibold">Berhasil diunggah</h1>
+                    </template>
+                    <template x-for="(file, index) in files" :key="index">
+                        <div x-show="file.isValid" class="space-y-1">
+                            <div class="flex justify-between items-center border-[0.5px] border-[#11AF22] py-1.5 px-3 rounded">
+                                <h1 class="text-[10px] md:text-xs text-black font-normal" x-text="file.name"></h1>
+                                <div class="flex items-center gap-2 md:gap-3">
+                                    <div class="bg-[#615EFC] py-0.5 px-2 rounded cursor-pointer">
+                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">Ganti Nama</h1>
+                                    </div>
+                                    <div class="cursor-pointer" @click="removeFile(index)">
+                                        <h1>Hapus</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal" x-show="file.renameRequired">Ganti nama file untuk melanjutkan upload file</h1>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+    
+    <script>
+        function fileUploader() {
+            return {
+                files: [],
+                handleFileUpload(event) {
+                    Array.from(event.target.files).forEach(file => {
+                        let isValid = file.type === 'application/pdf';
+                        this.files.push({
+                            name: file.name,
+                            file: file,
+                            isValid: isValid,
+                        });
+                    });
+                },
+                removeFile(index) {
+                    this.files.splice(index, 1);
+                },
+            };
+        }
+    </script>
+                 
+</body>
+</html>
