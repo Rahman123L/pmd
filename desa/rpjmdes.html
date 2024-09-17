@@ -628,7 +628,7 @@
                         </svg>
                     </button>
                     <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
-                        <div class="w-[80%] sm:w-[50%] md:w-[40%] lg:w-[25%] bg-white rounded-lg md:rounded-xl">
+                        <div class="w-[80%] sm:w-[50%] md:w-[40%] lg:w-[30%] bg-white rounded-lg md:rounded-xl">
                             <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
                                 <h1 class="text-sm md:text-base text-black font-semibold">Upload Laporan</h1>
                                 <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
@@ -637,21 +637,56 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="pt-2.5 pb-3.5 px-5 space-y-8">
-                                <div class="">
-                                    <label for="">
-                                        <div class="">
-                                            
+                            <div class="pt-2.5 pb-3.5 px-5 space-y-4">
+                                <div class="space-y-2">
+                                    <label for="upload">
+                                        <div class="border-[1.5px] border-dashed border-[#384EB74D] p-5 mx-5 space-y-2 rounded md:rounded-md cursor-pointer">
+                                            <img class="w-16 md:w-20 h-16 md:h-20 mx-auto" src="/svgs/upload.svg">
+                                            <div class="text-center space-y-1">
+                                                <h1 class="text-xs md:text-sm text-[#0F0F0F] font-bold">Drag & drop files or <span class="text-[#483EA8] font-bold underline">Browse</span></h1>
+                                                <p class="text-[10px] md:text-xs text-[#676767] font-normal">Format harus.pdf</p>
+                                            </div>
                                         </div>
-                                        <input class="hidden" type="file" name="" id="">
+                                        <input class="hidden" type="file" name="" id="upload">
                                     </label>
+                                    <div class="space-y-2">
+                                        <h1 class="text-xs md:text-sm text-[#676767] font-semibold">Mengunggah file - 2 files</h1>
+                                        <div class="space-y-1">
+                                            <div class="flex justify-between items-center border-[0.5px] border-[#E41D1D] py-1.5 px-3 rounded">
+                                                <h1 class="text-[10px] md:text-xs text-black font-normal">your-file-here.xlsx</h1>
+                                                <div class="cursor-pointer">
+                                                    <svg class="w-4" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8.5 16.1182C6.37833 16.1182 4.34331 15.2753 2.84315 13.775C1.3429 12.2746 0.5 10.2398 0.5 8.11817C0.5 5.9965 1.3429 3.96148 2.84315 2.46132C4.34353 0.961066 6.37833 0.118164 8.5 0.118164C10.6217 0.118164 12.6567 0.961066 14.1568 2.46132C15.6571 3.9617 16.5 5.9965 16.5 8.11817C16.4974 10.2391 15.6538 12.2727 14.154 13.7722C12.6543 15.272 10.6207 16.1156 8.5 16.1182ZM11.5851 6.06058V6.06046C11.7254 5.92495 11.8053 5.7388 11.8071 5.54374C11.8088 5.34869 11.7321 5.16108 11.5941 5.02313C11.4562 4.88517 11.2685 4.80848 11.0735 4.81018C10.8784 4.81188 10.6923 4.89188 10.5568 5.03214L8.5 7.08966L6.44323 5.03214C6.25853 4.85377 5.99346 4.78595 5.7457 4.85389C5.49805 4.92183 5.3046 5.11529 5.23665 5.36294C5.16871 5.61071 5.23653 5.87576 5.4149 6.06047L7.47167 8.11799L5.4149 10.1755C5.27464 10.311 5.19465 10.4972 5.19294 10.6922C5.19124 10.8873 5.26794 11.0749 5.40589 11.2128C5.54383 11.3508 5.73145 11.4275 5.9265 11.4258C6.12155 11.4241 6.3077 11.3441 6.44322 11.2038L8.49999 9.14631L10.5568 11.2038C10.6923 11.3441 10.8784 11.4241 11.0735 11.4258C11.2685 11.4275 11.4561 11.3508 11.5941 11.2128C11.7321 11.0749 11.8088 10.8873 11.807 10.6922C11.8053 10.4972 11.7253 10.311 11.5851 10.1755L9.52832 8.11799L11.5851 6.06058Z" fill="#E41D1D"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal">File tidak didukung. Tolong upload format .pdf</h1>
+                                        </div>
+                                        <h1 class="text-xs md:text-sm text-[#676767] font-semibold">Berhasil diunggah</h1>
+                                        <div class="space-y-1">
+                                            <div class="flex justify-between items-center border-[0.5px] border-[#11AF22] py-1.5 px-3 rounded">
+                                                <h1 class="text-[10px] md:text-xs text-black font-normal">your-file-here.pdf</h1>
+                                                <div class="flex items-center gap-2 md:gap-3">
+                                                    <div class="bg-[#615EFC] py-0.5 px-2 rounded cursor-pointer">
+                                                        <h1 class="text-[8px] md:text-[10px] text-white font-normal">Ganti Nama</h1>
+                                                    </div>
+                                                    <div class="cursor-pointer">
+                                                        <svg class="w-4" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M8.5 16.1182C6.37833 16.1182 4.34331 15.2753 2.84315 13.775C1.3429 12.2746 0.5 10.2398 0.5 8.11817C0.5 5.9965 1.3429 3.96148 2.84315 2.46132C4.34353 0.961066 6.37833 0.118164 8.5 0.118164C10.6217 0.118164 12.6567 0.961066 14.1568 2.46132C15.6571 3.9617 16.5 5.9965 16.5 8.11817C16.4974 10.2391 15.6538 12.2727 14.154 13.7722C12.6543 15.272 10.6207 16.1156 8.5 16.1182ZM11.5851 6.06058V6.06046C11.7254 5.92495 11.8053 5.7388 11.8071 5.54374C11.8088 5.34869 11.7321 5.16108 11.5941 5.02313C11.4562 4.88517 11.2685 4.80848 11.0735 4.81018C10.8784 4.81188 10.6923 4.89188 10.5568 5.03214L8.5 7.08966L6.44323 5.03214C6.25853 4.85377 5.99346 4.78595 5.7457 4.85389C5.49805 4.92183 5.3046 5.11529 5.23665 5.36294C5.16871 5.61071 5.23653 5.87576 5.4149 6.06047L7.47167 8.11799L5.4149 10.1755C5.27464 10.311 5.19465 10.4972 5.19294 10.6922C5.19124 10.8873 5.26794 11.0749 5.40589 11.2128C5.54383 11.3508 5.73145 11.4275 5.9265 11.4258C6.12155 11.4241 6.3077 11.3441 6.44322 11.2038L8.49999 9.14631L10.5568 11.2038C10.6923 11.3441 10.8784 11.4241 11.0735 11.4258C11.2685 11.4275 11.4561 11.3508 11.5941 11.2128C11.7321 11.0749 11.8088 10.8873 11.807 10.6922C11.8053 10.4972 11.7253 10.311 11.5851 10.1755L9.52832 8.11799L11.5851 6.06058Z" fill="#E41D1D"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal">Ganti nama file untuk melanjutkan upload file</h1>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="flex justify-center items-center gap-2 md:gap-3">
                                     <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
-                                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Periksa</h1>
+                                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
                                     </button>
                                     <button class="bg-[#615EFC] py-1.5 px-4 md:px-5 rounded">
-                                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
+                                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Upload</h1>
                                     </button>
                                 </div>
                             </div>
