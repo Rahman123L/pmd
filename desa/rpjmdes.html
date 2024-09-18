@@ -333,7 +333,8 @@
                                 </svg>
                                 <h1 class="text-[10px] md:text-xs text-[#059669] font-medium">
                                     <!-- Berhasil mengubah profile -->
-                                    Berhasil mengubah password
+                                    <!-- Berhasil mengubah password -->
+                                    Berhasil mengunggah laporan
                                 </h1>
                             </div>
                             <svg @click="notif = false" class="w-2.5 md:w-3 fill-[#8B8B8B] cursor-pointer" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -434,17 +435,6 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
                                     </svg>
                                     <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Evaluasi APEdes</h1>
-                                </div>
-                                <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
-                            </button>
-                        </a>
-                        <a href="management.html">
-                            <button class="w-full group gap-2 md:gap-3 px-4 md:px-5">
-                                <div class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent">
-                                    <svg class="w-[14px] fill-white" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.63661 1.7073C0 2.58352 0 3.83343 0 6.33325V7.66659C0 10.1664 0 11.4163 0.63661 12.2925C0.842209 12.5755 1.09107 12.8244 1.37405 13.03C2.25027 13.6666 3.50018 13.6666 6 13.6666C8.49982 13.6666 9.74973 13.6666 10.626 13.03C10.9089 12.8244 11.1578 12.5755 11.3634 12.2925C12 11.4163 12 10.1664 12 7.66659V6.33325C12 3.83343 12 2.58352 11.3634 1.7073C11.1578 1.42432 10.9089 1.17546 10.626 0.969862C9.74973 0.333252 8.49982 0.333252 6 0.333252C3.50018 0.333252 2.25027 0.333252 1.37405 0.969862C1.09107 1.17546 0.842209 1.42432 0.63661 1.7073ZM3.33333 3.83325C3.05719 3.83325 2.83333 4.05711 2.83333 4.33325C2.83333 4.60939 3.05719 4.83325 3.33333 4.83325H8.66667C8.94281 4.83325 9.16667 4.60939 9.16667 4.33325C9.16667 4.05711 8.94281 3.83325 8.66667 3.83325H3.33333ZM3.33333 6.49992C3.05719 6.49992 2.83333 6.72378 2.83333 6.99992C2.83333 7.27606 3.05719 7.49992 3.33333 7.49992H8.66667C8.94281 7.49992 9.16667 7.27606 9.16667 6.99992C9.16667 6.72378 8.94281 6.49992 8.66667 6.49992H3.33333ZM3.33333 9.16659C3.05719 9.16659 2.83333 9.39044 2.83333 9.66659C2.83333 9.94273 3.05719 10.1666 3.33333 10.1666H8.66667C8.94281 10.1666 9.16667 9.94273 9.16667 9.66659C9.16667 9.39044 8.94281 9.16659 8.66667 9.16659H3.33333Z"/>
-                                    </svg>
-                                    <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold">Management Evaluasi</h1>
                                 </div>
                                 <div class="mx-1.5 group-hover:border-b-[0.5px] group-hover:border-white group-focus:border-b-[0.5px] group-focus:border-white">
                             </button>
@@ -586,23 +576,6 @@
                         </div>
                     </button>
                 </a>
-                <a href="recovery.html" class="grid gap-3">
-                    <button class="w-full group flex items-center gap-2 md:gap-3 pr-5">
-                        <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
-                        <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
-                            <div class="flex items-center gap-2 md:gap-3">
-                                <svg class="w-[14px] fill-white transition-colors duration-300 group-hover:fill-[#615EFC] group-focus:fill-[#615EFC]" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.16667 8.66536C5.16667 8.20513 5.53976 7.83203 6 7.83203C6.46024 7.83203 6.83333 8.20513 6.83333 8.66536C6.83333 9.1256 6.46024 9.4987 6 9.4987C5.53976 9.4987 5.16667 9.1256 5.16667 8.66536Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 0.832031C3.88291 0.832031 2.16667 2.54827 2.16667 4.66536V5.40784C2.16667 5.45238 2.17249 5.49556 2.18342 5.53665C1.22602 5.88845 0.479776 6.66082 0.163145 7.63531C0 8.13742 0 8.75784 0 9.9987C0 11.2396 0 11.86 0.163145 12.3621C0.492871 13.3769 1.28848 14.1725 2.30328 14.5022C2.80538 14.6654 3.42581 14.6654 4.66665 14.6654H7.33333C8.57418 14.6654 9.19462 14.6654 9.69672 14.5022C10.7115 14.1725 11.5071 13.3769 11.8369 12.3621C12 11.86 12 11.2396 12 9.9987C12 8.75784 12 8.13742 11.8369 7.63531C11.5071 6.62051 10.7115 5.8249 9.69672 5.49518C9.58352 5.4584 9.46431 5.42991 9.33333 5.40784C8.88334 5.33203 8.29444 5.33203 7.33333 5.33203H4.66667C4.02314 5.33203 3.54649 5.33203 3.16667 5.35479V4.66536C3.16667 3.10056 4.43519 1.83203 6 1.83203C6.63854 1.83203 7.22645 2.04266 7.69999 2.39844C7.92076 2.56432 8.2342 2.51981 8.40007 2.29904C8.56594 2.07826 8.52144 1.76482 8.30066 1.59895C7.65988 1.11752 6.86256 0.832031 6 0.832031ZM4.16667 8.66536C4.16667 7.65284 4.98748 6.83203 6 6.83203C7.01252 6.83203 7.83333 7.65284 7.83333 8.66536C7.83333 9.50455 7.2695 10.212 6.5 10.4297V12.6654C6.5 12.9415 6.27614 13.1654 6 13.1654C5.72386 13.1654 5.5 12.9415 5.5 12.6654V10.4297C4.7305 10.212 4.16667 9.50455 4.16667 8.66536Z"/>
-                                </svg>                                    
-                                <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-[#615EFC] group-focus:text-[#615EFC]">Recovery</h1>
-                            </div>
-                            <svg :class="{ 'block' : isOpenn, 'hidden' : !isOpenn }" class="w-[5px] fill-white transition-colors duration-300 group-hover:fill-[#615EFC] group-focus:fill-[#615EFC]" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.14131 0.772516C0.969697 0.602425 0.69269 0.603661 0.5226 0.775276C0.352509 0.946891 0.353745 1.2239 0.52536 1.39399L1.55376 2.41325C1.97113 2.82691 2.25743 3.11161 2.45116 3.35283C2.63934 3.58715 2.7039 3.73766 2.72108 3.87246C2.73187 3.9571 2.73187 4.04274 2.72108 4.12738C2.7039 4.26218 2.63934 4.41269 2.45116 4.64701C2.25743 4.88823 1.97113 5.17292 1.55376 5.58659L0.52536 6.60585C0.353745 6.77594 0.352509 7.05295 0.5226 7.22456C0.69269 7.39618 0.969697 7.39741 1.14131 7.22732L2.18824 6.1897C2.58255 5.7989 2.90483 5.47949 3.13339 5.1949C3.37105 4.89896 3.5431 4.59858 3.58906 4.23801C3.60921 4.07991 3.60921 3.91992 3.58906 3.76182C3.5431 3.40126 3.37105 3.10088 3.13339 2.80494C2.90483 2.52034 2.58256 2.20094 2.18824 1.81014L1.14131 0.772516Z"/>
-                            </svg>
-                        </div>
-                    </button>
-                </a>
                 <a href="" class="md:absolute md:bottom-4 w-full">
                     <div :class="isOpenn ? 'bg-white py-2 px-6 rounded md:rounded-md shadow-lg shadow-black/20' : 'bg-transparent py-2 px-3 hover:bg-white rounded md:rounded-md hover:shadow-lg hover:shadow-black/20'" class="flex justify-center items-center gap-2 md:gap-3 ml-4 mr-5 md:mx-5">
                         <svg class="w-[14px]" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -620,7 +593,7 @@
                     <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Laporan RPJMDES</h1>
                     <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-[#615EFC] font-medium">Home</span> / Laporan RPJMDES</h1>
                 </div>
-                <div x-data="{ modal : true }" class="mx-2">
+                <div x-data="{ modal : false }" class="mx-2">
                     <button @click="modal = !modal" class="bg-[#6777EF] py-2 px-3 flex items-center gap-2 md:gap-3 rounded ring-8 ring-white">
                         <h1 class="text-[10px] md:text-xs text-white font-medium">Upload Laporan</h1>
                         <svg class="w-3 md:w-4" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -628,7 +601,7 @@
                         </svg>
                     </button>
                     <div x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
-                        <div class="w-[80%] sm:w-[50%] md:w-[40%] lg:w-[50%] bg-white rounded-lg md:rounded-xl">
+                        <div class="w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] bg-white rounded-lg md:rounded-xl">
                             <div class="flex justify-between items-center border-b border-[#D1D1D1] py-2.5 px-3">
                                 <h1 class="text-sm md:text-base text-black font-semibold">Upload Laporan</h1>
                                 <button type="button" @click="modal = false" type="button" class="bg-[#E8E8E8] p-2 rounded-full">
@@ -658,10 +631,14 @@
                             
                                             <template x-for="(file, index) in files" :key="index">
                                                 <div x-show="!file.isValid" class="space-y-1">
-                                                    <div class="flex justify-between items-center border-[0.5px] border-[#E41D1D] py-1.5 px-3 rounded">
-                                                        <h1 class="text-[10px] md:text-xs text-black font-normal" x-text="file.name"></h1>
+                                                    <div class="flex justify-between items-center gap-2 md:gap-3 border-[0.5px] border-[#E41D1D] py-1.5 px-3 rounded">
+                                                        <div class="break-words overflow-hidden">
+                                                            <h1 class="line-clamp-1 text-[10px] md:text-xs text-black font-normal" x-text="file.name"></h1>
+                                                        </div>
                                                         <div class="cursor-pointer" @click="removeFile(index)">
-                                                            <h1>Hapus</h1>
+                                                            <svg class="w-3 md:w-4" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8.5 16.6182C6.37833 16.6182 4.34331 15.7753 2.84315 14.275C1.3429 12.7746 0.5 10.7398 0.5 8.61817C0.5 6.4965 1.3429 4.46148 2.84315 2.96132C4.34353 1.46107 6.37833 0.618164 8.5 0.618164C10.6217 0.618164 12.6567 1.46107 14.1568 2.96132C15.6571 4.4617 16.5 6.4965 16.5 8.61817C16.4974 10.7391 15.6538 12.7727 14.154 14.2722C12.6543 15.772 10.6207 16.6156 8.5 16.6182ZM11.5851 6.56058V6.56046C11.7254 6.42495 11.8053 6.2388 11.8071 6.04374C11.8088 5.84869 11.7321 5.66108 11.5941 5.52313C11.4562 5.38517 11.2685 5.30848 11.0735 5.31018C10.8784 5.31188 10.6923 5.39188 10.5568 5.53214L8.5 7.58966L6.44323 5.53214C6.25853 5.35377 5.99346 5.28595 5.7457 5.35389C5.49805 5.42183 5.3046 5.61529 5.23665 5.86294C5.16871 6.11071 5.23653 6.37576 5.4149 6.56047L7.47167 8.61799L5.4149 10.6755C5.27464 10.811 5.19465 10.9972 5.19294 11.1922C5.19124 11.3873 5.26794 11.5749 5.40589 11.7128C5.54383 11.8508 5.73145 11.9275 5.9265 11.9258C6.12155 11.9241 6.3077 11.8441 6.44322 11.7038L8.49999 9.64631L10.5568 11.7038C10.6923 11.8441 10.8784 11.9241 11.0735 11.9258C11.2685 11.9275 11.4561 11.8508 11.5941 11.7128C11.7321 11.5749 11.8088 11.3873 11.807 11.1922C11.8053 10.9972 11.7253 10.811 11.5851 10.6755L9.52832 8.61799L11.5851 6.56058Z" fill="#E41D1D"/>
+                                                            </svg>                                                                
                                                         </div>
                                                     </div>
                                                     <h1 class="text-[8px] md:text-[10px] text-[#E41D1D] font-normal">File tidak didukung. Tolong upload format .pdf</h1>
@@ -673,12 +650,12 @@
                                             </template>
                                             <template x-for="(file, index) in files" :key="index">
                                                 <div x-show="file.isValid" class="space-y-1">
-                                                    <div class="flex justify-between items-center border-[0.5px] border-[#11AF22] py-1.5 px-3 rounded">
-                                                        <div class="break-words w-[50%] md:w-[70%]">
+                                                    <div class="flex justify-between items-center gap-2 md:gap-3 border-[0.5px] border-[#11AF22] py-0.5 px-3 rounded">
+                                                        <div class="break-words overflow-hidden">
                                                             <h1 class="line-clamp-1 text-[10px] md:text-xs text-black font-normal" x-text="file.name + '.pdf'"></h1>
                                                         </div>
                                                         <div class="flex items-center gap-2 md:gap-3">
-                                                            <div x-data="{ modal : false }">
+                                                            <div x-data="{ modal : false }" class="mb-1">
                                                                 <button @click="modal = !modal" class="w-max bg-[#615EFC] py-0.5 px-2 rounded cursor-pointer">
                                                                     <h1 class="text-[8px] md:text-[10px] text-white font-normal">Ganti Nama</h1>
                                                                 </button>
@@ -696,8 +673,8 @@
                                                                             <label class="grid gap-1">
                                                                                 <h1 class="mx-1 text-xs md:text-sm text-black font-medium capitalize">Nama File</h1>
                                                                                 <div class="flex items-center">
-                                                                                    <input x-ref="inputField" type="text" :id="'file-' + index" :value="file.name" required autocomplete="off" class="peer transition-colors duration-500 w-full text-[10px] md:text-xs text-black focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border rounded-l-md border-[#ABABAB] focus:border-black focus:outline-none focus:ring-0"/>
-                                                                                    <div class="bg-gray-300 px-5 py-1.5 md:py-2 border border-gray-300 rounded-r-md">
+                                                                                    <input x-ref="inputField" type="text" :id="'file-' + index" :value="file.name" required autocomplete="off" class="peer transition-colors duration-500 w-full text-[10px] md:text-xs text-black focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-2.5 md:px-5 py-0.5 md:py-2 border rounded-l-md border-[#ABABAB] focus:border-black focus:outline-none focus:ring-0"/>
+                                                                                    <div class="bg-gray-300 px-5 py-2 border border-gray-300 rounded-r-md">
                                                                                         <h1 class="text-[8px] md:text-xs text-gray-600">.pdf</h1>
                                                                                     </div>
                                                                                 </div>
@@ -714,8 +691,13 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="cursor-pointer" @click="removeFile(index)">
-                                                                <h1>Hapus</h1>
+                                                            <div class="bg-[#FFF3F3] p-1 rounded-full cursor-pointer" @click="removeFile(index)">
+                                                                <svg class="w-2 md:w-2.5" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M7.97692 1.76334H6.97736C6.96399 1.7587 6.95009 1.75569 6.936 1.75431H5.87174V0.871641C5.8718 0.805308 5.8458 0.741624 5.79945 0.694248C5.75304 0.646876 5.68995 0.619548 5.62369 0.618164H3.10672C3.03948 0.618164 2.97501 0.64483 2.92752 0.692382C2.87997 0.739934 2.85324 0.804401 2.85324 0.871639V1.75431H1.79439C1.7803 1.75569 1.7664 1.7587 1.75303 1.76333H0.753471C0.662881 1.76333 0.579206 1.81161 0.533949 1.89004C0.488684 1.96847 0.488684 2.06508 0.533949 2.14351C0.579214 2.22194 0.662882 2.27028 0.753471 2.27028H1.56783L2.22585 8.39166C2.2329 8.45396 2.26263 8.51145 2.3094 8.55328C2.35611 8.59505 2.41661 8.6181 2.47932 8.61816H6.25462C6.31668 8.61726 6.37627 8.59373 6.42233 8.55207C6.46831 8.51036 6.49751 8.45336 6.50449 8.39166L7.16245 2.27921H7.97687C8.06746 2.27921 8.15114 2.23094 8.19639 2.15251C8.24165 2.07407 8.24166 1.97741 8.19639 1.89904C8.15113 1.82061 8.06746 1.77227 7.97687 1.77227L7.97692 1.76334ZM3.36566 1.12511H5.36472V1.75431H3.36566V1.12511ZM6.02455 8.10757H2.70582L2.07663 2.27927H6.65368L6.02455 8.10757Z" fill="#E41D1D"/>
+                                                                    <path d="M4.36529 7.51435C4.43252 7.51435 4.49699 7.48763 4.54454 7.44014C4.59209 7.39258 4.61876 7.32812 4.61876 7.26088V3.12607C4.61876 3.03548 4.57049 2.95181 4.49205 2.90655C4.41362 2.86123 4.31696 2.86123 4.23852 2.90655C4.16009 2.95182 4.11182 3.03549 4.11182 3.12607V7.26088C4.11182 7.32811 4.13848 7.39258 4.18603 7.44014C4.23359 7.48763 4.29805 7.51435 4.36529 7.51435H4.36529Z" fill="#E41D1D"/>
+                                                                    <path d="M3.3674 7.5126H3.37817C3.44511 7.50983 3.50819 7.48064 3.5537 7.43146C3.59915 7.38229 3.62334 7.3171 3.62088 7.25016L3.46805 3.11535L3.46811 3.11529C3.46672 3.04758 3.43777 2.98329 3.38787 2.93742C3.33791 2.89161 3.27146 2.8682 3.2038 2.87259C3.13687 2.87542 3.07379 2.90462 3.02834 2.95379C2.98283 3.00297 2.95869 3.06816 2.9611 3.1351L3.11393 7.26991C3.11712 7.33509 3.14517 7.39661 3.19236 7.44175C3.23949 7.48684 3.30215 7.51224 3.3674 7.5126L3.3674 7.5126Z" fill="#E41D1D"/>
+                                                                    <path d="M5.35372 7.51249H5.36269C5.4295 7.514 5.49421 7.4892 5.54296 7.44351C5.59166 7.39776 5.62055 7.33474 5.62338 7.26798L5.77621 3.13318H5.77615C5.77862 3.06624 5.75442 3.00105 5.70898 2.95187C5.66347 2.90269 5.60039 2.8735 5.53345 2.87067C5.46501 2.86363 5.39675 2.88572 5.34541 2.93159C5.29406 2.97739 5.26445 3.04276 5.26378 3.11163L5.10915 7.24643H5.10921C5.10578 7.31427 5.12974 7.38066 5.17572 7.43068C5.22165 7.4807 5.28582 7.5102 5.35372 7.51249L5.35372 7.51249Z" fill="#E41D1D"/>
+                                                                </svg>                                                                    
                                                             </div>
                                                         </div>
                                                     </div>
@@ -729,22 +711,26 @@
                                     <button type="button" @click="modal = false" class="bg-[#FF4E4E] py-1.5 px-4 md:px-5 rounded">
                                         <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
                                     </button>
-                                    <button
-                                        x-data="{
-                                            status() {
-                                                return this.files.length === 0 ? false : this.files.every(file => file.isValid);
-                                            }
-                                        }"
+                                    <button x-data="{ status() { return this.files.length === 0 ? false : this.files.every(file => file.isValid); } }"
                                         x-init="$watch('files', () => { $el.disabled = !status(); })"
                                         :disabled="!status()"
-                                        :class="{ 'bg-[#615EFC]': status(), 'bg-gray-500': !status() }"
-                                        class="py-1.5 px-4 md:px-5 rounded"
-                                >
-                                    <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Upload</h1>
-                                </button>
+                                        :class="{ 'bg-[#615EFC] cursor-pointer': status(), 'bg-gray-500 cursor-not-allowed': !status() }"
+                                        class="py-1.5 px-4 md:px-5 rounded">
+                                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Upload</h1>
+                                    </button>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center pt-10">
+                <div class="space-y-2">
+                    <img class="w-28 md:w-32 h-28 md:h-32 mx-auto" src="/svgs/search.svg">
+                    <div class="text-center">
+                        <h1 class="text-lg md:text-xl text-black font-medium">Desa Tidak Ditemukan</h1>
+                        <h1 class="text-[10px] md:text-xs text-[#7A7A7A] font-normal">Pilih Desa untuk memunculkan data</h1>
                     </div>
                 </div>
             </div>
@@ -923,45 +909,6 @@
         </main>
     </div>
 
-    <script src="/js/desa.js"></script>
-    <script>
-        function fileUploader() {
-            return {
-                files: [],
-                handleFileUpload(event) {
-                    Array.from(event.target.files).forEach(file => {
-                        let isValid = file.type === 'application/pdf';
-                        this.files.push({
-                            name: this.getFileNameWithoutExtension(file.name),
-                            file: file,
-                            isValid: isValid,
-                        });
-                    });
-                },
-                removeFile(index) {
-                    this.files.splice(index, 1);
-                },
-                renameFile(index) {
-                    const newFile = document.getElementById(`file-${index}`);
-                    if (newFile) {
-                        const oldFile = this.files[index];
-                        oldFile.name = this.getFileNameWithoutExtension(newFile.value);
-                        this.files[index] = {
-                            name: oldFile.name,
-                            file: newFile,
-                            isValid: true
-                        };
-                    }
-                },
-                getFileNameWithoutExtension(fileName) {
-                    const lastDotIndex = fileName.lastIndexOf('.');
-                    if (lastDotIndex !== -1) {
-                        return fileName.substring(0, lastDotIndex);
-                    }
-                    return fileName;
-                }
-            };
-        }
-    </script>
+    <script src="/js/upload.js"></script>
 </body>
 </html>

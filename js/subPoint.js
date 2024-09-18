@@ -2,12 +2,13 @@ function app() {
     return {
         menus: [],
         showButtons: false,
+        hiddenButtons: true,
         addmenu() {
             this.menus.push({
                 title: '',
                 submenus: []
             });
-            this.updateShowButtons();
+            this.updateButtonStates();
         },
         addSubmenu(parentMenu) {
             const newSubmenu = {
@@ -18,14 +19,15 @@ function app() {
         },
         hapus(index) {
             this.menus.splice(index, 1);
-            this.updateShowButtons();
+            this.updateButtonStates();
         },
         hapusAll() {
             this.menus = [];
-            this.updateShowButtons();
+            this.updateButtonStates();
         },
-        updateShowButtons() {
+        updateButtonStates() {
             this.showButtons = this.menus.length > 0;
-        },
+            this.hiddenButtons = this.menus.length === 0;
+        }
     }
 }

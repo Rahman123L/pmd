@@ -333,7 +333,8 @@
                                 </svg>
                                 <h1 class="text-[10px] md:text-xs text-[#059669] font-medium">
                                     <!-- Berhasil mengubah profile -->
-                                    Berhasil mengubah password
+                                    <!-- Berhasil mengubah password -->
+                                    Berhasil mengunggah laporan
                                 </h1>
                             </div>
                             <svg @click="notif = false" class="w-2.5 md:w-3 fill-[#8B8B8B] cursor-pointer" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -643,7 +644,7 @@
             </div>
             
             <div x-data="app()" class="w-full md:w-[70%] space-y-3">
-                <button @click="addmenu()" class="flex items-center gap-2 md:gap-3 bg-white py-2 px-4 rounded md:rounded-md shadow-md shadow-[#00000014]">
+                <button @click="addmenu()" x-show="hiddenButtons" :class="{ 'block': hiddenButtons, 'hidden': !hiddenButtons }" class="flex items-center gap-2 md:gap-3 bg-white py-2 px-4 rounded md:rounded-md shadow-md shadow-[#00000014]">
                     <svg class="w-[18px] md:w-5" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
                         <path d="M13.4375 8.33325C13.4375 8.09163 13.2417 7.89575 13 7.89575C12.7584 7.89575 12.5625 8.09163 12.5625 8.33325L12.5625 12.5624H8.33337C8.09175 12.5624 7.89587 12.7583 7.89587 12.9999C7.89587 13.2415 8.09175 13.4374 8.33337 13.4374H12.5625V17.6666C12.5625 17.9082 12.7584 18.1041 13 18.1041C13.2417 18.1041 13.4375 17.9082 13.4375 17.6666V13.4374H17.6667C17.9083 13.4374 18.1042 13.2415 18.1042 12.9999C18.1042 12.7583 17.9083 12.5624 17.6667 12.5624H13.4375L13.4375 8.33325Z" fill="#A0A0A0" />
@@ -655,13 +656,11 @@
                         <div class="bg-white p-3 pb-5 space-y-3 rounded-md md:rounded-lg">
                             <div class="flex items-start gap-2 md:gap-3">
                                 <span class="bg-[#F3F3F3] py-2 px-2.5 rounded md:rounded-md">
-                                    <h1 x-text="menuIndex + 1" class="text-[10px] md:text-xs text-[#778294] font-normal"></h1>
+                                    <h1 x-text="String.fromCharCode(65 + menuIndex)" class="text-[10px] md:text-xs text-[#778294] font-normal"></h1>
                                 </span>
                                 <div class="w-full space-y-2">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-full bg-[#F3F3F3] py-2 px-3.5 rounded md:rounded-md">
-                                            <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">Isi evaluasi</h1>
-                                        </div>
+                                        <input type="text" x-model="submenu.title" placeholder="Isi evaluasi" required autocomplete="off" class="transition-colors duration-500 w-full text-[10px] md:text-xs text-[#778294] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-[#778294] placeholder:font-normal bg-[#F3F3F3] py-1.5 md:py-2 border-none rounded md:rounded-md focus:outline-none focus:ring-0" />
                                         <button @click="addSubmenu(menu)" class="relative group flex items-center">
                                             <svg class="w-6 md:w-[26px]" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect x="0.5" y="0.5" width="25" height="25" rx="12.5" stroke="#A0A0A0" />
@@ -841,6 +840,9 @@
                             </div>
                         </div>
                     </div>
+                    <button @click="addmenu()" class="bg-white py-1.5 px-4 rounded md:rounded-md">
+                        <h1 class="text-xs md:text-sm text-gray-500 font-normal">Tambah Evaluasi</h1>
+                    </button>
                 </div>
             </div>
         </main>
