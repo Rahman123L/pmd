@@ -1,0 +1,61 @@
+<div x-data="checkboxController()" class="grid w-full divide-y-[1.5px] bg-white rounded md:rounded-md shadow-md shadow-black/20"></div>
+    <div class="w-full flex justify-between items-center gap-2 md:gap-3 py-2.5 px-6">
+        <div class="flex items-center gap-2 md:gap-4">
+            <div class="flex items-center gap-1 md:gap-2">
+                <input type="checkbox" name="" id="" disabled class="appearance-none checked:bg-gray-500 rounded bg-transparent border-gray-500 checked:border-gray-500 ring-gray-500 checked:ring-gray-500" x-model="selectAll">
+                <div x-data="{ fitur: false }">
+                    <button @click="fitur = !fitur" :class="fitur ? 'bg-[#E9E9E9] p-1.5 rounded-full cursor-pointer' : ''" class="relative hover:bg-[#E9E9E9] p-1.5 rounded-full cursor-pointer">
+                        <svg class="w-2" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.29491 4.23242L0.294922 0.232422H6.29492L3.29491 4.23242Z" fill="#778294"/>
+                        </svg>
+                    </button>
+                    <div x-show="fitur" @click.outside="fitur = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': fitur, 'hidden': !fitur }" class="hidden absolute w-36 bg-white rounded shadow-md shadow-black/20">
+                        <div @click="toggleAllCheckboxes" class="bg-transparent py-2 px-4 hover:bg-[#EAEAEA] cursor-pointer">
+                            <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">Semua</h1>
+                        </div>
+                        <div @click="toggleCheckbox(0)" class="bg-transparent py-2 px-4 hover:bg-[#EAEAEA] cursor-pointer">
+                            <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">Sudah dibaca</h1>
+                        </div>
+                        <div @click="toggleCheckbox(1)" class="bg-transparent py-2 px-4 hover:bg-[#EAEAEA] cursor-pointer">
+                            <h1 class="text-[10px] md:text-xs text-[#778294] font-normal">Belum dibaca</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkbox items -->
+    <div class="flex items-center gap-2 md:gap-3 bg-red-500">
+        <input type="checkbox" name="" id="" class="appearance-none checked:bg-gray-500 rounded bg-transparent border-gray-500 checked:border-gray-500 ring-gray-500 checked:ring-gray-500" x-model="checkboxes[0]">
+        <img class="w-7 lg:w-8 h-7 lg:h-8 bg-transparent object-cover rounded-full" src="/images/avatar.jpg">
+        <div class="text-start">
+            <h1 class="text-xs md:text-sm text-black font-medium">Desa Janji</h1>
+            <p class="text-[10px] md:text-xs text-black font-normal">Desa Janji mengirim laporan - <span class="text-[#615EFC] font-normal">Cek Sekarang!</span></p>
+        </div>
+    </div>
+    <div class="flex items-center gap-2 md:gap-3 bg-blue-500">
+        <input type="checkbox" name="" id="" class="appearance-none checked:bg-gray-500 rounded bg-transparent border-gray-500 checked:border-gray-500 ring-gray-500 checked:ring-gray-500" x-model="checkboxes[1]">
+        <img class="w-7 lg:w-8 h-7 lg:h-8 bg-transparent object-cover rounded-full" src="/images/avatar.jpg">
+        <div class="text-start">
+            <h1 class="text-xs md:text-sm text-black font-medium">Desa Janji</h1>
+            <p class="text-[10px] md:text-xs text-black font-normal">Desa Janji mengirim laporan - <span class="text-[#615EFC] font-normal">Cek Sekarang!</span></p>
+        </div>
+    </div>
+</div>
+
+<script>
+function checkboxController() {
+    return {
+        checkboxes: [false, false],
+        selectAll: false,
+        toggleAllCheckboxes() {
+            this.selectAll = !this.selectAll;
+            this.checkboxes = this.checkboxes.map(() => this.selectAll);
+        },
+        toggleCheckbox(index) {
+            this.checkboxes = this.checkboxes.map((_, i) => i === index ? true : false);
+        }
+    }
+}
+</script>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Si Pelopor</title>
+
+    <link href="style.css" rel="stylesheet">
+    <link href="svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="flex justify-center items-center h-screen">
+        <div class="p-5 space-y-2">
+            <img class="w-28 h-w-28 object-contain mx-auto"
+                src="https://th.bing.com/th/id/OIP.1l8NmpOoFyMXIxhcvAZg9wAAAA?w=349&h=375&rs=1&pid=ImgDetMain">
+            <div class="text-center text-black space-y-1">
+                <h1 class="text-2xl font-bold">SI-PELOPOR</h1>
+                <p class="text-sm text-gray-800 font-bold">DINAS</p>
+                <p class="text-base text-gray-900 font-bold">PEMBERDAYAAN MASYARAKAT DESA</p>
+                <P class="text-base text-gray-900 font-bold">KABUPATEN LABUHANBATU</P>
+            </div>
+            <div class="flex justify-center pt-5">
+                <select onchange="selectDesa(event)" id="select-desa" class="text-center text-sm font-bold bg-white py-1 px-4 rounded-lg">
+                </select>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const select = document.getElementById('select-desa');
+
+        const desa = [
+            'PILIH DESA',
+            {
+                nama: "KAMPUNG PADANG",
+                link: "https://desakampungpadang.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "JANJI",
+                link: "https://desajanji.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SIBARGOT",
+                link: "https://desasibargot.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "BANDAR KUMBUL",
+                link: "https://desabandarkumbul.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TANJUNG MEDAN",
+                link: "https://desatanjungmedan.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TEBING LINGGAHARA",
+                link: "https://desatebinglinggahara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PEK. AFD I RANTAUPRAPAT",
+                link: "https://desapekarantauprapat1.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PEK. AFD II RANTAUPRAPAT",
+                link: "https://desapekarantauprapat2.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "AEK BURU SELATAN",
+                link: "https://desaaekburuselatan.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "KAMPUNG BARU",
+                link: "https://desakampungbaru.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TB. LINGGAHARA BARU",
+                link: "https://desatblinggaharabaru.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "LINGGA TIGA",
+                link: "https://desalinggatiga.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TANJUNG SIRAM",
+                link: "https://desatanjungsiram.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PEMATANG SELENG",
+                link: "https://desapematangseleng.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PERBAUNGAN",
+                link: "https://desaperbaungan.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "GUNUNG SELAMAT",
+                link: "https://desagunungselamat.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "EMPLASMEN A. NABARA",
+                link: "https://desaemplasmenanabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "BANDAR TINGGI",
+                link: "https://desabandartinggi.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "KAMPUNG DALAM",
+                link: "https://desakampungdalam.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PONDOK BATU",
+                link: "https://desapondokbatu.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "MERANTI",
+                link: "https://desameranti.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "N-1 AEK NABARA",
+                link: "https://desan1aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "N-2 AEK NABARA",
+                link: "https://desan2aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "N-3 AEK NABARA",
+                link: "https://desan3aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "N-4 AEK NABARA",
+                link: "https://desan4aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "N-5 AEK NABARA",
+                link: "https://desan5aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "N-6 AEK NABARA",
+                link: "https://desan6aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "N-7 AEK NABARA",
+                link: "https://desan7aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "N-8 AEK NABARA",
+                link: "https://desan8aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "S-1 AEK NABARA",
+                link: "https://desas1aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "S-2 AEK NABARA",
+                link: "https://desas2aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "S-3 AEK NABARA",
+                link: "https://desas3aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "S-4 AEK NABARA",
+                link: "https://desas4aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "S-5 AEK NABARA",
+                link: "https://desas5aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "S-6 AEK NABARA",
+                link: "https://desas6aeknabara.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SIDORUKUN",
+                link: "https://desasidorukun.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TB. TINGGI PANGKATAN",
+                link: "https://desatbtinggipangkatan.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PANGKATAN",
+                link: "https://desapangkatan.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TANJUNG HARAPAN",
+                link: "https://desatanjungharapan.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SENNAH",
+                link: "https://desasennah.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PERK. PANGKATAN",
+                link: "https://desaperkpangkatan.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI LUMUT",
+                link: "https://desaseilumut.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI TAWAR",
+                link: "https://desaseitawar.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI SANNGUL",
+                link: "https://desaseisanggul.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI SAKAT",
+                link: "https://desaseisakat.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI BARU",
+                link: "https://desaseibaru.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI PENGGANTUNGAN",
+                link: "https://desaseipenggantungan.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "WONOSARI",
+                link: "https://desawonosari.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PERK. SENNAH",
+                link: "https://desaperksennah.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PERK. NEGERI LAMA",
+                link: "https://desaperknegerilama.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PERK. BILAH",
+                link: "https://desaperkbilah.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "KAMPUNG BILAH",
+                link: "https://desakampungbilah.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "NEGERI LAMA SEBERANG",
+                link: "https://desanegerilamaseberang.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI TAMPANG",
+                link: "https://desaseitampang.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SELAT BESAR",
+                link: "https://desaselatbesar.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TANJUNG HALOBAN",
+                link: "https://desatanjunghaloban.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SIDOMULYO",
+                link: "https://desasidomulyo.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI TAROLAT",
+                link: "https://desaseitarolat.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI KASIH",
+                link: "https://desaseikasih.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI PELANCANG",
+                link: "https://desaseipelancang.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI SIARTI",
+                link: "https://desaseisiarti.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI NAHODARIS",
+                link: "https://desaseinahodaris.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI MERDEKA",
+                link: "https://desaseimerdeka.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI RAKYAT",
+                link: "https://desaseirakyat.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SELAT BETING",
+                link: "https://desaselatbeting.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "BAGAN BILAH",
+                link: "https://desabaganbilah.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TELAGA SUKA",
+                link: "https://desatelagasuka.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PASAR TIGA",
+                link: "https://desapasartiga.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TANJUNG SARANG ELANG",
+                link: "https://desatanjungsarangelang.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "PERK. AJAMU",
+                link: "https://desaperkajamu.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "TELUK SENTOSA",
+                link: "https://desateluksentosa.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SEI SENTOSA",
+                link: "https://desaseisentosa.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "CINTA MAKMUR",
+                link: "https://desacintamakmur.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "MERANTI PAHAM",
+                link: "https://desamerantipaham.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+            {
+                nama: "SIJAWI-JAWI",
+                link: "https://desasijawijawi.sipelopor.pro/index.php/layanan-mandiri/masuk",
+            },
+        ];
+
+        desa.sort((a, b) => {
+            if(a.nama < b.nama) {
+                return -1;
+            }
+            if(a.nama > b.nama) {
+                return 1;
+            }
+            return 0;
+        });
+        desa.forEach((data) => {
+            const option = document.createElement('option');
+            option.className = 'bg-white text-start text-xs text-black font-bold';
+            option.textContent = data.nama ?? data;
+            select.appendChild(option);
+        });
+
+        const selectDesa = (event) => {
+            const data = desa.find((data) => data.nama === event.target.value);
+            if(data.nama) {
+                document.location.href = data.link;
+            }
+        }
+    </script>
+</body>
+
+</html>
